@@ -1,11 +1,12 @@
-<!-- <div *ngIf="loading">Loading...</div>
-<div *ngIf="error">Error </div>
-<div *ngIf="stories">
-<div *ngFor="let story of stories">
-<p>hej</p></div></div> -->
-<H2>HEJ</H2>
-<div *ngFor="let story of stories">
+<!-- <div *ngFor="let story of stories">
 <h2>{{story.attributes.title}}</h2>
-<span>{{story.attributes.author}}</span>
+<span>Skriven av: {{story.attributes.author}}</span>
 <p>{{story.attributes.body}}</p>
-</div>
+</div> -->
+
+<header>
+  <app-navigation></app-navigation>
+</header>
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>
