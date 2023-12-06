@@ -8,7 +8,7 @@ describe('KnowledgeComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [KnowledgeComponent]
+      declarations: [KnowledgeComponent],
     });
     fixture = TestBed.createComponent(KnowledgeComponent);
     component = fixture.componentInstance;

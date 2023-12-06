@@ -9,29 +9,28 @@ import { ContactComponent } from './pages/contact/contact.component';
 const routes: Routes = [
   {
     path: '',
-    component: LandingpageComponent
+    component: LandingpageComponent,
   },
   {
     path: 'stod-oss',
-    component: DonateComponent
+    component: DonateComponent,
   },
   {
     path: 'for-patienter',
-    component: ForpatientsComponent
+    component: ForpatientsComponent,
   },
   {
     path: 'kunskap',
-    component: KnowledgeComponent
+    component: KnowledgeComponent,
   },
   {
     path: 'kontakt',
-    component: ContactComponent
-  }
-
+    component: ContactComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

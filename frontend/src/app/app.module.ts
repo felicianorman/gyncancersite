@@ -13,7 +13,6 @@ import { ForpatientsComponent } from './pages/forpatients/forpatients.component'
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,15 +22,10 @@ import { FooterComponent } from './footer/footer.component';
     ContactComponent,
     ForpatientsComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    GraphQLModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, GraphQLModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
