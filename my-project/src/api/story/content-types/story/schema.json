@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "singularName": "story",
+    "pluralName": "stories",
+    "displayName": "story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "body": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 5
+    },
+    "author": {
+      "type": "string"
+    }
+  }
+}
