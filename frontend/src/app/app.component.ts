@@ -3,19 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Apollo, gql, } from 'apollo-angular';
 
-
-// const POSTS = gql`
-//   query GetPosts {
-//     data {
-//       attributes {
-//         title,
-//         body,
-//         author
-//       }
-//     }
-//   }
-// `
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

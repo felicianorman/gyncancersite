@@ -1,0 +1,30 @@
+
+nav {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+
+ .logo {
+    border: 1px solid green;
+
+    img {
+        width: 200px;
+    }
+    
+ }
+    
+    ul {
+        display: flex;
+        gap: 10px;
+    }
+
+    li {
+        list-style-type:  none;
+        border: 1px solid red;
+        padding: 5px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
