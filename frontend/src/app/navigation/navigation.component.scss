@@ -1,3 +1,5 @@
+@import "../../styles.scss";
+
 header {
       padding: 15px;
 
@@ -15,7 +17,7 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  background-color: #faf8f8;
+  background-color: $base-gray;
   font-family: "Jost", sans-serif;
 
 
@@ -32,5 +34,15 @@ nav {
   a {
     text-decoration: none;
     color: black;
+    transition: border-bottom ease-in-out 0.3s;
+
+    &:hover {
+      border-bottom: 2px solid $base-accent;
+    }
+    
   }
+
+   .active {
+    border-bottom: 2px solid $base-accent;
+   }
 }
