@@ -3,12 +3,11 @@ footer {
   display: flex;
   justify-content: space-around;
   background-color: $base-accent;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   width: 100%;
   position: relative;
   bottom: 0;
   color: $base-gray;
-
 
   span {
     font-weight: bold;
@@ -31,12 +30,12 @@ footer {
         font-size: 0.8em;
 
         a {
-           text-decoration: none;
-           color: $base-gray;
-           
-                   &:hover {
-                     border-bottom: 2px solid $base-accent;
-    }
+          text-decoration: none;
+          color: $base-gray;
+
+          &:hover {
+            color: $base-gray-hover;
+          }
         }
       }
     }
