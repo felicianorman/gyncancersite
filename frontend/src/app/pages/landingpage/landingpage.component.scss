@@ -1,10 +1,11 @@
 @import "../../../styles.scss";
 
 .hero {
-  height: 50vh;
+  height: 60vh;
   background-image: url("../../../assets/banner.png");
   background-size: cover;
-  background-position: top 50%;
+  background-position: top 10%;
+  background-repeat: no-repeat;
   display: flex;
   font-family: "Jost", sans-serif;
 
@@ -51,8 +52,115 @@
 }
 
 .vision {
+  display: flex;
   background-color: $base-gray;
   height: 50vh;
+  align-items: center;
+  font-family: "Jost", sans-serif;
+
+  &--card {
+    width: 50%;
+    text-align: center;
+  }
+  h2 {
+    color: $base-accent;
+    margin: 0;
+
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 0.9em;
+    margin-right: 50px;
+  }
+}
+
+.cards {
+  height: 60vh;
+  display: flex;
+  font-family: "Jost", sans-serif;
+  color: $base-gray;
+
+  &--content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__placement {
+      background-color: $base-accent;
+      height: 300px;
+      width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+      &__text {
+        margin-left: 20px;
+        margin-top: 10px;
+        width: 70%;
+
+        span {
+          font-size: 0.9em;
+        }
+      }
+
+      &__img {
+        height: 25vh;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+    }
+  }
+}
+
+.news {
+  background-image: url("../../../assets/ls-news.jpg");
+  background-size: cover;
+  background-position: top;
+}
+
+.stories {
+  background-image: url("../../../assets/lp-ps.jpg");
+  background-size: cover;
+  background-position: top;
+}
+
+.membership {
+  height: 60vh;
+  background-image: url("../../../assets/lp-member.jpg");
+  background-size: cover;
+  background-position: 10%;
+  background-repeat: no-repeat;
+
+  &__text {
+    font-family: "Jost", sans-serif;
+    color: $base-gray;
+    font-size: 1.7em;
+    display: flex;
+    height: inherit;
+
+    &--left {
+      width: 50%;
+      margin-top: 2%;
+      margin-left: 2%;
+    }
+
+    &--right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+}
+
+.sharesite {
+  height: 40vh;
+  background-color: $base-gray;
+  font-family: "Jost", sans-serif;
+
   h2 {
     color: $base-accent;
     margin: 0;

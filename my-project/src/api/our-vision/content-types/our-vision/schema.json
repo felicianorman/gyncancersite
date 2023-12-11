@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_visions",
+  "info": {
+    "singularName": "our-vision",
+    "pluralName": "our-visions",
+    "displayName": "lp-our-vision",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

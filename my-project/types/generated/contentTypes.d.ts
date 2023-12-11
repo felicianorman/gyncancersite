@@ -677,6 +677,38 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiLpSharesiteLpSharesite extends Schema.SingleType {
+  collectionName: 'lp_sharesites';
+  info: {
+    singularName: 'lp-sharesite';
+    pluralName: 'lp-sharesites';
+    displayName: 'lp-sharesite';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lp-sharesite.lp-sharesite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lp-sharesite.lp-sharesite',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiNewsletterNewsletter extends Schema.CollectionType {
   collectionName: 'newsletters';
   info: {
@@ -702,6 +734,38 @@ export interface ApiNewsletterNewsletter extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::newsletter.newsletter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOurVisionOurVision extends Schema.SingleType {
+  collectionName: 'our_visions';
+  info: {
+    singularName: 'our-vision';
+    pluralName: 'our-visions';
+    displayName: 'lp-our-vision';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::our-vision.our-vision',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::our-vision.our-vision',
       'oneToOne',
       'admin::user'
     > &
@@ -766,7 +830,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
+      'api::our-vision.our-vision': ApiOurVisionOurVision;
       'api::story.story': ApiStoryStory;
     }
   }

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "lp_sharesites",
+  "info": {
+    "singularName": "lp-sharesite",
+    "pluralName": "lp-sharesites",
+    "displayName": "lp-sharesite",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
