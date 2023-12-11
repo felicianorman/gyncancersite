@@ -1,12 +1,10 @@
 @import "../../styles.scss";
 
 header {
-      padding: 15px;
+  padding: 15px;
 
   .logo {
     margin-left: 10px;
-
-  
 
     img {
       width: 150px;
@@ -16,10 +14,8 @@ header {
 
 nav {
   display: flex;
-  justify-content: center;
   background-color: $base-gray;
   font-family: "Jost", sans-serif;
-
 
   ul {
     display: flex;
@@ -39,10 +35,9 @@ nav {
     &:hover {
       border-bottom: 2px solid $base-accent;
     }
-    
   }
 
-   .active {
+  .active {
     border-bottom: 2px solid $base-accent;
-   }
+  }
 }

@@ -1,12 +1,24 @@
 <header>
-    <div class="logo"> <a routerLink="/"><img [src]="logoImg" alt="logo"></a></div>
+  <div class="logo">
+    <a routerLink="/"><img [src]="logoImg" alt="logo" /></a>
+  </div>
 </header>
 
 <nav>
-    <ul>
-        <li><a routerLink="stod-oss" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Stöd oss</a></li>
-        <li><a routerLink="for-patienter" routerLinkActive="active">För drabbade</a></li>
-        <li><a routerLink="kunskap" routerLinkActive="active">Kunskap</a></li>
-        <li><a routerLink="kontakt" routerLinkActive="active">Om oss</a></li>
-    </ul>
+  <ul>
+    <li>
+      <a
+        routerLink="stod-oss"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Stöd oss</a
+      >
+    </li>
+    <li>
+      <a routerLink="for-patienter" routerLinkActive="active">För drabbade</a>
+    </li>
+    <li><a routerLink="kunskap" routerLinkActive="active">Kunskap</a></li>
+    <li><a routerLink="kontakt" routerLinkActive="active">Om oss</a></li>
+    <li><a>Webshop</a></li>
+  </ul>
 </nav>
