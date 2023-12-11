@@ -12,7 +12,6 @@
   &--text {
     color: $base-gray;
     width: 50%;
-    font-weight: bold;
     font-size: 1.5em;
     display: flex;
     align-items: center;
@@ -47,6 +46,7 @@
       padding: 5px;
       border-radius: 8px;
       color: $base-gray;
+      font-weight: bold;
     }
   }
 }
@@ -57,21 +57,26 @@
   height: 50vh;
   align-items: center;
   font-family: "Jost", sans-serif;
+  justify-content: space-around;
 
-  &--card {
-    width: 50%;
+  &--card__title {
+    width: 40%;
     text-align: center;
-  }
-  h2 {
-    color: $base-accent;
-    margin: 0;
 
-    font-size: 2em;
+    h2 {
+      color: $base-accent;
+      margin: 0;
+      font-size: 2.1em;
+      font-weight: normal;
+    }
   }
 
-  p {
-    font-size: 0.9em;
-    margin-right: 50px;
+  &--card__content {
+    width: 40%;
+    text-align: center;
+    p {
+      font-size: 0.9em;
+    }
   }
 }
 
@@ -91,7 +96,7 @@
     &__placement {
       background-color: $base-accent;
       height: 300px;
-      width: 400px;
+      width: 550px;
       border-radius: 8px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 
@@ -152,6 +157,7 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: center;
+      font-weight: bold;
     }
   }
 }
@@ -160,9 +166,22 @@
   height: 40vh;
   background-color: $base-gray;
   font-family: "Jost", sans-serif;
+  display: flex;
+  flex-direction: column;
 
-  h2 {
-    color: $base-accent;
-    margin: 0;
+  &--content {
+    margin-top: 2%;
+    margin-left: 2%;
+
+    h2 {
+      color: $base-accent;
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    p {
+      width: 70%;
+      font-size: 1.1em;
+    }
   }
 }

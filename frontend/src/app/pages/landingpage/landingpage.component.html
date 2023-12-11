@@ -11,10 +11,10 @@
   </div>
 </div>
 <div class="vision">
-  <div class="vision--card">
+  <div class="vision--card__title">
     <h2>{{ visionTitle }}</h2>
   </div>
-  <markdown [data]="visionContent" class="vision--card">
+  <markdown [data]="visionContent" class="vision--card__content">
     <p>{{ visionContent }}</p>
   </markdown>
 </div>
@@ -51,6 +51,8 @@
   </div>
 </div>
 <div class="sharesite">
-  <h2>{{ shareTitle }}</h2>
-  <p>{{ shareContent }}</p>
+  <div class="sharesite--content">
+    <h2>{{ shareTitle }}</h2>
+    <p>{{ shareContent }}</p>
+  </div>
 </div>
