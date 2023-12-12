@@ -17,7 +17,7 @@ nav {
   background-color: $base-gray;
   font-family: "Jost", sans-serif;
 
-  ul {
+  .nav-ul {
     display: flex;
     gap: 10px;
   }
@@ -29,15 +29,30 @@ nav {
 
   a {
     text-decoration: none;
-    color: black;
-    transition: border-bottom ease-in-out 0.3s;
 
-    &:hover {
-      border-bottom: 2px solid $base-accent;
-    }
+    color: black;
+    position: relative;
+
+    // &:hover {
+    //   // border-bottom: 2px solid $base-accent;
+
+    // }
   }
 
   .active {
     border-bottom: 2px solid $base-accent;
   }
+}
+
+.dropdown-content {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  li {
+    border-bottom: 1px solid $base-gray-hover;
+    margin: 0;
+  }
+}
+.show {
+  visibility: visible;
 }
