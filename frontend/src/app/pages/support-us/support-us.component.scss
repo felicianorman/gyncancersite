@@ -20,7 +20,10 @@ h2 {
 }
 
 .sp-us--info {
-  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 35vh;
   background-color: $base-gray;
   font-family: "Jost", sans-serif;
 
@@ -65,6 +68,10 @@ h2 {
 
 .sp-us--about {
   font-family: "Jost", sans-serif;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &__title {
     color: $base-accent;
@@ -101,5 +108,30 @@ h2 {
       background-size: cover;
       border-radius: 6px;
     }
+  }
+}
+
+.sp-us--webshop {
+  height: 50vh;
+  background-image: url("../../../assets/sp-us__webshop.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Jost", sans-serif;
+  color: $base-gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title {
+    font-size: 1.2em;
+  }
+
+  &__text {
+    width: 40%;
+  }
+
+  &__title,
+  &__text {
+    margin-left: 3%;
   }
 }
