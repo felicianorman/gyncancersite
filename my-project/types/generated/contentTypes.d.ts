@@ -814,6 +814,70 @@ export interface ApiStoryStory extends Schema.CollectionType {
   };
 }
 
+export interface ApiSupportUsSupportUs extends Schema.SingleType {
+  collectionName: 'support_uses';
+  info: {
+    singularName: 'support-us';
+    pluralName: 'support-uses';
+    displayName: 'support-us';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support-us.support-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support-us.support-us',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSupportUsInfoSupportUsInfo extends Schema.SingleType {
+  collectionName: 'support_us_infos';
+  info: {
+    singularName: 'support-us-info';
+    pluralName: 'support-us-infos';
+    displayName: 'support-us-info';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::support-us-info.support-us-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::support-us-info.support-us-info',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -834,6 +898,8 @@ declare module '@strapi/types' {
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::our-vision.our-vision': ApiOurVisionOurVision;
       'api::story.story': ApiStoryStory;
+      'api::support-us.support-us': ApiSupportUsSupportUs;
+      'api::support-us-info.support-us-info': ApiSupportUsInfoSupportUsInfo;
     }
   }
 }

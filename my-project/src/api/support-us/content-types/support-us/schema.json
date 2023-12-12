@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "support_uses",
+  "info": {
+    "singularName": "support-us",
+    "pluralName": "support-uses",
+    "displayName": "support-us",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
