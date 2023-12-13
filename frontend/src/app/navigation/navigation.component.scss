@@ -17,6 +17,8 @@ nav {
   background-color: $base-gray;
   font-family: "Jost", sans-serif;
 
+  width: 100%;
+
   .nav-ul {
     display: flex;
     gap: 10px;
@@ -24,6 +26,7 @@ nav {
 
   li {
     list-style-type: none;
+
     padding: 5px;
   }
 
@@ -33,10 +36,9 @@ nav {
     color: black;
     position: relative;
 
-    // &:hover {
-    //   // border-bottom: 2px solid $base-accent;
-
-    // }
+    &:hover {
+      border-bottom: 2px solid $base-accent;
+    }
   }
 
   .active {
@@ -46,13 +48,24 @@ nav {
 
 .dropdown-content {
   visibility: hidden;
-  display: flex;
-  flex-direction: column;
+  padding: 0;
+  position: absolute;
+  left: 35px;
+  top: 130px;
   li {
     border-bottom: 1px solid $base-gray-hover;
-    margin: 0;
   }
 }
 .show {
   visibility: visible;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  background-color: $base-gray;
+  height: 100px;
+  width: 70px;
+  padding: 10px;
+
+  ul {
+    li {
+    }
+  }
 }
