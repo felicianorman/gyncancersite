@@ -32,12 +32,17 @@ nav {
 
   a {
     text-decoration: none;
-
+    background-image: linear-gradient($base-accent, $base-accent);
+    background-size: 0% 0.1em;
+    background-position-y: 100%;
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease-in-out;
     color: black;
     position: relative;
 
     &:hover {
-      border-bottom: 2px solid $base-accent;
+      background-size: 100% 0.1em;
     }
   }
 
