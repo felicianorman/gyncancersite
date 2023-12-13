@@ -11,18 +11,6 @@ export class NavigationComponent implements OnInit {
   public logoImg = '../../assets/logo.png';
   public isDropdownOpen = false;
 
-  onMouseEnter() {
-    this.isDropdownOpen = true;
-  }
-
-  onMouseLeave() {
-    setTimeout(() => {
-      // Check if the mouse is still outside the dropdown before hiding
-
-      this.isDropdownOpen = false;
-    }, 2000); // Adjust the delay (in milliseconds) as needed
-  }
-
   constructor(private router: Router) {}
 
   ngOnInit() {
