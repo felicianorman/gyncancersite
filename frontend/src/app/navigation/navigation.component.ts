@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Event, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-navigation',
@@ -7,27 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
   public logoImg = '../../assets/logo.png';
+  public isDropdownOpen = false;
 
-  public toggleDropdown() {
-    const dropdown = document.getElementById('myDropdown');
-    if (dropdown) {
-      dropdown.classList.toggle('show');
-    }
+  onMouseEnter() {
+    this.isDropdownOpen = true;
   }
 
-  // Close the dropdown menu if the user clicks outside of it
+  onMouseLeave() {
+    setTimeout(() => {
+      // Check if the mouse is still outside the dropdown before hiding
+
+      this.isDropdownOpen = false;
+    }, 2000); // Adjust the delay (in milliseconds) as needed
+  }
+
+  constructor(private router: Router) {}
+
   ngOnInit() {
-    // (window as any).onclick = function (event: any) {
-    //   if (!event.target.matches('.dropbtn')) {
-    //     var dropdowns = document.getElementsByClassName('dropdown-content');
-    //     var i;
-    //     for (i = 0; i < dropdowns.length; i++) {
-    //       var openDropdown = dropdowns[i];
-    //       if (openDropdown.classList.contains('show')) {
-    //         openDropdown.classList.remove('show');
-    //       }
-    //     }
-    //   }
-    // };
+    // Subscribe to router events to reset dropdown state on route changes
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: Event) => {
+        // Check the current route and close the dropdown if needed
+        if ((event as NavigationEnd).url !== '/stod-oss') {
+          this.isDropdownOpen = false;
+        }
+      });
+  }
+
+  public toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
   }
 }

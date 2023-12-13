@@ -10,13 +10,21 @@
       <a
         routerLink="stod-oss"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="toggleDropdown()"
+        id="support-us"
+        class="dropbtn"
         >Stöd oss</a
       >
-      <ul class="dropdown-content" id="myDropdown">
-        <li><a href="#">Ge gåva</a></li>
-        <li><a href="#">Bli medlem</a></li>
+      <ul
+        class="dropdown-content"
+        id="myDropdown"
+        [class.show]="isDropdownOpen"
+      >
+        <li>
+          <a routerLink="stod-oss/donate" routerLinkActive="active-link"
+            >Ge gåva</a
+          >
+        </li>
+        <li><a href="stod-oss/register">Bli medlem</a></li>
       </ul>
     </li>
 

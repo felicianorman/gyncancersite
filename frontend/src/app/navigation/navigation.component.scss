@@ -51,26 +51,32 @@ nav {
   }
 }
 
-.dropdown-content {
-  visibility: hidden;
-  padding: 0;
-  position: absolute;
-  left: 35px;
-  top: 130px;
-  li {
-    border-bottom: 1px solid $base-gray-hover;
-  }
-}
-.show {
-  visibility: visible;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  background-color: $base-gray;
-  height: 100px;
-  width: 70px;
-  padding: 10px;
+.dropdown {
+  position: relative;
+  display: inline-block;
 
-  ul {
-    li {
+  &-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
+
+    a {
+      color: black;
+      text-decoration: none;
+      display: block;
+
+      &:hover {
+        background-color: #ddd;
+      }
     }
   }
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
