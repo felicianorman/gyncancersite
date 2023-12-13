@@ -5,20 +5,26 @@
 </header>
 
 <nav>
-  <ul>
-    <li>
+  <ul class="nav-ul">
+    <li class="dropdown">
       <a
         routerLink="stod-oss"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
+        (click)="toggleDropdown()"
         >Stöd oss</a
       >
+      <ul class="dropdown-content" id="myDropdown">
+        <li><a href="#">Ge gåva</a></li>
+        <li><a href="#">Bli medlem</a></li>
+      </ul>
     </li>
+
     <li>
       <a routerLink="for-patienter" routerLinkActive="active">För drabbade</a>
     </li>
     <li><a routerLink="kunskap" routerLinkActive="active">Kunskap</a></li>
     <li><a routerLink="kontakt" routerLinkActive="active">Om oss</a></li>
-    <li><a>Webshop</a></li>
+    <li><a routerLink="" routerLinkActive="active">Webshop</a></li>
   </ul>
 </nav>
