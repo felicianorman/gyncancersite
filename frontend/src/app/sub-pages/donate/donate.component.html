@@ -1,1 +1,65 @@
-<p>donate works!</p>
+<div class="donate-wrapper">
+  <div class="donate-img">
+    <div class="donate-img__text">
+      <h1>Ge en gåva</h1>
+      <p>Tack för att du är intresserad av att stödja vår verksamhet</p>
+    </div>
+  </div>
+
+  <h2 class="subtitle">Olika sätt att donera</h2>
+  <div class="donate-payment">
+    <div class="donate-payment__card">
+      <div class="donate-payment__card--swish"></div>
+      <h3>Swish</h3>
+      <span>123 029 7762</span>
+    </div>
+    <div class="donate-payment__card">
+      <div class="donate-payment__card--bankgiro"></div>
+      <h3>Bankgiro</h3>
+      <span>803-2229</span>
+    </div>
+  </div>
+</div>
+<h2 class="titleofText">Det här gör vi med din gåva</h2>
+<div class="donate-gift">
+  <div class="donate-gift__card">
+    <div class="donate-gift__card--img">
+      <img [src]="levaLiteTillImg" class="levalitetill" />
+    </div>
+    <p class="donate-gift__card--text">
+      <markdown [data]="levaLiteTillText">
+        {{ levaLiteTillText }}
+      </markdown>
+    </p>
+  </div>
+  <div class="donate-gift__card">
+    <div class="donate-gift__card--img">
+      <img [src]="vaccineImg" class="vaccin" />
+    </div>
+    <p class="donate-gift__card--text">
+      <markdown [data]="vaccineText">
+        {{ vaccineText }}
+      </markdown>
+    </p>
+  </div>
+  <div class="donate-gift__card">
+    <div class="donate-gift__card--img">
+      <img [src]="meetUpImg" alt="" class="meetup" />
+    </div>
+    <p class="donate-gift__card--text">
+      <markdown [data]="meetUpText">
+        {{ meetUpText }}
+      </markdown>
+    </p>
+  </div>
+  <div class="donate-gift__card">
+    <div class="donate-gift__card--img">
+      <img [src]="gynCancerDagenImg" alt="" class="gyncancerdagen" />
+    </div>
+    <p class="donate-gift__card--text">
+      <markdown [data]="gynCancerDagenText">
+        {{ gynCancerDagenText }}
+      </markdown>
+    </p>
+  </div>
+</div>

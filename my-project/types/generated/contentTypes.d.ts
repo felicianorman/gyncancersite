@@ -677,6 +677,136 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiDoneraGyncancerdagenDoneraGyncancerdagen
+  extends Schema.SingleType {
+  collectionName: 'donera_gyncancerdagens';
+  info: {
+    singularName: 'donera-gyncancerdagen';
+    pluralName: 'donera-gyncancerdagens';
+    displayName: 'donera-gyncancerdagen';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::donera-gyncancerdagen.donera-gyncancerdagen',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::donera-gyncancerdagen.donera-gyncancerdagen',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDoneraLevalitetillDoneraLevalitetill
+  extends Schema.SingleType {
+  collectionName: 'donera_levalitetills';
+  info: {
+    singularName: 'donera-levalitetill';
+    pluralName: 'donera-levalitetills';
+    displayName: 'donera-levalitetill';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::donera-levalitetill.donera-levalitetill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::donera-levalitetill.donera-levalitetill',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDoneraMeetupDoneraMeetup extends Schema.SingleType {
+  collectionName: 'donera_meetups';
+  info: {
+    singularName: 'donera-meetup';
+    pluralName: 'donera-meetups';
+    displayName: 'donera-meetup';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::donera-meetup.donera-meetup',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::donera-meetup.donera-meetup',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDoneraVaccinDoneraVaccin extends Schema.SingleType {
+  collectionName: 'donera_vaccins';
+  info: {
+    singularName: 'donera-vaccin';
+    pluralName: 'donera-vaccins';
+    displayName: 'donera-vaccin';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::donera-vaccin.donera-vaccin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::donera-vaccin.donera-vaccin',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLpSharesiteLpSharesite extends Schema.SingleType {
   collectionName: 'lp_sharesites';
   info: {
@@ -894,6 +1024,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::donera-gyncancerdagen.donera-gyncancerdagen': ApiDoneraGyncancerdagenDoneraGyncancerdagen;
+      'api::donera-levalitetill.donera-levalitetill': ApiDoneraLevalitetillDoneraLevalitetill;
+      'api::donera-meetup.donera-meetup': ApiDoneraMeetupDoneraMeetup;
+      'api::donera-vaccin.donera-vaccin': ApiDoneraVaccinDoneraVaccin;
       'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::our-vision.our-vision': ApiOurVisionOurVision;
