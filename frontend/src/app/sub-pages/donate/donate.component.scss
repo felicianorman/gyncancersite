@@ -31,15 +31,27 @@ h2 {
   font-family: "Jost", sans-serif;
   color: $base-accent;
   font-size: 1.8em;
+  margin: 0;
 }
 
+.subtitle {
+  margin-top: 3%;
+}
+
+// .titleofText {
+//   margin-top: 4%;
+//   margin-bottom: 3%;
+// }
+
+.donate-wrapper {
+  background-color: $base-gray;
+}
 .donate-payment {
   height: 80vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background-color: $base-gray;
 
   &__card {
     width: 300px;
@@ -75,43 +87,32 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   height: 100vh;
+  align-items: center;
+  margin-bottom: 2%;
 
   &__card {
     width: 250px;
-    height: 550px;
+    height: 580px;
     font-family: "Jost", sans-serif;
     font-size: 0.9em;
     box-shadow: 0px 0px 8px 0px rgba(140, 136, 136, 0.75);
 
     &--img {
-      height: 200px;
+      height: 250px;
       width: 250px;
+
+      img {
+        height: 250px;
+        width: 250px;
+      }
     }
 
     &--text {
       padding: 6px;
     }
-
-    .levalitetill {
-      background-image: url("../../../assets/sp-us-donate-leva.png");
-      background-size: cover;
-      background-position: center;
-    }
-
-    .vaccin {
-      background-image: url("../../../assets/sp-us-donate-vaccine.jpg");
-      background-size: cover;
-    }
-
-    .meetup {
-      background-image: url("../../../assets/sp-us-donate-meetup.jpg");
-      background-size: cover;
-      background-position: top;
-    }
-
-    .gyncancerdagen {
-      background-image: url("../../../assets/sp-us-donate-gyncancer.jpg");
-      background-size: cover;
-    }
   }
+}
+
+.titleofText {
+  margin-top: 3%;
 }

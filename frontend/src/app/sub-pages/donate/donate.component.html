@@ -1,69 +1,65 @@
-<div class="donate-img">
-  <div class="donate-img__text">
-    <h1>Ge en gåva</h1>
-    <p>Tack för att du är intresserad av att stödja vår verksamhet</p>
+<div class="donate-wrapper">
+  <div class="donate-img">
+    <div class="donate-img__text">
+      <h1>Ge en gåva</h1>
+      <p>Tack för att du är intresserad av att stödja vår verksamhet</p>
+    </div>
+  </div>
+
+  <h2 class="subtitle">Olika sätt att donera</h2>
+  <div class="donate-payment">
+    <div class="donate-payment__card">
+      <div class="donate-payment__card--swish"></div>
+      <h3>Swish</h3>
+      <span>123 029 7762</span>
+    </div>
+    <div class="donate-payment__card">
+      <div class="donate-payment__card--bankgiro"></div>
+      <h3>Bankgiro</h3>
+      <span>803-2229</span>
+    </div>
   </div>
 </div>
-<h2>Olika sätt att donera</h2>
-<div class="donate-payment">
-  <div class="donate-payment__card">
-    <div class="donate-payment__card--swish"></div>
-    <h3>Swish</h3>
-    <span>123 029 7762</span>
-  </div>
-  <div class="donate-payment__card">
-    <div class="donate-payment__card--bankgiro"></div>
-    <h3>Bankgiro</h3>
-    <span>803-2229</span>
-  </div>
-</div>
-<h2>Det här gör vi med din gåva</h2>
+<h2 class="titleofText">Det här gör vi med din gåva</h2>
 <div class="donate-gift">
   <div class="donate-gift__card">
-    <div class="donate-gift__card--img levalitetill"></div>
+    <div class="donate-gift__card--img">
+      <img [src]="levaLiteTillImg" class="levalitetill" />
+    </div>
     <p class="donate-gift__card--text">
-      Vi är människor bakom den dystra statistiken, vi är personer med vänner
-      och familj som kommer sakna oss och som lider med oss genom sjukdomen. Den
-      så ofta vidriga och dödliga sjukdomen som äggstockscancer kan vara.
-      <br /><br />
-      #Levalitetill är en kampanj från Nätverket mot gynekologisk cancer och har
-      som syfte att uppmärksamma äggstockscancer och de utmaningar denna
-      fruktansvärda sjukdom för med sig.
+      <markdown [data]="levaLiteTillText">
+        {{ levaLiteTillText }}
+      </markdown>
     </p>
   </div>
   <div class="donate-gift__card">
-    <div class="donate-gift__card--img vaccin"></div>
+    <div class="donate-gift__card--img">
+      <img [src]="vaccineImg" class="vaccin" />
+    </div>
     <p class="donate-gift__card--text">
-      Livmoderhalscancer är den enda cancer som vi idag vet går att utrota. Vi
-      har ett mål: Ett Sverige fritt från livmoderhalscancer – 2025.
-      <br /><br />
-      I Sverige får ca 550 personer varje år en diagnos; livmoderhalscancer.
-      Varje år dör ca 150 personer till följd av samma diagnos. Det är 150 för
-      många.
-      <br /><br />Vi sprider kunskap om detta till politiker för att få detta
-      att hända – NU.
+      <markdown [data]="vaccineText">
+        {{ vaccineText }}
+      </markdown>
     </p>
   </div>
   <div class="donate-gift__card">
-    <div class="donate-gift__card--img meetup"></div>
+    <div class="donate-gift__card--img">
+      <img [src]="meetUpImg" alt="" class="meetup" />
+    </div>
     <p class="donate-gift__card--text">
-      Digitala Systerträff riktar sig till dig som har/eller har haft
-      gynekologisk cancer och är medlem i Nätverket mot gynekologisk cancer.<br /><br />
-      Uppläggen liknar upplägg från tidigare systerträffar med att vi talar om
-      det vi vill dela med oss för stunden. <br /><br />
-      Och det är även denna gång en helt kravlös träff, vill du bara vara med i
-      gemenskapen utan att säga något är det helt okej.
+      <markdown [data]="meetUpText">
+        {{ meetUpText }}
+      </markdown>
     </p>
   </div>
   <div class="donate-gift__card">
-    <div class="donate-gift__card--img gyncancerdagen"></div>
+    <div class="donate-gift__card--img">
+      <img [src]="gynCancerDagenImg" alt="" class="gyncancerdagen" />
+    </div>
     <p class="donate-gift__card--text">
-      Varje år arrangeras Gyncancerdagen. Vi tar upp ämnen som berör de olika
-      gyncancerdiagnoserna, närståendestöd, tidig upptäckt, seneffekter och inte
-      minst sneglar vi på framtidens gyncancerbehandlingar.
-      <br /><br />Gyncancer berör yngre som äldre, och deras närstående - alltså
-      både män som kvinnor - så varmt välkommen till en informativ dag om
-      gynekologisk cancer.
+      <markdown [data]="gynCancerDagenText">
+        {{ gynCancerDagenText }}
+      </markdown>
     </p>
   </div>
 </div>
