@@ -1,1 +1,26 @@
-<p>register works!</p>
+<div>
+  <form [formGroup]="form" (ngSubmit)="addUser()">
+    <label for="firstName">Förnamn</label>
+    <input type="text" formControlName="firstName" />
+
+    <label for="lastName">Efternamn</label>
+    <input type="text" formControlName="lastName" />
+
+    <label for="age">Ålder</label>
+    <input type="number" formControlName="age" />
+
+    <label for="region">Region</label>
+    <input type="string" formControlName="region" />
+
+    <label for="role">Roll</label>
+    <select name="role" id="" formControlName="role">
+      <option value="drabbad">Drabbad</option>
+      <option value="närstående">Närstående</option>
+      <option value="stödmedlem">Stödmedlem</option>
+    </select>
+
+    <label for="email">E-mail</label>
+    <input type="string" formControlName="email" />
+    <button type="submit">Add user</button>
+  </form>
+</div>

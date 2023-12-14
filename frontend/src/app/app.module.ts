@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
@@ -43,6 +44,7 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
       sanitize: SecurityContext.NONE,
     }),
     MarkdownModule.forChild(),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
