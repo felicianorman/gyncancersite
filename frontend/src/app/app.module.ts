@@ -16,6 +16,7 @@ import { SupportUsComponent } from './pages/support-us/support-us.component';
 import { BlogComponent } from './sub-pages/blog/blog.component';
 import { DonateComponent } from './sub-pages/donate/donate.component';
 import { NewsComponent } from './sub-pages/news/news.component';
+
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
 

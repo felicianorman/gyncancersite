@@ -3,8 +3,23 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Apollo, gql } from 'apollo-angular';
 import { User } from 'src/app/models/User';
-import { RegisterService } from 'src/app/services/registerService';
 
+const NEW_USER = gql`
+  mutation createRegister($data: RegisterInput!) {
+    createRegister(data: $data) {
+      data {
+        attributes {
+          firstName
+          lastName
+          age
+          region
+          role
+          email
+        }
+      }
+    }
+  }
+`;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -17,16 +32,33 @@ export class RegisterComponent implements OnInit {
 
   readonly ROOT_URL = 'http://localhost:1337/api/registers';
 
-  constructor(
-    private http: HttpClient,
-    private apollo: Apollo,
-    private apolloService: RegisterService,
-  ) {}
+  constructor(private apollo: Apollo) {}
 
   addUser() {
-    this.apolloService.createRegister(this.form.value).subscribe((result) => {
-      console.log(result);
-    });
+    this.apollo
+      .mutate({
+        mutation: NEW_USER,
+        variables: {
+          data: {
+            firstName: this.form.value.firstName,
+            lastName: this.form.value.lastName,
+            age: this.form.value.age,
+            region: this.form.value.region,
+            role: this.form.value.role,
+            email: this.form.value.email,
+          },
+        },
+      })
+      .subscribe(
+        ({ data }) => {
+          // Handle success, if needed
+          console.log('User added successfully', data);
+        },
+        (error) => {
+          // Handle error
+          console.error('Error adding user', error);
+        },
+      );
   }
 
   ngOnInit(): void {
@@ -35,11 +67,7 @@ export class RegisterComponent implements OnInit {
       lastName: new FormControl('', Validators.required),
       age: new FormControl(''),
       region: new FormControl(''),
-      role: new FormControl({
-        drabbad: new FormControl(''),
-        närstående: new FormControl(''),
-        stödmedlem: new FormControl(''),
-      }),
+      role: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
     });
   }

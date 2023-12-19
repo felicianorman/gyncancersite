@@ -15,7 +15,7 @@
 
 <div class="register-form">
   <h3>Ansök</h3>
-  <form [formGroup]="form" (ngSubmit)="addUser()" action="post">
+  <form [formGroup]="form" (ngSubmit)="addUser()">
     <div class="register-form__container">
       <div class="register-form__container--card">
         <label for="firstName">Förnamn</label>
@@ -41,7 +41,7 @@
         <label for="role">Roll</label>
         <select name="role" id="" formControlName="role">
           <option value="drabbad">Drabbad</option>
-          <option value="närstående">Närstående</option>
+          <option value="naerstaende">Närstående</option>
           <option value="stödmedlem">Stödmedlem</option>
         </select>
       </div>
