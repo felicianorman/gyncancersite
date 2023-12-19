@@ -903,6 +903,43 @@ export interface ApiOurVisionOurVision extends Schema.SingleType {
   };
 }
 
+export interface ApiRegisterRegister extends Schema.CollectionType {
+  collectionName: 'registers';
+  info: {
+    singularName: 'register';
+    pluralName: 'registers';
+    displayName: 'Register';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    firstName: Attribute.String;
+    lastName: Attribute.String;
+    age: Attribute.Integer;
+    region: Attribute.String;
+    role: Attribute.Enumeration<
+      ['drabbad', 'n\u00E4rst\u00E5ende', 'st\u00F6dmedlem']
+    >;
+    email: Attribute.Email;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::register.register',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::register.register',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStoryStory extends Schema.CollectionType {
   collectionName: 'stories';
   info: {
@@ -1031,6 +1068,7 @@ declare module '@strapi/types' {
       'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::our-vision.our-vision': ApiOurVisionOurVision;
+      'api::register.register': ApiRegisterRegister;
       'api::story.story': ApiStoryStory;
       'api::support-us.support-us': ApiSupportUsSupportUs;
       'api::support-us-info.support-us-info': ApiSupportUsInfoSupportUsInfo;

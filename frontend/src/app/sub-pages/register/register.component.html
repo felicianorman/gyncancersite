@@ -1,1 +1,57 @@
-<p>register works!</p>
+<div class="register-img"></div>
+<div class="register-info">
+  <div class="register-info__text">
+    <h2>Bli medlem</h2>
+    <p>
+      Att bli medlem hos oss kostar ingenting men du är då med och stöttar oss i
+      vårt arbete med att sprida kunskap, driva på om förbättringar och skapa
+      debatt om gynekologiska cancersjukdomar. Ju fler vi blir desto starkare
+      blir vår röst. <br /><br />
+      Som medlem får du vårt nyhetsbrev som skickas ut kontinuerligt. Hos oss
+      kan du också engagera dig i vårt arbete och i våra arbetsgrupper
+    </p>
+  </div>
+</div>
+
+<div class="register-form">
+  <h3>Ansök</h3>
+  <form [formGroup]="form" (ngSubmit)="addUser()" action="post">
+    <div class="register-form__container">
+      <div class="register-form__container--card">
+        <label for="firstName">Förnamn</label>
+        <input type="text" formControlName="firstName" />
+      </div>
+      <div class="register-form__container--card">
+        <label for="lastName">Efternamn</label>
+        <input type="text" formControlName="lastName" />
+      </div>
+    </div>
+    <div class="register-form__container">
+      <div class="register-form__container--card">
+        <label for="age">Ålder</label>
+        <input type="number" formControlName="age" />
+      </div>
+      <div class="register-form__container--card">
+        <label for="region">Region</label>
+        <input type="string" formControlName="region" />
+      </div>
+    </div>
+    <div class="register-form__container">
+      <div class="register-form__container--card">
+        <label for="role">Roll</label>
+        <select name="role" id="" formControlName="role">
+          <option value="drabbad">Drabbad</option>
+          <option value="närstående">Närstående</option>
+          <option value="stödmedlem">Stödmedlem</option>
+        </select>
+      </div>
+      <div class="register-form__container--card">
+        <label for="email">E-mail</label>
+        <input type="string" formControlName="email" />
+      </div>
+    </div>
+    <div class="register-form__button">
+      <button>Bli medlem</button>
+    </div>
+  </form>
+</div>
