@@ -15,7 +15,7 @@
 
 <div class="register-form">
   <h3>Ansök</h3>
-  <form [formGroup]="form" (ngSubmit)="addUser()">
+  <form [formGroup]="form" (ngSubmit)="addUser()" action="post">
     <div class="register-form__container">
       <div class="register-form__container--card">
         <label for="firstName">Förnamn</label>
@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="register-form__button">
-      <button type="submit">Bli medlem</button>
+      <button>Bli medlem</button>
     </div>
   </form>
 </div>
