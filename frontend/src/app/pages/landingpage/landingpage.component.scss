@@ -47,6 +47,15 @@
       border-radius: 8px;
       color: $base-gray;
       font-weight: bold;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $base-accent-hover;
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
     }
   }
 }

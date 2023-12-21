@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 import { Article } from 'src/app/models/Article';
 
@@ -17,7 +18,14 @@ export class LandingpageComponent {
   public visionTitle: string = '';
   public visionContent: string = '';
 
-  constructor(private apollo: Apollo) {}
+  public navigateTo() {
+    this.router.navigate(['/stod-oss']);
+  }
+
+  constructor(
+    private apollo: Apollo,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
     //shareSite
@@ -47,7 +55,7 @@ export class LandingpageComponent {
     this.apollo
       .watchQuery({
         query: gql`
-          query getShareSite {
+          query getOurVision {
             ourVision {
               data {
                 attributes {

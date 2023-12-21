@@ -29,6 +29,7 @@ export class RegisterComponent implements OnInit {
   public newUser: User[] = [];
   public user: User;
   form: FormGroup;
+  public registerSuccess: boolean = false;
 
   readonly ROOT_URL = 'http://localhost:1337/api/registers';
 
@@ -53,6 +54,7 @@ export class RegisterComponent implements OnInit {
         ({ data }) => {
           // Handle success, if needed
           console.log('User added successfully', data);
+          this.registerSuccess = true;
         },
         (error) => {
           // Handle error

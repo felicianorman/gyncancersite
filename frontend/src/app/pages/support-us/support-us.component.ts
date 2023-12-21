@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 import { Article } from 'src/app/models/Article';
 
@@ -14,8 +15,14 @@ export class SupportUsComponent implements OnInit {
   public supportInfoTitle: string = '';
   public supportInfoContent: string = '';
 
-  constructor(private apollo: Apollo) {}
+  constructor(
+    private apollo: Apollo,
+    private router: Router,
+  ) {}
 
+  public navigateTo() {
+    this.router.navigate(['/stod-oss/donate']);
+  }
   ngOnInit() {
     //supportUs
     this.apollo

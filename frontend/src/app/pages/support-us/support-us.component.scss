@@ -61,6 +61,15 @@ h2 {
         color: $base-gray;
         font-size: 1.1em;
         font-weight: medium;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $base-accent-hover;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
       }
     }
   }
