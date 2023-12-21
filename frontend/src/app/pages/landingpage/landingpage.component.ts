@@ -47,7 +47,7 @@ export class LandingpageComponent {
     this.apollo
       .watchQuery({
         query: gql`
-          query getShareSite {
+          query getOurVision {
             ourVision {
               data {
                 attributes {

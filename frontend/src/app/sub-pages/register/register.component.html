@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div class="register-form">
+<div class="register-form" *ngIf="!registerSuccess">
   <h3>Ansök</h3>
   <form [formGroup]="form" (ngSubmit)="addUser()">
     <div class="register-form__container">
@@ -54,4 +54,8 @@
       <button>Bli medlem</button>
     </div>
   </form>
+</div>
+
+<div class="register-success" *ngIf="registerSuccess">
+  <p>Tack för din ansökan!</p>
 </div>
