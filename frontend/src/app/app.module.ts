@@ -19,6 +19,7 @@ import { NewsComponent } from './sub-pages/news/news.component';
 
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     }),
     MarkdownModule.forChild(),
     ReactiveFormsModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],
