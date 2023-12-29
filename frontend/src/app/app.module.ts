@@ -20,9 +20,15 @@ import { NewsComponent } from './sub-pages/news/news.component';
 
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { LandingPageService } from 'src/services';
-import { SupportUsService } from 'src/services/support-us.service';
-import { LandingPageEffects, SupportUsEffects } from 'src/store/effects';
+import {
+  servicesDonate,
+  servicesLandingPage,
+  servicesSupportUs,
+} from 'src/services';
+
+import { DonateEffects } from 'src/store/donate/effects';
+import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
+import { SupportUsEffects } from 'src/store/support-us/effects';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
 
@@ -56,11 +62,13 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     EffectsModule.forRoot([]),
     StoreModule.forFeature('landingPage', {}),
     StoreModule.forFeature('support-us', {}),
+    StoreModule.forFeature('support-us', {}),
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
+    EffectsModule.forFeature(DonateEffects),
     StoreDevtoolsModule.instrument(),
   ],
-  providers: [LandingPageService, SupportUsService],
+  providers: [servicesDonate, servicesLandingPage, servicesSupportUs],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

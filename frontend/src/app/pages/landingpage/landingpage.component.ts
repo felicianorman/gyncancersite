@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Post } from 'src/interfaces/Post';
 import { LandingPageService } from 'src/services';
-import * as fromStore from '../../../store/index';
+import * as fromStore from '../../../store/landingpage/index';
 
 @Component({
   selector: 'app-landingpage',
@@ -38,6 +38,7 @@ export class LandingpageComponent {
   ngOnInit() {
     this.posts$ = this.store.select(fromStore.getLandingPage);
     this.store.dispatch({ type: '[LandingPage] Get Share Site' });
+    this.store.dispatch({ type: '[LandingPage] Get Our Vision' });
 
     this.landingPageService.getShareSite().valueChanges.subscribe((result) => {
       this.shareTitle = (result.data as any)[

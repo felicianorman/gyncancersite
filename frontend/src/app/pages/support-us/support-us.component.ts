@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Post } from 'src/interfaces/Post';
 import { LandingPageService } from 'src/services';
 import { SupportUsService } from 'src/services/support-us.service';
-import * as fromStore from '../../../store/index';
+import * as fromStore from '../../../store/support-us/index';
 
 @Component({
   selector: 'app-support-us',
@@ -37,6 +37,7 @@ export class SupportUsComponent implements OnInit {
   ngOnInit() {
     this.posts$ = this.store.select(fromStore.getSupportUs);
     this.store.dispatch({ type: '[Support Us] Get Support Us' });
+    this.store.dispatch({ type: '[Support Us] Get Support Us Info' });
 
     this.supportusService.getSupportUs().valueChanges.subscribe((result) => {
       this.supportTitle = (result.data as any)[
