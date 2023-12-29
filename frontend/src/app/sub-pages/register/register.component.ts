@@ -1,25 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { Apollo, gql } from 'apollo-angular';
 import { User } from 'src/app/models/User';
+import { RegisterService } from 'src/services/register.service';
+import { RegisterActions } from 'src/store/register/actions';
+import * as fromStore from '../../../store/register/index';
 
-const NEW_USER = gql`
-  mutation createRegister($data: RegisterInput!) {
-    createRegister(data: $data) {
-      data {
-        attributes {
-          firstName
-          lastName
-          age
-          region
-          role
-          email
-        }
-      }
-    }
-  }
-`;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -33,34 +21,13 @@ export class RegisterComponent implements OnInit {
 
   readonly ROOT_URL = 'http://localhost:1337/api/registers';
 
-  constructor(private apollo: Apollo) {}
+  constructor(
+    private store: Store<fromStore.RegisterState>,
+    private registerService: RegisterService,
+  ) {}
 
   addUser() {
-    this.apollo
-      .mutate({
-        mutation: NEW_USER,
-        variables: {
-          data: {
-            firstName: this.form.value.firstName,
-            lastName: this.form.value.lastName,
-            age: this.form.value.age,
-            region: this.form.value.region,
-            role: this.form.value.role,
-            email: this.form.value.email,
-          },
-        },
-      })
-      .subscribe(
-        ({ data }) => {
-          // Handle success, if needed
-          console.log('User added successfully', data);
-          this.registerSuccess = true;
-        },
-        (error) => {
-          // Handle error
-          console.error('Error adding user', error);
-        },
-      );
+    this.store.dispatch(new RegisterActions.CreateRegister(this.form.value));
   }
 
   ngOnInit(): void {
