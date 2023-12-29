@@ -17,9 +17,12 @@ import { BlogComponent } from './sub-pages/blog/blog.component';
 import { DonateComponent } from './sub-pages/donate/donate.component';
 import { NewsComponent } from './sub-pages/news/news.component';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { LandingPageService } from 'src/services';
+import { LandingPageEffects } from 'src/store/effects';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
-import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -48,8 +51,11 @@ import { StoreModule } from '@ngrx/store';
     MarkdownModule.forChild(),
     ReactiveFormsModule,
     StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature('landingPage', {}),
+    EffectsModule.forFeature(LandingPageEffects),
   ],
-  providers: [],
+  providers: [LandingPageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

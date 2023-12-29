@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Apollo, gql } from 'apollo-angular';
+import { Observable } from 'rxjs';
 import { Article } from 'src/app/models/Article';
+import { Post } from 'src/interfaces/Post';
+import { LandingPageService } from 'src/services';
+import * as fromStore from '../../../store/index';
 
 @Component({
   selector: 'app-landingpage',
@@ -12,6 +17,9 @@ export class LandingpageComponent {
   public articles: Article[] = [];
   loading = true;
   error: any;
+
+  posts$: Observable<Post>;
+  posts: Post;
 
   public shareTitle: string = '';
   public shareContent: string = '';
@@ -25,53 +33,32 @@ export class LandingpageComponent {
   constructor(
     private apollo: Apollo,
     private router: Router,
-  ) {}
+    private store: Store<fromStore.LandingPageState>,
+    private landingPageService: LandingPageService,
+  ) {
+    this.store.select((state) => state.landingPage);
+  }
 
   ngOnInit() {
-    //shareSite
-    this.apollo
-      .watchQuery({
-        query: gql`
-          query getShareSite {
-            lpSharesite {
-              data {
-                attributes {
-                  title
-                  content
-                }
-              }
-            }
-          }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        console.log('sharesite:', result.data.lpSharesite.data.attributes);
+    this.posts$ = this.store.select(fromStore.getLandingPage);
+    this.store.dispatch({ type: '[LandingPage] Get Share Site' });
 
-        this.shareTitle = result.data.lpSharesite.data.attributes.title;
-        this.shareContent = result.data.lpSharesite.data.attributes.content;
-      });
+    this.landingPageService.getShareSite().valueChanges.subscribe((result) => {
+      this.shareTitle = (result.data as any)[
+        'lpSharesite'
+      ].data.attributes.title;
+      this.shareContent = (result.data as any)[
+        'lpSharesite'
+      ].data.attributes.content;
+    });
 
-    //ourvision
-    this.apollo
-      .watchQuery({
-        query: gql`
-          query getOurVision {
-            ourVision {
-              data {
-                attributes {
-                  title
-                  content
-                }
-              }
-            }
-          }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        console.log('vision:', result.data.ourVision.data.attributes);
-
-        this.visionTitle = result.data.ourVision.data.attributes.title;
-        this.visionContent = result.data.ourVision.data.attributes.content;
-      });
+    this.landingPageService.getOurVision().valueChanges.subscribe((result) => {
+      this.visionTitle = (result.data as any)[
+        'ourVision'
+      ].data.attributes.title;
+      this.visionContent = (result.data as any)[
+        'ourVision'
+      ].data.attributes.content;
+    });
   }
 }
