@@ -28,8 +28,25 @@
       </ul>
     </li>
 
-    <li>
-      <a routerLink="for-patienter" routerLinkActive="active">För drabbade</a>
+    <li class="dropdown">
+      <a routerLink="for-patienter" routerLinkActive="active" class="dropbtn"
+        >För drabbade</a
+      >
+      <ul
+        class="dropdown-content"
+        id="myDropdown"
+        [class.show]="isDropdownOpen"
+      >
+        <li>
+          <a routerLink="stod-oss/donate" routerLinkActive="active-link"
+            >Livet med cancer</a
+          >
+        </li>
+        <li><a href="stod-oss/register">Livet efter cancer</a></li>
+        <li><a href="stod-oss/register">Behandlingar</a></li>
+        <li><a href="stod-oss/register">För närstående</a></li>
+        <li><a href="stod-oss/register">Palliativ vård</a></li>
+      </ul>
     </li>
     <li><a routerLink="kunskap" routerLinkActive="active">Kunskap</a></li>
     <li><a routerLink="kontakt" routerLinkActive="active">Om oss</a></li>
