@@ -31,7 +31,6 @@ export class LandingpageComponent {
   }
 
   constructor(
-    private apollo: Apollo,
     private router: Router,
     private store: Store<fromStore.LandingPageState>,
     private landingPageService: LandingPageService,

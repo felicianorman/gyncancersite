@@ -20,6 +20,7 @@ import { NewsComponent } from './sub-pages/news/news.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { LandingPageService } from 'src/services';
+import { SupportUsService } from 'src/services/support-us.service';
 import { LandingPageEffects } from 'src/store/effects';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
@@ -55,7 +56,7 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     StoreModule.forFeature('landingPage', {}),
     EffectsModule.forFeature(LandingPageEffects),
   ],
-  providers: [LandingPageService],
+  providers: [LandingPageService, SupportUsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

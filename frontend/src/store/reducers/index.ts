@@ -5,14 +5,46 @@ import {
 } from '@ngrx/store';
 
 import * as fromLandingPage from './landingpage.reducer';
+import * as fromSupportUs from './support-us.reducer';
 
 export interface LandingPageState {
   landingPage: fromLandingPage.LandingPageState;
 }
 
+export interface SupportUsState {
+  supportUs: fromSupportUs.SupportUsState;
+}
+
 export const reducers: ActionReducerMap<LandingPageState, any> = {
   landingPage: fromLandingPage.reducer,
 };
+
+export const reducersSupportUs: ActionReducerMap<SupportUsState, any> = {
+  supportUs: fromSupportUs.reducer,
+};
+
+export const getSupportUsState =
+  createFeatureSelector<SupportUsState>('supportUs');
+
+export const getSupportUsEntitiesState = createSelector(
+  getSupportUsState,
+  (state) => state.supportUs,
+);
+
+export const getSupportUs = createSelector(
+  getSupportUsEntitiesState,
+  fromSupportUs.getSupportUs,
+);
+
+export const getSupportUsLoaded = createSelector(
+  getSupportUsEntitiesState,
+  fromSupportUs.getSupportUsLoaded,
+);
+
+export const getLoadingSupportUs = createSelector(
+  getSupportUsEntitiesState,
+  fromSupportUs.getSupportUsLoading,
+);
 
 export const getLandingPageState =
   createFeatureSelector<LandingPageState>('landingPage');
