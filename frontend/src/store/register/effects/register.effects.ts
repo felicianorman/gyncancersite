@@ -13,7 +13,7 @@ export class RegisterEffects {
     private apollo: Apollo,
   ) {}
 
-  private readonly NEW_USER = gql`
+  NEW_USER = gql`
     mutation createRegister($data: RegisterInput!) {
       createRegister(data: $data) {
         data {
@@ -37,45 +37,17 @@ export class RegisterEffects {
         this.apollo
           .mutate({
             mutation: this.NEW_USER,
-            variables: {
-              data: payload,
-            },
+            variables: payload,
           })
           .pipe(
-            switchMap(() =>
-              this.apollo
-                .mutate<{
-                  register: any;
-                  data: { register: { data: { attributes: Register } } };
-                }>({
-                  mutation: gql`
-                    mutation createRegister($data: RegisterInput!) {
-                      createRegister(data: $data) {
-                        data {
-                          attributes {
-                            firstName
-                            lastName
-                            age
-                            region
-                            role
-                            email
-                          }
-                        }
-                      }
-                    }
-                  `,
-                })
-                .pipe(
-                  map(
-                    (result) =>
-                      new RegisterActions.CreateRegisterSuccess(
-                        result.data?.register.data.attributes,
-                      ),
-                  ),
-                  catchError((error) =>
-                    of(new RegisterActions.CreateRegisterFail(error)),
-                  ),
+            map(
+              (result: any) =>
+                new RegisterActions.CreateRegisterSuccess(
+                  result.data.createRegister.data.attributes,
                 ),
+            ),
+            catchError((error) =>
+              of(new RegisterActions.CreateRegisterFail(error)),
             ),
           ),
       ),

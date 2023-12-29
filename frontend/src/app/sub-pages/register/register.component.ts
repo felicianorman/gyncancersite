@@ -24,10 +24,17 @@ export class RegisterComponent implements OnInit {
   constructor(
     private store: Store<fromStore.RegisterState>,
     private registerService: RegisterService,
-  ) {}
+  ) {
+    this.store.select((state) => state.register);
+  }
 
   addUser() {
     this.store.dispatch(new RegisterActions.CreateRegister(this.form.value));
+
+    this.registerService.createRegisterUser().subscribe((result) => {
+      this.registerSuccess = true;
+      this.form.reset();
+    });
   }
 
   ngOnInit(): void {
