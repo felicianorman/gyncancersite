@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
-import { Article } from 'src/app/models/Article';
 import { Post } from 'src/interfaces/Post';
 import { LandingPageService } from 'src/services';
 import * as fromStore from '../../../store/index';
@@ -14,7 +12,6 @@ import * as fromStore from '../../../store/index';
   styleUrls: ['./landingpage.component.scss'],
 })
 export class LandingpageComponent {
-  public articles: Article[] = [];
   loading = true;
   error: any;
 

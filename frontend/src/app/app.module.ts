@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { LandingPageService } from 'src/services';
 import { SupportUsService } from 'src/services/support-us.service';
-import { LandingPageEffects } from 'src/store/effects';
+import { LandingPageEffects, SupportUsEffects } from 'src/store/effects';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
 
@@ -54,7 +55,10 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
     StoreModule.forFeature('landingPage', {}),
+    StoreModule.forFeature('support-us', {}),
     EffectsModule.forFeature(LandingPageEffects),
+    EffectsModule.forFeature(SupportUsEffects),
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [LandingPageService, SupportUsService],
   bootstrap: [AppComponent],

@@ -11,13 +11,36 @@ export interface LandingPageState {
   landingPage: fromLandingPage.LandingPageState;
 }
 
-export interface SupportUsState {
-  supportUs: fromSupportUs.SupportUsState;
-}
-
 export const reducers: ActionReducerMap<LandingPageState, any> = {
   landingPage: fromLandingPage.reducer,
 };
+
+export const getLandingPageState =
+  createFeatureSelector<LandingPageState>('landingPage');
+
+export const getLandingPageEntitiesState = createSelector(
+  getLandingPageState,
+  (state) => state.landingPage,
+);
+
+export const getLandingPage = createSelector(
+  getLandingPageEntitiesState,
+  fromLandingPage.getLandingPageData,
+);
+
+export const getLoading = createSelector(
+  getLandingPageEntitiesState,
+  fromLandingPage.getLandingPageLoaded,
+);
+
+export const getLoaded = createSelector(
+  getLandingPageEntitiesState,
+  fromLandingPage.getLandingPageLoading,
+);
+
+export interface SupportUsState {
+  supportUs: fromSupportUs.SupportUsState;
+}
 
 export const reducersSupportUs: ActionReducerMap<SupportUsState, any> = {
   supportUs: fromSupportUs.reducer,
@@ -44,27 +67,4 @@ export const getSupportUsLoaded = createSelector(
 export const getLoadingSupportUs = createSelector(
   getSupportUsEntitiesState,
   fromSupportUs.getSupportUsLoading,
-);
-
-export const getLandingPageState =
-  createFeatureSelector<LandingPageState>('landingPage');
-
-export const getLandingPageEntitiesState = createSelector(
-  getLandingPageState,
-  (state) => state.landingPage,
-);
-
-export const getLandingPage = createSelector(
-  getLandingPageEntitiesState,
-  fromLandingPage.getLandingPageData,
-);
-
-export const getLoading = createSelector(
-  getLandingPageEntitiesState,
-  fromLandingPage.getLandingPageLoaded,
-);
-
-export const getLoaded = createSelector(
-  getLandingPageEntitiesState,
-  fromLandingPage.getLandingPageLoading,
 );
