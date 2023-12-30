@@ -13,37 +13,37 @@ export class RegisterEffects {
     private apollo: Apollo,
   ) {}
 
-  NEW_USER = gql`
-    mutation createRegister($data: RegisterInput!) {
-      createRegister(data: $data) {
-        data {
-          attributes {
-            firstName
-            lastName
-            age
-            region
-            role
-            email
-          }
-        }
-      }
-    }
-  `;
-
   createRegister$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RegisterActions.CREATE_REGISTER),
       switchMap(({ payload }: { payload: Register }) =>
         this.apollo
           .mutate({
-            mutation: this.NEW_USER,
-            variables: payload,
+            mutation: gql`
+              mutation createRegister($data: RegisterInput!) {
+                createRegister(data: $data) {
+                  data {
+                    attributes {
+                      firstName
+                      lastName
+                      age
+                      region
+                      role
+                      email
+                    }
+                  }
+                }
+              }
+            `,
+            variables: {
+              data: payload,
+            },
           })
           .pipe(
             map(
               (result: any) =>
                 new RegisterActions.CreateRegisterSuccess(
-                  result.data.createRegister.data.attributes,
+                  result.data?.createRegister.data.attributes,
                 ),
             ),
             catchError((error) =>

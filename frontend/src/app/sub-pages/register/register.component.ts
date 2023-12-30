@@ -1,12 +1,8 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Apollo, gql } from 'apollo-angular';
-import { User } from 'src/app/models/User';
-import { RegisterService } from 'src/services/register.service';
-import { RegisterActions } from 'src/store/register/actions';
-import * as fromStore from '../../../store/register/index';
+import { RegisterActions } from '../../../store/register/actions';
+import * as fromStore from '../../../store/register/reducer/index';
 
 @Component({
   selector: 'app-register',
@@ -14,27 +10,18 @@ import * as fromStore from '../../../store/register/index';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  public newUser: User[] = [];
-  public user: User;
   form: FormGroup;
   public registerSuccess: boolean = false;
 
-  readonly ROOT_URL = 'http://localhost:1337/api/registers';
-
-  constructor(
-    private store: Store<fromStore.RegisterState>,
-    private registerService: RegisterService,
-  ) {
-    this.store.select((state) => state.register);
-  }
+  constructor(private store: Store<fromStore.RegisterState>) {}
 
   addUser() {
+    // Dispatch the action with the form value
     this.store.dispatch(new RegisterActions.CreateRegister(this.form.value));
+    this.registerSuccess = true;
 
-    this.registerService.createRegisterUser().subscribe((result) => {
-      this.registerSuccess = true;
-      this.form.reset();
-    });
+    // No need to call registerService.createRegisterUser() here
+    // The effect will handle the mutation and the response
   }
 
   ngOnInit(): void {

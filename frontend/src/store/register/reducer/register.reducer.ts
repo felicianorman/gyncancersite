@@ -1,5 +1,5 @@
 import { Register, Role } from 'src/interfaces/Register';
-import * as fromRegister from '../register/actions';
+import * as fromRegister from '../actions';
 
 export interface RegisterState {
   data: Register;
