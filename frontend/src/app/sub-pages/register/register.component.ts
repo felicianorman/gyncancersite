@@ -1,66 +1,27 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Apollo, gql } from 'apollo-angular';
-import { User } from 'src/app/models/User';
+import { Store } from '@ngrx/store';
+import { RegisterActions } from '../../../store/register/actions';
+import * as fromStore from '../../../store/register/reducer/index';
 
-const NEW_USER = gql`
-  mutation createRegister($data: RegisterInput!) {
-    createRegister(data: $data) {
-      data {
-        attributes {
-          firstName
-          lastName
-          age
-          region
-          role
-          email
-        }
-      }
-    }
-  }
-`;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  public newUser: User[] = [];
-  public user: User;
   form: FormGroup;
   public registerSuccess: boolean = false;
 
-  readonly ROOT_URL = 'http://localhost:1337/api/registers';
-
-  constructor(private apollo: Apollo) {}
+  constructor(private store: Store<fromStore.RegisterState>) {}
 
   addUser() {
-    this.apollo
-      .mutate({
-        mutation: NEW_USER,
-        variables: {
-          data: {
-            firstName: this.form.value.firstName,
-            lastName: this.form.value.lastName,
-            age: this.form.value.age,
-            region: this.form.value.region,
-            role: this.form.value.role,
-            email: this.form.value.email,
-          },
-        },
-      })
-      .subscribe(
-        ({ data }) => {
-          // Handle success, if needed
-          console.log('User added successfully', data);
-          this.registerSuccess = true;
-        },
-        (error) => {
-          // Handle error
-          console.error('Error adding user', error);
-        },
-      );
+    // Dispatch the action with the form value
+    this.store.dispatch(new RegisterActions.CreateRegister(this.form.value));
+    this.registerSuccess = true;
+
+    // No need to call registerService.createRegisterUser() here
+    // The effect will handle the mutation and the response
   }
 
   ngOnInit(): void {

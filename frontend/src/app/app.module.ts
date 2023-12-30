@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule, SecurityContext } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,19 @@ import { BlogComponent } from './sub-pages/blog/blog.component';
 import { DonateComponent } from './sub-pages/donate/donate.component';
 import { NewsComponent } from './sub-pages/news/news.component';
 
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import {
+  servicesDonate,
+  servicesLandingPage,
+  servicesRegister,
+  servicesSupportUs,
+} from 'src/services';
+
+import { DonateEffects } from 'src/store/donate/effects';
+import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
+import { RegisterEffects } from 'src/store/register/effects/register.effects';
+import { SupportUsEffects } from 'src/store/support-us/effects';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
 
@@ -46,8 +60,24 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     }),
     MarkdownModule.forChild(),
     ReactiveFormsModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreModule.forFeature('landingPage', {}),
+    StoreModule.forFeature('support-us', {}),
+    StoreModule.forFeature('donate', {}),
+    StoreModule.forFeature('register', {}),
+    EffectsModule.forFeature(LandingPageEffects),
+    EffectsModule.forFeature(SupportUsEffects),
+    EffectsModule.forFeature(DonateEffects),
+    EffectsModule.forFeature(RegisterEffects),
+    StoreDevtoolsModule.instrument(),
   ],
-  providers: [],
+  providers: [
+    servicesDonate,
+    servicesLandingPage,
+    servicesSupportUs,
+    servicesRegister,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

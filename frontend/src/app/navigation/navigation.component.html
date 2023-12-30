@@ -28,11 +28,68 @@
       </ul>
     </li>
 
-    <li>
-      <a routerLink="for-patienter" routerLinkActive="active">För drabbade</a>
+    <li class="dropdown">
+      <a routerLink="for-patienter" routerLinkActive="active" class="dropbtn"
+        >För drabbade</a
+      >
+      <ul
+        class="dropdown-content"
+        id="myDropdown"
+        [class.show]="isDropdownOpen"
+      >
+        <li>
+          <a
+            routerLink="for-patienter/livet-med-cancer"
+            routerLinkActive="active-link"
+            >Livet med cancer</a
+          >
+        </li>
+        <li>
+          <a href="for-patienter/livet-efter-cancer">Livet efter cancer</a>
+        </li>
+        <li><a href="for-patienter/behandlingar">Behandlingar</a></li>
+        <li><a href="for-patienter/for-narstaende">För närstående</a></li>
+        <li><a href="for-patienter/palliativ-vard">Palliativ vård</a></li>
+      </ul>
     </li>
-    <li><a routerLink="kunskap" routerLinkActive="active">Kunskap</a></li>
-    <li><a routerLink="kontakt" routerLinkActive="active">Om oss</a></li>
-    <li><a routerLink="" routerLinkActive="active">Webshop</a></li>
+    <li class="dropdown">
+      <a routerLink="kunskap" routerLinkActive="active" class="dropbtn"
+        >Kunskap</a
+      >
+      <ul
+        class="dropdown-content"
+        id="myDropdown"
+        [class.show]="isDropdownOpen"
+      >
+        <li>
+          <a routerLink="kunskap/gyn-cancer" routerLinkActive="active-link"
+            >Gynekologisk cancer</a
+          >
+        </li>
+        <li><a href="kunskap/prevention">Prevention</a></li>
+        <li><a href="kunskap/screening">Screening</a></li>
+        <li><a href="kunskap/patient-berattelser">Patientberättelser</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a routerLink="kontakt" routerLinkActive="active" class="dropbtn"
+        >Om oss</a
+      >
+      <ul
+        class="dropdown-content"
+        id="myDropdown"
+        [class.show]="isDropdownOpen"
+      >
+        <li>
+          <a routerLink="kontakt/vad-vi-gor" routerLinkActive="active-link"
+            >Vad vi gör</a
+          >
+        </li>
+        <li><a href="kontakt/vad-vi-vill-uppna">Vad vi vill uppnå</a></li>
+        <li><a href="kontakt/kontakta-oss">Kontakta oss</a></li>
+        <li><a href="kontakt/faq">FAQ</a></li>
+      </ul>
+    </li>
+    <li><a routerLink="webshop" routerLinkActive="active">Webshop</a></li>
   </ul>
 </nav>

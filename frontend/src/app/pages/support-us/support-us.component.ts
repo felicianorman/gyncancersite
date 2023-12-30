@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Apollo, gql } from 'apollo-angular';
-import { Article } from 'src/app/models/Article';
+import { Observable } from 'rxjs';
+import { Post } from 'src/interfaces/Post';
+import { LandingPageService } from 'src/services';
+import { SupportUsService } from 'src/services/support-us.service';
+import * as fromStore from '../../../store/support-us/index';
 
 @Component({
   selector: 'app-support-us',
@@ -9,6 +14,9 @@ import { Article } from 'src/app/models/Article';
   styleUrls: ['./support-us.component.scss'],
 })
 export class SupportUsComponent implements OnInit {
+  posts$: Observable<Post>;
+  posts: Post;
+
   public supportTitle: string = '';
   public supportContent: string = '';
 
@@ -16,63 +24,39 @@ export class SupportUsComponent implements OnInit {
   public supportInfoContent: string = '';
 
   constructor(
-    private apollo: Apollo,
     private router: Router,
-  ) {}
+    private store: Store<fromStore.SupportUsState>,
+    private supportusService: SupportUsService,
+  ) {
+    this.store.select((state) => state.supportUs);
+  }
 
   public navigateTo() {
     this.router.navigate(['/stod-oss/donate']);
   }
   ngOnInit() {
-    //supportUs
-    this.apollo
-      .watchQuery({
-        query: gql`
-          query getSupportUs {
-            supportUs {
-              data {
-                attributes {
-                  title
-                  content
-                }
-              }
-            }
-          }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        console.log(
-          'support us',
-          result.data.supportUs.data.attributes.content,
-        );
-        this.supportTitle = result.data.supportUs.data.attributes.title;
-        this.supportContent = result.data.supportUs.data.attributes.content;
-      });
+    this.posts$ = this.store.select(fromStore.getSupportUs);
+    this.store.dispatch({ type: '[Support Us] Get Support Us' });
+    this.store.dispatch({ type: '[Support Us] Get Support Us Info' });
 
-    this.apollo
-      .watchQuery({
-        query: gql`
-          query getSupportUsInfo {
-            supportUsInfo {
-              data {
-                attributes {
-                  title
-                  content
-                }
-              }
-            }
-          }
-        `,
-      })
-      .valueChanges.subscribe((result: any) => {
-        console.log(
-          'support us info:',
-          result.data.supportUsInfo.data.attributes,
-        );
+    this.supportusService.getSupportUs().valueChanges.subscribe((result) => {
+      this.supportTitle = (result.data as any)[
+        'supportUs'
+      ].data.attributes.title;
+      this.supportContent = (result.data as any)[
+        'supportUs'
+      ].data.attributes.content;
+    });
 
-        this.supportInfoTitle = result.data.supportUsInfo.data.attributes.title;
-        this.supportInfoContent =
-          result.data.supportUsInfo.data.attributes.content;
+    this.supportusService
+      .getSupportUsInfo()
+      .valueChanges.subscribe((result) => {
+        this.supportInfoTitle = (result.data as any)[
+          'supportUsInfo'
+        ].data.attributes.title;
+        this.supportInfoContent = (result.data as any)[
+          'supportUsInfo'
+        ].data.attributes.content;
       });
   }
 }
