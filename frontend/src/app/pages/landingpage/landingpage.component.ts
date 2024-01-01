@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+
 import { Post } from 'src/interfaces/Post';
 import { LandingPageService } from 'src/services';
 import * as fromStore from '../../../store/landingpage/index';

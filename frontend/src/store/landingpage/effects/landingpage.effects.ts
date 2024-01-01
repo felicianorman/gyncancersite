@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Apollo, gql } from 'apollo-angular';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
+
 import { Post } from 'src/interfaces/Post';
 import * as LandingPageActions from '../actions/landingpage.actions';
 
