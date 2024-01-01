@@ -33,6 +33,7 @@ import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.ef
 import { LifeWithCancerEffects } from 'src/store/life-with-cancer';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
+import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ShopComponent } from './sub-pages/shop/shop.component';
 
@@ -45,6 +46,7 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     SupportUsComponent,
     ContactComponent,
     ForpatientsComponent,
+    LifewithcancerComponent,
     NavigationComponent,
     FooterComponent,
     NewsComponent,
