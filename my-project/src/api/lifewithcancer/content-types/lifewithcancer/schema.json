@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "lifewithcancers",
+  "info": {
+    "singularName": "lifewithcancer",
+    "pluralName": "lifewithcancers",
+    "displayName": "lifewithcancer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
