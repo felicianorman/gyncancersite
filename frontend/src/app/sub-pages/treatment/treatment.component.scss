@@ -1,0 +1,34 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles.scss";
+
+.treatment-header {
+  height: 40vh;
+  background-image: url("../../../assets/treatment-header.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &--text {
+    display: flex;
+    color: $base-gray;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2%;
+
+    p {
+      width: 50%;
+    }
+  }
+}
+
+.treatment-content {
+  border: 1px solid red;
+  height: auto;
+
+  &--pages {
+    @include mixins.card-holder;
+
+    &--card {
+      @include mixins.card;
+    }
+  }
+}

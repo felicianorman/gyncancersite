@@ -1,13 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-body {
-  margin: 0;
-  font-family: "Jost", sans-serif;
-}
-
-$base-accent: #287878;
-$base-accent-hover: #1e5f5f;
-$base-gray: #faf8f8;
-$base-gray-hover: #e0dddd;
+@import "./styles.scss";
 
 @mixin card-holder {
   display: flex;

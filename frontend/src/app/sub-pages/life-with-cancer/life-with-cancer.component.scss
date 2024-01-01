@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 
 body {
@@ -43,36 +44,10 @@ h2 {
   }
 
   &--pages {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
-    h2 {
-      margin: 0;
-      font-size: 1.1em;
-    }
+    @include mixins.card-holder;
 
     &--card {
-      margin-top: 2%;
-      width: 30%;
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      p {
-        width: 50%;
-      }
-
-      span {
-        color: $base-accent;
-      }
-
-      &__img {
-        height: 200px;
-        width: 200px;
-        border-radius: 50%;
-      }
+      @include mixins.card;
 
       .doctor {
         background-image: url("../../../assets/lfw-doctor.jpg");
