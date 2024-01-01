@@ -807,6 +807,37 @@ export interface ApiDoneraVaccinDoneraVaccin extends Schema.SingleType {
   };
 }
 
+export interface ApiLifewithcancerLifewithcancer extends Schema.SingleType {
+  collectionName: 'lifewithcancers';
+  info: {
+    singularName: 'lifewithcancer';
+    pluralName: 'lifewithcancers';
+    displayName: 'lifewithcancer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::lifewithcancer.lifewithcancer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::lifewithcancer.lifewithcancer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLpSharesiteLpSharesite extends Schema.SingleType {
   collectionName: 'lp_sharesites';
   info: {
@@ -1065,6 +1096,7 @@ declare module '@strapi/types' {
       'api::donera-levalitetill.donera-levalitetill': ApiDoneraLevalitetillDoneraLevalitetill;
       'api::donera-meetup.donera-meetup': ApiDoneraMeetupDoneraMeetup;
       'api::donera-vaccin.donera-vaccin': ApiDoneraVaccinDoneraVaccin;
+      'api::lifewithcancer.lifewithcancer': ApiLifewithcancerLifewithcancer;
       'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::our-vision.our-vision': ApiOurVisionOurVision;

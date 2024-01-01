@@ -1,0 +1,150 @@
+@import "../../../styles.scss";
+
+.lac-header {
+  height: 40vh;
+  background-image: url("../../../assets/fp-lec.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  h1 {
+    color: $base-gray;
+    font-weight: normal;
+    font-size: 3em;
+    margin: 0;
+    margin-right: 2%;
+  }
+}
+
+.lac-content {
+  height: auto;
+
+  &--text {
+    margin-left: 2%;
+  }
+
+  h2 {
+    color: $base-accent;
+  }
+
+  p {
+    width: 90%;
+  }
+
+  &--pages {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    h2 {
+      margin: 0;
+      font-size: 1.1em;
+    }
+
+    &--cards {
+      margin-top: 2%;
+      width: 30%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        width: 50%;
+        font-size: 0.9em;
+      }
+
+      span {
+        color: $base-accent;
+      }
+
+      &__img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+      }
+
+      .anxiety {
+        background-image: url("../../../assets/lac-worry.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .rehab {
+        background-image: url("../../../assets/lac-rehab.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .hangover {
+        background-image: url("../../../assets/lac-hangover.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .work {
+        background-image: url("../../../assets/lac-job.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .followup {
+        background-image: url("../../../assets/lac-followup.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .emotions {
+        background-image: url("../../../assets/lac-feelings.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.lac-stories {
+  height: 40vh;
+  background-image: url("../../../assets/lac-stories.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &--text {
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $base-gray;
+
+    h2 {
+      color: $base-gray;
+      font-size: 2.8em;
+    }
+  }
+}
+
+.lac-workout {
+  height: 40vh;
+  background-image: url("../../../assets/lac-workout.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &--text {
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: $base-gray;
+
+    h2 {
+      color: $base-gray;
+      font-size: 2.8em;
+    }
+
+    p {
+      width: 50%;
+    }
+  }
+}
