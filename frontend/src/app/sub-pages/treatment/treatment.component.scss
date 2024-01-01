@@ -21,14 +21,53 @@
 }
 
 .treatment-content {
-  border: 1px solid red;
+  margin-top: 5%;
+  margin-bottom: 5%;
   height: auto;
 
   &--pages {
     @include mixins.card-holder;
+    flex-wrap: wrap;
 
     &--card {
       @include mixins.card;
+
+      p {
+        font-size: 0.9em;
+      }
+
+      .chemo {
+        background-image: url("../../../assets/treatment-chemo.jpg");
+        background-size: cover;
+      }
+
+      .radiation {
+        background-image: url("../../../assets/treatment-radiation.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .surgery {
+        background-image: url("../../../assets/treatment-surgery.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hormones {
+        background-image: url("../../../assets/treatment-hormones.jpg");
+        background-size: cover;
+      }
+
+      .medicine {
+        background-image: url("../../../assets/treatment-medicine.jpg");
+        background-size: cover;
+      }
+
+      .fertility {
+        background-image: url("../../../assets/treatment-fertility.jpg");
+        background-size: cover;
+        background-position: center;
+      }
     }
   }
 }
