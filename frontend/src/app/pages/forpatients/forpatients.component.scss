@@ -1,5 +1,8 @@
 @import "../../../styles.scss";
 
+body {
+  background-color: $base-gray;
+}
 h1,
 h2,
 h3,
@@ -33,10 +36,10 @@ span {
 }
 
 .fp-content {
-  background-color: $base-gray;
   height: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2%;
 
   h2,
   h3,
@@ -69,6 +72,18 @@ span {
       color: $base-gray;
 
       font-size: 1.5em;
+
+      &:hover {
+        background-color: red;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        background-color: red;
+      }
     }
   }
 
