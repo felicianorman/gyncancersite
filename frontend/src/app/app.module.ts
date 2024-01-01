@@ -23,12 +23,14 @@ import { StoreModule } from '@ngrx/store';
 import {
   servicesDonate,
   servicesLandingPage,
+  servicesLifeWithCancer,
   servicesRegister,
   servicesSupportUs,
 } from 'src/services';
 
 import { DonateEffects } from 'src/store/donate/effects';
 import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
+import { LifeWithCancerEffects } from 'src/store/life-with-cancer';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
 import { RegisterComponent } from './sub-pages/register/register.component';
@@ -66,10 +68,12 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     StoreModule.forFeature('support-us', {}),
     StoreModule.forFeature('donate', {}),
     StoreModule.forFeature('register', {}),
+    StoreModule.forFeature('life-with-cancer', {}),
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
     EffectsModule.forFeature(DonateEffects),
     EffectsModule.forFeature(RegisterEffects),
+    EffectsModule.forFeature(LifeWithCancerEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -77,6 +81,7 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     servicesLandingPage,
     servicesSupportUs,
     servicesRegister,
+    servicesLifeWithCancer,
   ],
   bootstrap: [AppComponent],
 })
