@@ -1,0 +1,165 @@
+@import "../../../styles.scss";
+
+body {
+  background-color: $base-gray;
+}
+h1,
+h2 {
+  color: $base-accent;
+}
+
+.lfw-header {
+  height: 50vh;
+  background-image: url("../../../assets/fp-lmc.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &--text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: inherit;
+  }
+
+  h1 {
+    margin: 0;
+    margin-top: 5%;
+  }
+}
+
+.lfw-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    margin-top: 2%;
+    margin-left: 2%;
+  }
+
+  p {
+    margin-left: 2%;
+    width: 90%;
+    font-size: 0.9em;
+  }
+
+  &--pages {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    h2 {
+      margin: 0;
+      font-size: 1.1em;
+    }
+
+    &--card {
+      margin-top: 2%;
+      width: 30%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        width: 50%;
+      }
+
+      span {
+        color: $base-accent;
+      }
+
+      &__img {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+      }
+
+      .doctor {
+        background-image: url("../../../assets/lfw-doctor.jpg");
+        background-size: cover;
+      }
+
+      .cancer {
+        background-image: url("../../../assets/lfw-cancer.jpg");
+        background-size: cover;
+      }
+
+      .rights {
+        background-image: url("../../../assets/lfw-rights.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .fatigue {
+        background-image: url("../../../assets/lfw-fatigue.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .sexuality {
+        background-image: url("../../../assets/lfw-sexuality.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .lymph {
+        background-image: url("../../../assets/lfw-lymph.jpg");
+        background-size: cover;
+        background-position: right;
+      }
+    }
+  }
+}
+
+.lfw-diet {
+  width: 100%;
+  background-image: url("../../../assets/lfw-food.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &--text {
+    margin-left: 12%;
+    h2 {
+      color: $base-gray;
+      font-size: 2.2em;
+    }
+
+    p {
+      font-size: 1.1em;
+      width: 60%;
+    }
+    color: $base-gray;
+  }
+}
+
+.lfw-words {
+  width: 100%;
+  background-image: url("../../../assets/lfw-words.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 40vh;
+
+  h2,
+  p,
+  span {
+    color: $base-gray;
+  }
+
+  span {
+    margin-left: 2%;
+  }
+
+  h2 {
+    font-size: 2.2em;
+  }
+
+  p {
+    font-size: 1.1em;
+    width: 60%;
+  }
+}
