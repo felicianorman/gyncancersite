@@ -1,0 +1,88 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles.scss";
+
+body {
+  background-color: $base-gray;
+}
+.palliative-header {
+  height: 50vh;
+  background-image: url("../../../assets/palliative-header.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &--text {
+    color: $base-gray;
+    margin-left: 2%;
+
+    p {
+      width: 50%;
+    }
+  }
+}
+
+.palliative-content {
+  &--text {
+    margin-left: 2%;
+    h2 {
+      color: $base-accent;
+    }
+
+    p {
+      width: 90%;
+      font-size: 0.9em;
+    }
+  }
+
+  &--pages {
+    @include mixins.card-holder;
+
+    &__card {
+      @include mixins.card;
+
+      .early {
+        background-image: url("../../../assets/palliative-early.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .late {
+        background-image: url("../../../assets/palliative-late.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .relative {
+        background-image: url("../../../assets/palliative-relative.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  &--late {
+    margin-top: 5%;
+    height: 40vh;
+    background-image: url("../../../assets/palliative-end.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+
+    &__text {
+      color: $base-gray;
+      margin-left: 2%;
+
+      h2 {
+        font-weight: normal;
+        font-size: 1.8em;
+      }
+
+      p {
+        width: 40%;
+      }
+    }
+  }
+}
