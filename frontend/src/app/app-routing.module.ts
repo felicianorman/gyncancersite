@@ -4,6 +4,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ForpatientsComponent } from './pages/forpatients/forpatients.component';
 import { KnowledgeComponent } from './pages/knowledge/knowledge.component';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
+import { ShopComponent } from './pages/shop/shop.component';
 import { SupportUsComponent } from './pages/support-us/support-us.component';
 import { BlogComponent } from './sub-pages/blog/blog.component';
 import { CloseRelativeComponent } from './sub-pages/close-relative/close-relative.component';
@@ -17,7 +18,6 @@ import { PalliatveCareComponent } from './sub-pages/palliatve-care/palliatve-car
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { ScreeningComponent } from './sub-pages/screening/screening.component';
-import { ShopComponent } from './sub-pages/shop/shop.component';
 import { ToAchieveComponent } from './sub-pages/to-achieve/to-achieve.component';
 import { TreatmentComponent } from './sub-pages/treatment/treatment.component';
 import { WhatWeDoComponent } from './sub-pages/what-we-do/what-we-do.component';

@@ -2,7 +2,6 @@ import { Action } from '@ngrx/store';
 import { Post } from 'src/interfaces/Post';
 
 export const LOAD_LIFE_WITH_CANCER = '[LifeWithCancer] Get LifeWithCancer';
-
 export const LOAD_LIFE_WITH_CANCER_SUCCESS =
   '[LifeWithCancer] Get LifeWithCancer Success';
 export const LOAD_LIFE_WITH_CANCER_FAIL =

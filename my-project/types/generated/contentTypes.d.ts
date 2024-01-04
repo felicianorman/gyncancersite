@@ -934,6 +934,39 @@ export interface ApiOurVisionOurVision extends Schema.SingleType {
   };
 }
 
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    img: Attribute.Media;
+    price: Attribute.Decimal;
+    description: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRegisterRegister extends Schema.CollectionType {
   collectionName: 'registers';
   info: {
@@ -1100,6 +1133,7 @@ declare module '@strapi/types' {
       'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::our-vision.our-vision': ApiOurVisionOurVision;
+      'api::product.product': ApiProductProduct;
       'api::register.register': ApiRegisterRegister;
       'api::story.story': ApiStoryStory;
       'api::support-us.support-us': ApiSupportUsSupportUs;

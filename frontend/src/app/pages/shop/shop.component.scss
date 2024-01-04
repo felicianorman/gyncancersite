@@ -1,0 +1,11 @@
+@import "../../../styles.scss";
+
+.shop-header {
+  color: $base-accent;
+  display: flex;
+  justify-content: center;
+}
+
+.shop-content {
+  border: 1px solid red;
+}
