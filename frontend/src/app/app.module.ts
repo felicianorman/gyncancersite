@@ -24,6 +24,7 @@ import {
   servicesDonate,
   servicesLandingPage,
   servicesLifeWithCancer,
+  servicesProducts,
   servicesRegister,
   servicesSupportUs,
 } from 'src/services';
@@ -31,11 +32,13 @@ import {
 import { DonateEffects } from 'src/store/donate/effects';
 import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
 import { LifeWithCancerEffects } from 'src/store/life-with-cancer';
+import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
+import { ProductsComponent } from './components/products/products.component';
+import { ShopComponent } from './pages/shop/shop.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
-import { ShopComponent } from './sub-pages/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,7 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     BlogComponent,
     RegisterComponent,
     ShopComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,11 +75,14 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     StoreModule.forFeature('donate', {}),
     StoreModule.forFeature('register', {}),
     StoreModule.forFeature('life-with-cancer', {}),
+    StoreModule.forFeature('products', {}),
+
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
     EffectsModule.forFeature(DonateEffects),
     EffectsModule.forFeature(RegisterEffects),
     EffectsModule.forFeature(LifeWithCancerEffects),
+    EffectsModule.forFeature(ProductEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -84,6 +91,7 @@ import { ShopComponent } from './sub-pages/shop/shop.component';
     servicesSupportUs,
     servicesRegister,
     servicesLifeWithCancer,
+    servicesProducts,
   ],
   bootstrap: [AppComponent],
 })

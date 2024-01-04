@@ -1,0 +1,17 @@
+<div class="shop-header">
+  <h1>Webshop</h1>
+</div>
+<main class="shop-content">
+  <section class="shop-content--products">
+    <article
+      class="shop-content--products__card"
+      *ngFor="let product of productDetails"
+      (click)="onProductClick(product)"
+    >
+      <h2>{{ product.title }}</h2>
+      <img [src]="product.img" alt="" />
+      <!-- <p>{{ product.description }}</p> -->
+      <span>Pris: {{ product.price }}</span>
+    </article>
+  </section>
+</main>
