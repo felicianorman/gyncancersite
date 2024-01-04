@@ -47,13 +47,15 @@ export class ShopComponent {
       });
 
       console.log('Processed productDetails:', this.productDetails);
-
-      // this.products.forEach((product: any) => {
-      //   this.title = product.attributes.title;
-      //   this.description = product.attributes.description;
-      //   this.price = product.attributes.price;
-      //   this.img = product.attributes.img.data.attributes.url;
-      // });
     });
+  }
+
+  public onProductClick(product: any) {
+    this.title = product.title;
+    this.description = product.description;
+    this.price = product.price;
+    this.img = product.img;
+
+    console.log('Product clicked:', product);
   }
 }
