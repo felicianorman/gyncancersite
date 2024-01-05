@@ -6,7 +6,7 @@ body {
 }
 .palliative-header {
   height: 50vh;
-  background-image: url("../../../assets/palliative-header.jpg");
+  // background-image: url("../../../assets/palliative-header.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -41,31 +41,13 @@ body {
 
     &__card {
       @include mixins.card;
-
-      .early {
-        background-image: url("../../../assets/palliative-early.jpg");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .late {
-        background-image: url("../../../assets/palliative-late.jpg");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .relative {
-        background-image: url("../../../assets/palliative-relative.jpg");
-        background-size: cover;
-        background-position: center;
-      }
     }
   }
 
   &--late {
     margin-top: 5%;
     height: 40vh;
-    background-image: url("../../../assets/palliative-end.jpg");
+    // background-image: url("../../../assets/palliative-end.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
