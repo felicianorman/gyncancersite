@@ -4,90 +4,81 @@
   </div>
 </div>
 
-<main class="lfw-content">
-  <h2>{{ lwcTitle }}</h2>
-
-  <p>
-    <markdown [data]="lwcContent">
-      {{ lwcContent }}
-    </markdown>
-  </p>
+<main class="lfw-content" *ngIf="pageDetails && pageDetails.length > 0">
+  <div>
+    <markdown [data]="pageDetails[0].content">
+      <p>{{ pageDetails[0].content }}</p></markdown
+    >
+  </div>
 
   <div class="lfw-content--pages">
     <div class="lfw-content--pages--card">
-      <div class="lfw-content--pages--card__img doctor"></div>
-      <h2>Inför läkarbesöket</h2>
+      <img [src]="pageDetails[1].img" class="lfw-content--pages--card__img" />
+
+      <h2>{{ pageDetails[1].title }}</h2>
       <p>
-        Vid samtalet med läkaren har du möjlighet att få svar på dina frågor och
-        funderingar.
+        {{ pageDetails[1].content }}
       </p>
       <span>Läs mer</span>
     </div>
     <div class="lfw-content--pages--card">
-      <div class="lfw-content--pages--card__img cancer"></div>
-      <h2>Efter cancerbeskedet</h2>
+      <img class="lfw-content--pages--card__img" [src]="pageDetails[2].img" />
+      <h2>{{ pageDetails[2].title }}</h2>
       <p>
-        Ett cancerbesked blir för de flesta en påminnelse om hur skört livet är
-        – hur god prognosen än ser ut.
+        {{ pageDetails[2].content }}
       </p>
       <span>Läs mer</span>
     </div>
     <div class="lfw-content--pages--card">
-      <div class="lfw-content--pages--card__img rights"></div>
-      <h2>Rättigheter</h2>
+      <img class="lfw-content--pages--card__img" [src]="pageDetails[3].img" />
+      <h2>{{ pageDetails[3].title }}</h2>
       <p>
-        Många personer upplever det som ett stöd och en trygghet att känna till
-        vilka rättigheter man har i vården.
+        {{ pageDetails[3].content }}
       </p>
       <span>Läs mer</span>
     </div>
   </div>
+
+  <!-- byt till bild?-->
   <div class="lfw-diet">
     <div class="lfw-diet--text">
-      <h2>Kost</h2>
+      <h2>{{ pageDetails[8].title }}</h2>
       <p>
-        Det vi vet idag är att det vi äter kan påverka risken att drabbas av
-        olika cancerformer. Det finns däremot inget belägg för att en specifik
-        diet eller vissa livsmedel skulle kunna bota cancer eller minska
-        cancerns tillväxt.
+        {{ pageDetails[8].content }}
       </p>
       <span>Läs mer</span>
     </div>
   </div>
   <div class="lfw-content--pages">
     <div class="lfw-content--pages--card">
-      <div class="lfw-content--pages--card__img fatigue"></div>
-      <h2>Trötthet - Fatigue</h2>
+      <img class="lfw-content--pages--card__img" [src]="pageDetails[4].img" />
+      <h2>{{ pageDetails[4].title }}</h2>
       <p>
-        Fatigue är en speciell trötthet och kraftlöshet som är överväldigande
-        för den som drabbas.
+        {{ pageDetails[4].content }}
       </p>
       <span>Läs mer</span>
     </div>
     <div class="lfw-content--pages--card">
-      <div class="lfw-content--pages--card__img sexuality"></div>
-      <h2>Sexualitet</h2>
+      <img class="lfw-content--pages--card__img" [src]="pageDetails[5].img" />
+      <h2>{{ pageDetails[5].title }}</h2>
       <p>
-        Studier visar att i princip alla kvinnor som behandlats för gynekologisk
-        cancer på något sätt får en påverkad sexualitet.
+        {{ pageDetails[5].content }}
       </p>
       <span>Läs mer</span>
     </div>
     <div class="lfw-content--pages--card">
-      <div class="lfw-content--pages--card__img lymph"></div>
-      <h2>Lymfödem</h2>
+      <img class="lfw-content--pages--card__img" [src]="pageDetails[6].img" />
+      <h2>{{ pageDetails[6].title }}</h2>
       <p>
-        Om kroppsvätskan som kallas lymfa har svårt att transporteras i kroppen
-        kan det bildas en svullnad, och den svullnaden kallas då för lymfödem.
+        {{ pageDetails[6].content }}
       </p>
       <span>Läs mer</span>
     </div>
   </div>
   <div class="lfw-words">
-    <h2>Ordlista</h2>
+    <h2>{{ pageDetails[7].title }}</h2>
     <p>
-      Vi har skapat en ordlista med en del ord och begrepp som det kan hända att
-      du stöter på i vården.
+      {{ pageDetails[7].content }}
     </p>
     <span>Läs mer</span>
   </div>

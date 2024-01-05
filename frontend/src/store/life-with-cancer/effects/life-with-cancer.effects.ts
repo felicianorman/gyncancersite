@@ -3,6 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Apollo, gql } from 'apollo-angular';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
+import { Page } from 'src/interfaces/Page';
 import { Post } from 'src/interfaces/Post';
 import * as LifeWithCancerActions from '../actions/life-with-cancer.action';
 
@@ -21,11 +22,18 @@ export class LifeWithCancerEffects {
           .query({
             query: gql`
               query getLifeWithCancer {
-                lifewithcancer {
+                donates {
                   data {
                     attributes {
                       title
                       content
+                      img {
+                        data {
+                          attributes {
+                            url
+                          }
+                        }
+                      }
                     }
                   }
                 }
@@ -37,15 +45,22 @@ export class LifeWithCancerEffects {
               this.apollo
                 .query<{
                   lifewithcancer: any;
-                  data: { lifewithcancer: { data: { attributes: Post } } };
+                  data: { lifewithcancer: { data: { attributes: Page } } };
                 }>({
                   query: gql`
                     query getLifeWithCancer {
-                      lifewithcancer {
+                      donates {
                         data {
                           attributes {
                             title
                             content
+                            img {
+                              data {
+                                attributes {
+                                  url
+                                }
+                              }
+                            }
                           }
                         }
                       }

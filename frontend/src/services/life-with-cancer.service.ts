@@ -9,11 +9,18 @@ export class LifeWithCancerService {
     return this.apollo.watchQuery({
       query: gql`
         query getLifeWithCancer {
-          lifewithcancer {
+          donates {
             data {
               attributes {
                 title
                 content
+                img {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
               }
             }
           }

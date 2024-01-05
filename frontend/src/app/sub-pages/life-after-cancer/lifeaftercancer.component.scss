@@ -39,42 +39,6 @@
 
     &--cards {
       @include mixins.card;
-
-      .anxiety {
-        background-image: url("../../../assets/lac-worry.jpg");
-        background-position: center;
-        background-size: cover;
-      }
-
-      .rehab {
-        background-image: url("../../../assets/lac-rehab.jpg");
-        background-position: center;
-        background-size: cover;
-      }
-
-      .hangover {
-        background-image: url("../../../assets/lac-hangover.jpg");
-        background-position: center;
-        background-size: cover;
-      }
-
-      .work {
-        background-image: url("../../../assets/lac-job.jpg");
-        background-position: center;
-        background-size: cover;
-      }
-
-      .followup {
-        background-image: url("../../../assets/lac-followup.jpg");
-        background-position: center;
-        background-size: cover;
-      }
-
-      .emotions {
-        background-image: url("../../../assets/lac-feelings.jpg");
-        background-position: center;
-        background-size: cover;
-      }
     }
   }
 }

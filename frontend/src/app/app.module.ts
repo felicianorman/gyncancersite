@@ -23,6 +23,7 @@ import { StoreModule } from '@ngrx/store';
 import {
   servicesDonate,
   servicesLandingPage,
+  servicesLifeAfterCancer,
   servicesLifeWithCancer,
   servicesProducts,
   servicesRegister,
@@ -31,12 +32,14 @@ import {
 
 import { DonateEffects } from 'src/store/donate/effects';
 import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
+import { LifeAfterCancerEffects } from 'src/store/life-after-cancer/effects';
 import { LifeWithCancerEffects } from 'src/store/life-with-cancer';
 import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
 
@@ -50,6 +53,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     ContactComponent,
     ForpatientsComponent,
     LifewithcancerComponent,
+    LifeaftercancerComponent,
     NavigationComponent,
     FooterComponent,
     NewsComponent,
@@ -76,6 +80,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     StoreModule.forFeature('register', {}),
     StoreModule.forFeature('life-with-cancer', {}),
     StoreModule.forFeature('products', {}),
+    StoreModule.forFeature('life-after-cancer', {}),
 
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
@@ -83,6 +88,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     EffectsModule.forFeature(RegisterEffects),
     EffectsModule.forFeature(LifeWithCancerEffects),
     EffectsModule.forFeature(ProductEffects),
+    EffectsModule.forFeature(LifeAfterCancerEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -92,6 +98,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     servicesRegister,
     servicesLifeWithCancer,
     servicesProducts,
+    servicesLifeAfterCancer,
   ],
   bootstrap: [AppComponent],
 })

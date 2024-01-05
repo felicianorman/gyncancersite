@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "livet_efter_cancers",
+  "info": {
+    "singularName": "livet-efter-cancer",
+    "pluralName": "livet-efter-cancers",
+    "displayName": "LivetEfterCancer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

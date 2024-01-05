@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { Page } from 'src/interfaces/Page';
 import { Post } from 'src/interfaces/Post';
 
 export const LOAD_LIFE_WITH_CANCER = '[LifeWithCancer] Get LifeWithCancer';
@@ -16,7 +17,7 @@ export class LoadLifeWithCancer implements Action {
 export class LoadLifeWithCancerSuccess implements Action {
   readonly type = LOAD_LIFE_WITH_CANCER_SUCCESS;
 
-  constructor(public payload: Post) {}
+  constructor(public payload: Page[]) {}
 }
 
 export class LoadLifeWithCancerFail implements Action {

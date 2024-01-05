@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "foer_naerstaendes",
+  "info": {
+    "singularName": "foer-naerstaende",
+    "pluralName": "foer-naerstaendes",
+    "displayName": "För närstående"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

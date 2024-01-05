@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "palliativ_vards",
+  "info": {
+    "singularName": "palliativ-vard",
+    "pluralName": "palliativ-vards",
+    "displayName": "Palliativ vård"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

@@ -1,8 +1,8 @@
 import { DonateService } from './donate.service';
 import { LandingPageService } from './landingpage.service';
+import { LifeAfterCancerService } from './life-after-cancer.service';
 import { LifeWithCancerService } from './life-with-cancer.service';
 import { ProductService } from './products.service';
-
 import { RegisterService } from './register.service';
 import { SupportUsService } from './support-us.service';
 
@@ -17,5 +17,7 @@ export const servicesRegister: any[] = [RegisterService];
 export const servicesLifeWithCancer: any[] = [LifeWithCancerService];
 
 export const servicesProducts: any[] = [ProductService];
+
+export const servicesLifeAfterCancer: any[] = [LifeAfterCancerService];
 
 export * from './landingpage.service';

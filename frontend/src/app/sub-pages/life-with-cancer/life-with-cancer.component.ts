@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Post } from 'src/interfaces/Post';
+import { Page } from 'src/interfaces/Page';
 import { LifeWithCancerService } from 'src/services/life-with-cancer.service';
 import * as fromStore from '../../../store/life-with-cancer/index';
 
@@ -11,11 +11,13 @@ import * as fromStore from '../../../store/life-with-cancer/index';
   styleUrls: ['./life-with-cancer.component.scss'],
 })
 export class LifewithcancerComponent implements OnInit {
-  public lwcTitle: string = '';
-  public lwcContent: string = '';
+  public pages$: Observable<Page[]>;
+  public pages: Page[] = [];
+  public pageDetails: any[] = [];
 
-  public posts$: Observable<Post>;
-  public posts: Post;
+  public title: string = '';
+  public content: string = '';
+  public img: string = '';
 
   constructor(
     private store: Store<fromStore.LifeWithCancerState>,
@@ -25,19 +27,26 @@ export class LifewithcancerComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.posts$ = this.store.select(fromStore.getLifeWithCancer);
-
+    this.pages$ = this.store.select(fromStore.getLifeWithCancer);
     this.store.dispatch({ type: '[LifeWithCancer] Get LifeWithCancer' });
 
     this.lifeWithCancerService
       .getLifeWithCancer()
       .valueChanges.subscribe((result) => {
-        this.lwcTitle = (result.data as any)[
-          'lifewithcancer'
-        ].data.attributes.title;
-        this.lwcContent = (result.data as any)[
-          'lifewithcancer'
-        ].data.attributes.content;
+        this.pages = (result.data as any)['donates'].data;
+        console.log(this.pages);
+
+        this.pageDetails = this.pages.map((page: any) => {
+          return {
+            title: page.attributes.title,
+            content: page.attributes.content,
+            img:
+              'http://localhost:1337' +
+                page.attributes.img?.data?.attributes?.url || '',
+          };
+        });
+
+        console.log('Processed pageDetails:', this.pageDetails);
       });
   }
 }

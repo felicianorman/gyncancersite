@@ -677,6 +677,39 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiDonateDonate extends Schema.CollectionType {
+  collectionName: 'donates';
+  info: {
+    singularName: 'donate';
+    pluralName: 'donates';
+    displayName: 'livetmedcancer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    img: Attribute.Media;
+    content: Attribute.RichText;
+    title: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::donate.donate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::donate.donate',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDoneraGyncancerdagenDoneraGyncancerdagen
   extends Schema.SingleType {
   collectionName: 'donera_gyncancerdagens';
@@ -807,6 +840,39 @@ export interface ApiDoneraVaccinDoneraVaccin extends Schema.SingleType {
   };
 }
 
+export interface ApiFoerNaerstaendeFoerNaerstaende
+  extends Schema.CollectionType {
+  collectionName: 'foer_naerstaendes';
+  info: {
+    singularName: 'foer-naerstaende';
+    pluralName: 'foer-naerstaendes';
+    displayName: 'F\u00F6r n\u00E4rst\u00E5ende';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    img: Attribute.Media;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::foer-naerstaende.foer-naerstaende',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::foer-naerstaende.foer-naerstaende',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLifewithcancerLifewithcancer extends Schema.SingleType {
   collectionName: 'lifewithcancers';
   info: {
@@ -831,6 +897,39 @@ export interface ApiLifewithcancerLifewithcancer extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::lifewithcancer.lifewithcancer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLivetEfterCancerLivetEfterCancer
+  extends Schema.CollectionType {
+  collectionName: 'livet_efter_cancers';
+  info: {
+    singularName: 'livet-efter-cancer';
+    pluralName: 'livet-efter-cancers';
+    displayName: 'LivetEfterCancer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    img: Attribute.Media;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::livet-efter-cancer.livet-efter-cancer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::livet-efter-cancer.livet-efter-cancer',
       'oneToOne',
       'admin::user'
     > &
@@ -927,6 +1026,38 @@ export interface ApiOurVisionOurVision extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::our-vision.our-vision',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPalliativVardPalliativVard extends Schema.CollectionType {
+  collectionName: 'palliativ_vards';
+  info: {
+    singularName: 'palliativ-vard';
+    pluralName: 'palliativ-vards';
+    displayName: 'Palliativ v\u00E5rd';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    img: Attribute.Media;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::palliativ-vard.palliativ-vard',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::palliativ-vard.palliativ-vard',
       'oneToOne',
       'admin::user'
     > &
@@ -1125,14 +1256,18 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::donate.donate': ApiDonateDonate;
       'api::donera-gyncancerdagen.donera-gyncancerdagen': ApiDoneraGyncancerdagenDoneraGyncancerdagen;
       'api::donera-levalitetill.donera-levalitetill': ApiDoneraLevalitetillDoneraLevalitetill;
       'api::donera-meetup.donera-meetup': ApiDoneraMeetupDoneraMeetup;
       'api::donera-vaccin.donera-vaccin': ApiDoneraVaccinDoneraVaccin;
+      'api::foer-naerstaende.foer-naerstaende': ApiFoerNaerstaendeFoerNaerstaende;
       'api::lifewithcancer.lifewithcancer': ApiLifewithcancerLifewithcancer;
+      'api::livet-efter-cancer.livet-efter-cancer': ApiLivetEfterCancerLivetEfterCancer;
       'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::our-vision.our-vision': ApiOurVisionOurVision;
+      'api::palliativ-vard.palliativ-vard': ApiPalliativVardPalliativVard;
       'api::product.product': ApiProductProduct;
       'api::register.register': ApiRegisterRegister;
       'api::story.story': ApiStoryStory;

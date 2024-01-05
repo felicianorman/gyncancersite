@@ -1,17 +1,14 @@
-import { Post } from 'src/interfaces/Post';
+import { Page } from 'src/interfaces/Page';
 import * as fromLifeWithCancer from '../actions/life-with-cancer.action';
 
 export interface LifeWithCancerState {
-  data: Post;
+  data: Page[];
   loaded: boolean;
   loading: boolean;
 }
 
 export const initialState: LifeWithCancerState = {
-  data: {
-    title: '',
-    content: '',
-  },
+  data: [],
   loaded: false,
   loading: false,
 };

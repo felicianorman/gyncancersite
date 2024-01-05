@@ -48,40 +48,6 @@ h2 {
 
     &--card {
       @include mixins.card;
-
-      .doctor {
-        background-image: url("../../../assets/lfw-doctor.jpg");
-        background-size: cover;
-      }
-
-      .cancer {
-        background-image: url("../../../assets/lfw-cancer.jpg");
-        background-size: cover;
-      }
-
-      .rights {
-        background-image: url("../../../assets/lfw-rights.jpg");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .fatigue {
-        background-image: url("../../../assets/lfw-fatigue.jpg");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .sexuality {
-        background-image: url("../../../assets/lfw-sexuality.jpg");
-        background-size: cover;
-        background-position: center;
-      }
-
-      .lymph {
-        background-image: url("../../../assets/lfw-lymph.jpg");
-        background-size: cover;
-        background-position: right;
-      }
     }
   }
 }
