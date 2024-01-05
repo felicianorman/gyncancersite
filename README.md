@@ -1,5 +1,7 @@
 # My Degree Project
 
+View it live: [https://gyncancersite.vercel.app/](https://gyncancersite.vercel.app/)
+
 This repository contains my degree project, which is built using the following technologies:
 
 -   Angular 17: A popular JavaScript framework for building web applications.
