@@ -873,6 +873,39 @@ export interface ApiFoerNaerstaendeFoerNaerstaende
   };
 }
 
+export interface ApiGynekologiskCancerGynekologiskCancer
+  extends Schema.CollectionType {
+  collectionName: 'gynekologisk_cancers';
+  info: {
+    singularName: 'gynekologisk-cancer';
+    pluralName: 'gynekologisk-cancers';
+    displayName: 'Gynekologisk cancer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gynekologisk-cancer.gynekologisk-cancer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gynekologisk-cancer.gynekologisk-cancer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiLifewithcancerLifewithcancer extends Schema.SingleType {
   collectionName: 'lifewithcancers';
   info: {
@@ -1262,6 +1295,7 @@ declare module '@strapi/types' {
       'api::donera-meetup.donera-meetup': ApiDoneraMeetupDoneraMeetup;
       'api::donera-vaccin.donera-vaccin': ApiDoneraVaccinDoneraVaccin;
       'api::foer-naerstaende.foer-naerstaende': ApiFoerNaerstaendeFoerNaerstaende;
+      'api::gynekologisk-cancer.gynekologisk-cancer': ApiGynekologiskCancerGynekologiskCancer;
       'api::lifewithcancer.lifewithcancer': ApiLifewithcancerLifewithcancer;
       'api::livet-efter-cancer.livet-efter-cancer': ApiLivetEfterCancerLivetEfterCancer;
       'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
