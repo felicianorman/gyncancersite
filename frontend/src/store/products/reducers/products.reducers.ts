@@ -14,6 +14,7 @@ export const initialState: ProductState = {
       description: '',
       price: 0,
       img: '',
+      productId: 0,
     },
   ],
   loaded: false,

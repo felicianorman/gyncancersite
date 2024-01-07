@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductIdComponent } from './components/product-id/product-id.component';
+import { ProductsComponent } from './components/products/products.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ForpatientsComponent } from './pages/forpatients/forpatients.component';
 import { KnowledgeComponent } from './pages/knowledge/knowledge.component';
@@ -105,6 +107,10 @@ const routes: Routes = [
   {
     path: 'webshop',
     component: ShopComponent,
+  },
+  {
+    path: 'webshop/:id',
+    component: ProductIdComponent,
   },
 ];
 
