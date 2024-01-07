@@ -13,6 +13,7 @@ export class ProductService {
             data {
               attributes {
                 title
+                productId
                 img {
                   data {
                     attributes {

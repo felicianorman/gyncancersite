@@ -26,6 +26,7 @@ export class ProductEffects {
                   data {
                     attributes {
                       title
+                      productId
                       img {
                         data {
                           attributes {
@@ -54,6 +55,7 @@ export class ProductEffects {
                         data {
                           attributes {
                             title
+                            productId
                             img {
                               data {
                                 attributes {

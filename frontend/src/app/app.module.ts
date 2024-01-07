@@ -42,6 +42,7 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
+import { ProductIdComponent } from './components/product-id/product-id.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     RegisterComponent,
     ShopComponent,
     ProductsComponent,
+    ProductIdComponent,
   ],
   imports: [
     BrowserModule,
