@@ -1,0 +1,32 @@
+@use "../../../mixins";
+@import "../../../styles.scss";
+
+.gyncancer--header {
+  height: 50vh;
+  background-image: url("../../../assets/gyncancer-header.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &--text {
+    color: $base-gray;
+    margin-left: 2%;
+
+    p {
+      width: 40%;
+    }
+  }
+}
+
+.gyncancer--content {
+  &--pages {
+    flex-wrap: wrap;
+    @include mixins.card-holder;
+
+    &__card {
+      @include mixins.card;
+    }
+  }
+}

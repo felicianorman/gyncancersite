@@ -1,1 +1,39 @@
-<p>gyn-cancers works!</p>
+<div class="gyncancer--header">
+  <div class="gyncancer--header--text">
+    <h1>Gyncancer</h1>
+    <p>
+      Det finns flera olika typer av gyncancer. De vanligaste är
+      livmoderhalscancer, äggstockscancer, livmoderkroppscancer och slemhinne-
+      eller skivepitelcancer i slidan.
+    </p>
+  </div>
+</div>
+<main class="gyncancer--content" *ngIf="pageDetails && pageDetails.length > 0">
+  <section class="gyncancer--content--pages">
+    <article class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[3].img" />
+      <h2>{{ pageDetails[3].title }}</h2>
+      <p>{{ pageDetails[3].content }}</p>
+    </article>
+    <article class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[4].img" />
+      <h2>{{ pageDetails[4].title }}</h2>
+      <p>{{ pageDetails[4].content }}</p>
+    </article>
+    <article class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[3].img" />
+      <h2>{{ pageDetails[3].title }}</h2>
+      <p>{{ pageDetails[3].content }}</p>
+    </article>
+    <article class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[3].img" />
+      <h2>{{ pageDetails[3].title }}</h2>
+      <p>{{ pageDetails[3].content }}</p>
+    </article>
+    <article class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[3].img" />
+      <h2>{{ pageDetails[3].title }}</h2>
+      <p>{{ pageDetails[3].content }}</p>
+    </article>
+  </section>
+</main>
