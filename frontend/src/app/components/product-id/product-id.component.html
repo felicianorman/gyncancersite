@@ -1,3 +1,22 @@
 <div *ngIf="product" class="product-details">
-  <h2>{{ product.attributes.title }}</h2>
+  <div class="product-details--container">
+    <div class="product-details--text">
+      <h2>{{ product.title }}</h2>
+      <span>{{ product.price }} kr</span>
+      <p>{{ product.description }}</p>
+      <div class="product-details--btn">
+        <button>Lägg i varukorg</button>
+      </div>
+    </div>
+    <div class="product-details--img">
+      <img [src]="img" alt="" />
+    </div>
+  </div>
+
+  <div class="product-details--info">
+    <h3>
+      Berätta gärna om ditt nya smycke – och om oss! Använd #gyncancer i sociala
+      medier och tagga gärna vårt instagramkonto gyncancer.se
+    </h3>
+  </div>
 </div>

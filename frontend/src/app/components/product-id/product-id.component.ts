@@ -1,14 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/interfaces/Product';
 import { ProductService } from 'src/services/products.service';
 
 @Component({
   selector: 'app-product-id',
   templateUrl: './product-id.component.html',
-  styleUrls: ['./product-id.component.css'],
+  styleUrls: ['./product-id.component.scss'],
 })
 export class ProductIdComponent implements OnInit {
   @Input() public product: any;
+  public img: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -18,17 +20,18 @@ export class ProductIdComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const productId = params['id'];
-      console.log('Product ID from route:', productId);
 
       this.productService.getProducts().valueChanges.subscribe((result) => {
-        console.log('GraphQL Response:', result);
         const products = (result.data as any)['products'].data;
 
-        console.log('All products:', products);
-
-        this.product = products.find((product: any) => {
+        const productDetail = products.find((product: any) => {
+          this.img =
+            'http://localhost:1337' +
+              product.attributes.img?.data?.attributes?.url || '';
           return product.attributes.productId == productId;
         });
+
+        this.product = productDetail ? productDetail.attributes : null;
 
         console.log('Found product:', this.product);
       });
