@@ -42,8 +42,10 @@ import { SupportUsEffects } from 'src/store/support-us/effects';
 import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
 import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
+import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
 
 @NgModule({
@@ -65,6 +67,8 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     ShopComponent,
     ProductsComponent,
     ProductIdComponent,
+    GynCancersComponent,
+    PreventionComponent,
   ],
   imports: [
     BrowserModule,
