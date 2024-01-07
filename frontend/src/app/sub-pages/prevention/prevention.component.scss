@@ -1,0 +1,39 @@
+@import "../../../styles.scss";
+
+.prevention-header {
+  height: 50vh;
+
+  background-image: url("../../../assets/prevention-header.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $base-gray;
+
+  h1 {
+    margin: 0;
+    margin-left: 2%;
+  }
+}
+
+.prevention-content {
+  background-color: $base-gray;
+  margin-left: 2%;
+
+  h2 {
+    color: $base-accent;
+  }
+
+  &--text {
+    h3 {
+      color: $base-accent;
+      font-size: 1em;
+    }
+
+    p {
+      width: 90%;
+      font-size: 0.9em;
+    }
+  }
+}

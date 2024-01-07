@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kunskaps",
+  "info": {
+    "singularName": "kunskap",
+    "pluralName": "kunskaps",
+    "displayName": "kunskap"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

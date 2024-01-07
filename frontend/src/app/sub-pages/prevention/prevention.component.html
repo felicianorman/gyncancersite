@@ -1,1 +1,31 @@
-<p>prevention works!</p>
+<div class="prevention-header">
+  <h1>Prevention</h1>
+</div>
+<main class="prevention-content" *ngIf="pageDetails && pageDetails.length > 0">
+  <h2>Minska risken</h2>
+
+  <section class="prevention-content--text">
+    <h3>{{ pageDetails[5].title }}</h3>
+    <p>{{ pageDetails[5].content }}</p>
+  </section>
+
+  <section class="prevention-content--text">
+    <h3>{{ pageDetails[6].title }}</h3>
+    <p>{{ pageDetails[6].content }}</p>
+  </section>
+
+  <section class="prevention-content--text">
+    <h3>{{ pageDetails[7].title }}</h3>
+    <p>{{ pageDetails[7].content }}</p>
+  </section>
+
+  <section class="prevention-content--text">
+    <h3>{{ pageDetails[8].title }}</h3>
+    <p>{{ pageDetails[8].content }}</p>
+  </section>
+
+  <section class="prevention-content--text">
+    <h3>{{ pageDetails[9].title }}</h3>
+    <p>{{ pageDetails[9].content }}</p>
+  </section>
+</main>

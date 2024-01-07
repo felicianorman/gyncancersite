@@ -1,0 +1,28 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles.scss";
+
+.knowledge-header {
+  height: 60vh;
+  background-image: url("../../../assets/knowledge-header.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &--text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5%;
+    color: $base-gray;
+    height: inherit;
+  }
+}
+
+.knowledge-content {
+  &--pages {
+    @include mixins.card-holder;
+
+    &__card {
+      @include mixins.card;
+    }
+  }
+}
