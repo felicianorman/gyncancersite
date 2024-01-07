@@ -22,6 +22,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import {
   servicesDonate,
+  servicesKnowledge,
   servicesLandingPage,
   servicesLifeAfterCancer,
   servicesLifeWithCancer,
@@ -31,18 +32,19 @@ import {
 } from 'src/services';
 
 import { DonateEffects } from 'src/store/donate/effects';
+import { KnowledgeEffects } from 'src/store/knowledge';
 import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
 import { LifeAfterCancerEffects } from 'src/store/life-after-cancer/effects';
 import { LifeWithCancerEffects } from 'src/store/life-with-cancer';
 import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
+import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
-import { ProductIdComponent } from './components/product-id/product-id.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,7 @@ import { ProductIdComponent } from './components/product-id/product-id.component
     StoreModule.forFeature('life-with-cancer', {}),
     StoreModule.forFeature('products', {}),
     StoreModule.forFeature('life-after-cancer', {}),
+    StoreModule.forFeature('knowledge', {}),
 
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
@@ -91,6 +94,7 @@ import { ProductIdComponent } from './components/product-id/product-id.component
     EffectsModule.forFeature(LifeWithCancerEffects),
     EffectsModule.forFeature(ProductEffects),
     EffectsModule.forFeature(LifeAfterCancerEffects),
+    EffectsModule.forFeature(KnowledgeEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -101,6 +105,7 @@ import { ProductIdComponent } from './components/product-id/product-id.component
     servicesLifeWithCancer,
     servicesProducts,
     servicesLifeAfterCancer,
+    servicesKnowledge,
   ],
   bootstrap: [AppComponent],
 })

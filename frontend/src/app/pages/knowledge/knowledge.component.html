@@ -4,24 +4,24 @@
     <p>Kunskap och tidig upptäckt räddar liv.</p>
   </div>
 </div>
-<main class="knowledge-content">
+<main class="knowledge-content" *ngIf="pageDetails && pageDetails.length > 0">
   <section class="knowledge-content--pages">
     <article class="knowledge-content--pages__card">
-      <img src="" alt="bild" />
-      <h2>Text</h2>
-      <p>Paragraf</p>
+      <img class="lac-content--pages--cards__img" [src]="pageDetails[0].img" />
+      <h2>{{ pageDetails[0].title }}</h2>
+      <p>{{ pageDetails[0].content }}</p>
       <span>Läs mer</span>
     </article>
     <article class="knowledge-content--pages__card">
-      <img src="" alt="bild" />
-      <h2>Text</h2>
-      <p>Paragraf</p>
+      <img [src]="pageDetails[1].img" alt="bild" />
+      <h2>{{ pageDetails[1].title }}</h2>
+      <p>{{ pageDetails[1].content }}</p>
       <span>Läs mer</span>
     </article>
     <article class="knowledge-content--pages__card">
-      <img src="" alt="bild" />
-      <h2>Text</h2>
-      <p>Paragraf</p>
+      <img [src]="pageDetails[2].img" alt="bild" />
+      <h2>{{ pageDetails[2].title }}</h2>
+      <p>{{ pageDetails[2].content }}</p>
       <span>Läs mer</span>
     </article>
   </section>
