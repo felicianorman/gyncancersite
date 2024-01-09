@@ -59,4 +59,8 @@ export class LandingpageComponent {
       ].data.attributes.content;
     });
   }
+
+  public navigateToBlog() {
+    this.router.navigate(['/kunskap/patient-berattelser']);
+  }
 }

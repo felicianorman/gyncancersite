@@ -21,6 +21,7 @@ import { NewsComponent } from './sub-pages/news/news.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import {
+  servicesCart,
   servicesDonate,
   servicesKnowledge,
   servicesLandingPage,
@@ -41,6 +42,7 @@ import { PatientStoriesEffects } from 'src/store/patient-stories';
 import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
+import { CartComponent } from './components/cart/cart.component';
 import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -72,6 +74,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     GynCancersComponent,
     PreventionComponent,
     BlogComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -116,6 +119,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     servicesLifeAfterCancer,
     servicesKnowledge,
     servicesPatientStories,
+    servicesCart,
   ],
   bootstrap: [AppComponent],
 })

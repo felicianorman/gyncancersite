@@ -5,7 +5,7 @@
       <span>{{ product.price }} kr</span>
       <p>{{ product.description }}</p>
       <div class="product-details--btn">
-        <button>Lägg i varukorg</button>
+        <button (click)="addToCart()">Lägg i varukorg</button>
       </div>
     </div>
     <div class="product-details--img">
