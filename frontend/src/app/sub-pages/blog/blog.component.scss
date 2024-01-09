@@ -1,0 +1,61 @@
+@import "../../../styles.scss";
+.blog--header {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $base-accent;
+  color: $base-gray;
+  margin-bottom: 5%;
+}
+.blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  &--card {
+    width: 80%;
+    background-color: $base-gray;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 2%;
+
+    &__info {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 5%;
+      justify-content: center;
+
+      &--img {
+        padding: 15px;
+
+        img {
+          width: 60%;
+        }
+      }
+
+      span {
+        color: $base-accent;
+        font-size: 0.9em;
+        font-weight: bold;
+      }
+    }
+
+    &__text {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h2 {
+        font-size: 1em;
+      }
+
+      p {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
