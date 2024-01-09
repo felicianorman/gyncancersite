@@ -1,1 +1,17 @@
-<p>blog works!</p>
+<div class="blog--header">
+  <h1>Patientberättelser</h1>
+</div>
+<main class="blog">
+  <article *ngFor="let blog of blogDetails" class="blog--card">
+    <div class="blog--card__info">
+      <div class="blog--card__info--img">
+        <img [src]="blog.img" alt="" />
+      </div>
+      <span>Skriven av: {{ blog.author }}</span>
+    </div>
+    <div class="blog--card__text">
+      <h2>{{ blog.title }}</h2>
+      <p>{{ blog.preview }}</p>
+    </div>
+  </article>
+</main>
