@@ -58,13 +58,5 @@ export class ProductsComponent {
   public onProductClick(product: any) {
     this.productClick.emit(product);
     this.router.navigate(['/webshop', product.id]);
-    // this.title = product.title;
-    // this.description = product.description;
-    // this.price = product.price;
-    // this.img = product.img;
-    // this.id = product.id;
-
-    // console.log('Product id:', product.id);
-    // this.router.navigate(['/', product.id]);
   }
 }

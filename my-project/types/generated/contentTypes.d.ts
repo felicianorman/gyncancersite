@@ -1225,6 +1225,8 @@ export interface ApiStoryStory extends Schema.CollectionType {
         minLength: 5;
       }>;
     author: Attribute.String;
+    preview: Attribute.RichText;
+    img: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

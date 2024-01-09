@@ -26,6 +26,7 @@ import {
   servicesLandingPage,
   servicesLifeAfterCancer,
   servicesLifeWithCancer,
+  servicesPatientStories,
   servicesProducts,
   servicesRegister,
   servicesSupportUs,
@@ -36,6 +37,7 @@ import { KnowledgeEffects } from 'src/store/knowledge';
 import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
 import { LifeAfterCancerEffects } from 'src/store/life-after-cancer/effects';
 import { LifeWithCancerEffects } from 'src/store/life-with-cancer';
+import { PatientStoriesEffects } from 'src/store/patient-stories';
 import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
@@ -69,6 +71,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     ProductIdComponent,
     GynCancersComponent,
     PreventionComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,6 +93,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     StoreModule.forFeature('products', {}),
     StoreModule.forFeature('life-after-cancer', {}),
     StoreModule.forFeature('knowledge', {}),
+    StoreModule.forFeature('patient-stories', {}),
 
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
@@ -99,6 +103,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     EffectsModule.forFeature(ProductEffects),
     EffectsModule.forFeature(LifeAfterCancerEffects),
     EffectsModule.forFeature(KnowledgeEffects),
+    EffectsModule.forFeature(PatientStoriesEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -110,6 +115,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     servicesProducts,
     servicesLifeAfterCancer,
     servicesKnowledge,
+    servicesPatientStories,
   ],
   bootstrap: [AppComponent],
 })
