@@ -34,10 +34,9 @@ export class LifeaftercancerComponent implements OnInit {
       .getLifeAfterCancer()
       .valueChanges.subscribe((result) => {
         this.pages = (result.data as any)['livetEfterCancers'].data;
-        console.log(this.pages[1]);
 
         this.pageDetails = this.pages.map((page: any) => {
-          const imgObject = page.attributes.img?.data?.[0]; // Assuming img is an array, adjust accordingly if it's not
+          const imgObject = page.attributes.img?.data?.[0];
           const imgUrl = imgObject?.attributes?.url || '';
 
           return {
@@ -46,8 +45,6 @@ export class LifeaftercancerComponent implements OnInit {
             img: 'http://localhost:1337' + imgUrl,
           };
         });
-
-        console.log('Processed pageDetails:', this.pageDetails);
       });
   }
 }

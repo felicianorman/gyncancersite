@@ -1,3 +1,4 @@
+import { AboutUsService } from './about-us.service';
 import { CartService } from './cart.service';
 import { DonateService } from './donate.service';
 import { KnowledgeService } from './knowledge.service';
@@ -28,5 +29,7 @@ export const servicesKnowledge: any[] = [KnowledgeService];
 export const servicesPatientStories: any[] = [PatientStoriesService];
 
 export const servicesCart: any[] = [CartService];
+
+export const servicesAboutUs: any[] = [AboutUsService];
 
 export * from './landingpage.service';
