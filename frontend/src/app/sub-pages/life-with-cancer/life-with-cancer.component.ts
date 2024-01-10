@@ -34,7 +34,6 @@ export class LifewithcancerComponent implements OnInit {
       .getLifeWithCancer()
       .valueChanges.subscribe((result) => {
         this.pages = (result.data as any)['donates'].data;
-        console.log(this.pages);
 
         this.pageDetails = this.pages.map((page: any) => {
           return {
@@ -45,8 +44,6 @@ export class LifewithcancerComponent implements OnInit {
                 page.attributes.img?.data?.attributes?.url || '',
           };
         });
-
-        console.log('Processed pageDetails:', this.pageDetails);
       });
   }
 }

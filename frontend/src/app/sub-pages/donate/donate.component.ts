@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { Donate } from 'src/interfaces/Donate';
 import { DonateService } from 'src/services/donate.service';
@@ -25,7 +24,6 @@ export class DonateComponent implements OnInit {
   posts: Donate;
 
   constructor(
-    private apollo: Apollo,
     private store: Store<fromStore.DonateState>,
     private donateService: DonateService,
   ) {

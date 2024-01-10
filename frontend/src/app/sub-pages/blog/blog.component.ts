@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Apollo } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { Blog } from 'src/interfaces/Blog';
 import { PatientStoriesService } from 'src/services/patient-stories.service';
@@ -23,7 +22,6 @@ export class BlogComponent implements OnInit {
   blogDetails: any[] = [];
 
   constructor(
-    private apollo: Apollo,
     private store: Store<fromStore.PatientStoriesState>,
     private patientStoriesService: PatientStoriesService,
   ) {
@@ -47,8 +45,6 @@ export class BlogComponent implements OnInit {
           img: 'http://localhost:1337' + imgObject,
         };
       });
-
-      console.log('Processed blog:', this.blog);
     });
   }
 }
