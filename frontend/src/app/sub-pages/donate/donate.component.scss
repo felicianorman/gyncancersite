@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 
 .donate-img {
@@ -8,6 +9,19 @@
   background-position: center;
   display: flex;
   align-items: flex-end;
+
+  @include mixins.mobile {
+    align-items: center;
+
+    &__text {
+      width: 80%;
+      margin: 0;
+
+      p {
+        width: 40%;
+      }
+    }
+  }
 
   &__text {
     font-family: "Jost", sans-serif;
@@ -48,6 +62,11 @@ h2 {
   align-items: center;
   justify-content: space-evenly;
 
+  @include mixins.mobile {
+    height: 100vh;
+    flex-direction: column;
+  }
+
   &__card {
     width: 300px;
     height: 300px;
@@ -84,6 +103,13 @@ h2 {
   height: 100vh;
   align-items: center;
   margin-bottom: 2%;
+
+  @include mixins.mobile {
+    flex-direction: column;
+    height: auto;
+
+    gap: 20px;
+  }
 
   &__card {
     width: 250px;

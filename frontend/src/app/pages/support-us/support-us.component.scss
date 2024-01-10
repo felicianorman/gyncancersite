@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 
 h1,
@@ -11,11 +12,23 @@ h2 {
   display: flex;
   flex-direction: row-reverse;
 
+  @include mixins.mobile {
+    height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
   &__text {
     color: $base-gray;
     font-family: "Jost", sans-serif;
     width: 50%;
     font-size: 1.5em;
+
+    @include mixins.mobile {
+      font-size: 1.1em;
+      margin-bottom: 2%;
+    }
   }
 }
 
@@ -26,6 +39,20 @@ h2 {
   height: 35vh;
   background-color: $base-gray;
   font-family: "Jost", sans-serif;
+
+  @include mixins.mobile {
+    height: 50vh;
+
+    &__title {
+      margin: 0;
+      text-align: center;
+    }
+
+    &__container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 
   &__title {
     color: $base-accent;
@@ -82,6 +109,15 @@ h2 {
   flex-direction: column;
   justify-content: center;
 
+  @include mixins.mobile {
+    height: 100vh;
+
+    &__title {
+      margin: 0;
+      text-align: center;
+    }
+  }
+
   &__title {
     color: $base-accent;
     margin-left: 2%;
@@ -95,12 +131,13 @@ h2 {
     justify-content: space-evenly;
     padding: 5px;
 
+    @include mixins.mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &--text {
       width: 60%;
-
-      p {
-        margin-left: 5%;
-      }
     }
 
     &--photo {
@@ -108,6 +145,10 @@ h2 {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @include mixins.mobile {
+        width: 100%;
+      }
     }
 
     &--img {

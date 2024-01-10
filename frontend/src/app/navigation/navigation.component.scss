@@ -1,3 +1,4 @@
+@use "../../mixins" as mixins;
 @import "../../styles.scss";
 
 header {
@@ -16,6 +17,19 @@ nav {
   display: flex;
   background-color: $base-gray;
   font-family: "Jost", sans-serif;
+
+  @include mixins.mobile {
+    align-items: center;
+    justify-content: center;
+
+    .nav-ul {
+      padding: 0;
+    }
+
+    li {
+      font-size: 0.8em;
+    }
+  }
 
   width: 100%;
 

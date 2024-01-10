@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 
 .shop-header {
@@ -15,6 +16,11 @@
     flex-wrap: wrap;
     width: 100%;
 
+    @include mixins.mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &__card {
       background-color: $base-gray;
       padding: 5px;
@@ -26,6 +32,10 @@
       justify-content: center;
 
       box-shadow: 0px 2px 5px 0px rgba(94, 94, 94, 0.2);
+
+      @include mixins.mobile {
+        width: 80%;
+      }
 
       &:hover {
         cursor: pointer;

@@ -33,6 +33,9 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include mixins.mobile {
+  }
   h2 {
     margin-left: 2%;
   }
@@ -46,8 +49,17 @@ h2 {
   &--pages {
     @include mixins.card-holder;
 
+    @include mixins.mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &--card {
       @include mixins.card;
+
+      @include mixins.mobile {
+        width: 90%;
+      }
     }
   }
 }
@@ -89,6 +101,10 @@ h2 {
   background-size: cover;
   background-position: center;
   height: 40vh;
+
+  @include mixins.mobile {
+    height: 50vh;
+  }
 
   h2,
   p,
