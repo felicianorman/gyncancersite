@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 .blog--header {
   height: 50vh;
@@ -20,6 +21,10 @@
     border-radius: 8px;
     display: flex;
     margin-bottom: 2%;
+
+    @include mixins.mobile {
+      width: 100%;
+    }
 
     &__info {
       width: 30%;
