@@ -1,12 +1,16 @@
 <div *ngIf="cartItems.length > 0">
-  <span class="material-symbols-outlined"> shopping_bag </span>
-  <ul>
-    <li *ngFor="let item of cartItems">
-      {{ item.title }} - {{ item.price }} kr
-    </li>
-  </ul>
-  <span>Total: {{ totalAmount }} kr</span>
-</div>
-<div *ngIf="cartItems.length === 0">
-  <p>Your cart is empty.</p>
+  <div class="material-symbols-outlined dropdown">
+    shopping_bag
+    <ul class="dropdown-content">
+      <li *ngFor="let item of cartItems">
+        {{ item.title }} - {{ item.price }} kr
+      </li>
+      <div class="total">
+        <span>Total: {{ totalAmount }} kr</span>
+      </div>
+    </ul>
+  </div>
+  <div *ngIf="cartItems.length === 0">
+    <p>Your cart is empty.</p>
+  </div>
 </div>
