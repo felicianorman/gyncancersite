@@ -15,13 +15,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(private store: Store<fromStore.RegisterState>) {}
 
-  addUser() {
-    // Dispatch the action with the form value
+  public addUser() {
     this.store.dispatch(new RegisterActions.CreateRegister(this.form.value));
     this.registerSuccess = true;
-
-    // No need to call registerService.createRegisterUser() here
-    // The effect will handle the mutation and the response
   }
 
   ngOnInit(): void {
