@@ -22,12 +22,10 @@ export class CartService {
     );
 
     if (existingProductIndex !== -1) {
-      // Product with the same ID already exists, update the quantity
       const updatedCartItems = [...currentCartItems];
       updatedCartItems[existingProductIndex].quantity += 1;
       this.updateCartItems(updatedCartItems);
     } else {
-      // Product with the given ID doesn't exist, add a new entry
       const updatedCartItems = [
         ...currentCartItems,
         { ...product, quantity: 1 },
@@ -45,11 +43,9 @@ export class CartService {
     if (existingProductIndex !== -1) {
       const updatedCartItems = [...currentCartItems];
 
-      // Decrease the quantity
       if (updatedCartItems[existingProductIndex].quantity > 1) {
         updatedCartItems[existingProductIndex].quantity -= 1;
       } else {
-        // Remove the entire product if the quantity is 1
         updatedCartItems.splice(existingProductIndex, 1);
       }
 

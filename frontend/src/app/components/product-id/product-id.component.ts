@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/interfaces/Product';
 import { CartService } from 'src/services/cart.service';
 import { ProductService } from 'src/services/products.service';
-import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-product-id',
@@ -11,7 +10,7 @@ import { CartComponent } from '../cart/cart.component';
   styleUrls: ['./product-id.component.scss'],
 })
 export class ProductIdComponent implements OnInit {
-  @Input() public product: any;
+  @Input() public product: Product;
   public img: string = '';
 
   constructor(
@@ -35,8 +34,6 @@ export class ProductIdComponent implements OnInit {
         });
 
         this.product = productDetail ? productDetail.attributes : null;
-
-        console.log('Found product:', this.product);
       });
     });
   }
@@ -45,8 +42,5 @@ export class ProductIdComponent implements OnInit {
     if (this.product) {
       this.cartService.addToCart(this.product);
     }
-
-    console.log('Added to cart:', this.product);
-    console.log('Cart:', this.cartService.cartItems$);
   }
 }

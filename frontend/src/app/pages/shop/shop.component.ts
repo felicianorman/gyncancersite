@@ -1,12 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { CartComponent } from 'src/app/components/cart/cart.component';
+import { Component } from '@angular/core';
 import { Product } from 'src/interfaces/Product';
+
 import { CartService } from 'src/services/cart.service';
-import { ProductService } from 'src/services/products.service';
-import * as fromStore from '../../../store/products/index';
 
 @Component({
   selector: 'app-shop',
@@ -14,7 +9,7 @@ import * as fromStore from '../../../store/products/index';
   styleUrls: ['./shop.component.scss'],
 })
 export class ShopComponent {
-  public selectedProduct: any;
+  public selectedProduct: Product;
 
   constructor(private cartService: CartService) {}
 

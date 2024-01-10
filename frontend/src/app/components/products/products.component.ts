@@ -12,10 +12,11 @@ import * as fromStore from '../../../store/products/index';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  public products$: Observable<Product[]>;
-  public products: Product[] = [];
   @Input() productDetails: any[] = [];
   @Output() public productClick: EventEmitter<any> = new EventEmitter<any>();
+
+  public products$: Observable<Product[]>;
+  public products: Product[] = [];
 
   public title: string = '';
   public description: string = '';

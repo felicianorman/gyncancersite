@@ -42,8 +42,6 @@ export class KnowledgeComponent {
           img: 'http://localhost:1337' + imgObject,
         };
       });
-
-      console.log('Processed pageDetails:', this.pageDetails);
     });
   }
 }

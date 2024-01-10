@@ -13,9 +13,6 @@ import * as fromStore from '../../../store/landingpage/index';
   styleUrls: ['./landingpage.component.scss'],
 })
 export class LandingpageComponent {
-  loading = true;
-  error: any;
-
   posts$: Observable<Post>;
   posts: Post;
 
