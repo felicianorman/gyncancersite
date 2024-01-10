@@ -1,5 +1,5 @@
 <div *ngIf="cartItems.length > 0">
-  <div class="material-symbols-outlined dropdown">
+  <div class="material-symbols-outlined dropdown" (click)="navigateToCart()">
     shopping_bag
     <ul class="dropdown-content">
       <li *ngFor="let item of cartItems">

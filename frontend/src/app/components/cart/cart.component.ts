@@ -20,4 +20,8 @@ export class CartComponent implements OnInit {
       this.totalAmount = items.reduce((acc, item) => acc + item.price, 0);
     });
   }
+
+  public navigateToCart() {
+    console.log('hej');
+  }
 }

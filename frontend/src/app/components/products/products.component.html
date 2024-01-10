@@ -9,10 +9,10 @@
       *ngFor="let product of productDetails"
       (click)="onProductClick(product)"
     >
-      <h2>{{ product.title }}</h2>
       <img [src]="product.img" alt="" />
+      <h2>{{ product.title }}</h2>
       <!-- <p>{{ product.description }}</p> -->
-      <span>Pris: {{ product.price }}</span>
+      <span>Pris: {{ product.price }} kr</span>
     </article>
   </section>
 </main>
