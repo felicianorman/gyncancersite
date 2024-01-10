@@ -1,3 +1,4 @@
+import { CartService } from './cart.service';
 import { DonateService } from './donate.service';
 import { KnowledgeService } from './knowledge.service';
 import { LandingPageService } from './landingpage.service';
@@ -25,5 +26,7 @@ export const servicesLifeAfterCancer: any[] = [LifeAfterCancerService];
 export const servicesKnowledge: any[] = [KnowledgeService];
 
 export const servicesPatientStories: any[] = [PatientStoriesService];
+
+export const servicesCart: any[] = [CartService];
 
 export * from './landingpage.service';

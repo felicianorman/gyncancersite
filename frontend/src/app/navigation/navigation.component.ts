@@ -14,11 +14,9 @@ export class NavigationComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Subscribe to router events to reset dropdown state on route changes
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: Event) => {
-        // Check the current route and close the dropdown if needed
         if ((event as NavigationEnd).url !== '/stod-oss') {
           this.isDropdownOpen = false;
         }

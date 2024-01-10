@@ -1,0 +1,16 @@
+<div *ngIf="cartItems.length > 0">
+  <div class="material-symbols-outlined dropdown" (click)="navigateToCart()">
+    shopping_bag
+    <ul class="dropdown-content">
+      <li *ngFor="let item of cartItems">
+        {{ item.title }} - {{ item.price }} kr
+      </li>
+      <div class="total">
+        <span>Total: {{ totalAmount }} kr</span>
+      </div>
+    </ul>
+  </div>
+  <div *ngIf="cartItems.length === 0">
+    <p>Your cart is empty.</p>
+  </div>
+</div>

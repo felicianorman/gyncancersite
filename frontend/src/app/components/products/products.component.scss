@@ -11,17 +11,21 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
     flex-wrap: wrap;
     width: 100%;
 
     &__card {
-      background-color: pink;
-
-      width: 40%;
+      background-color: $base-gray;
+      padding: 5px;
+      width: 30%;
+      min-height: 400px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+
+      box-shadow: 0px 2px 5px 0px rgba(94, 94, 94, 0.2);
 
       &:hover {
         cursor: pointer;
@@ -32,8 +36,13 @@
         font-size: 0.9em;
       }
 
+      h2 {
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+
       img {
-        width: 50%;
+        width: 60%;
       }
     }
   }
