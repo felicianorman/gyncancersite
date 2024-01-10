@@ -37,7 +37,6 @@ export class ProductsComponent {
 
     this.productService.getProducts().valueChanges.subscribe((result) => {
       this.products = (result.data as any)['products'].data;
-      console.log(this.products);
 
       this.productDetails = this.products.map((product: any) => {
         return {
@@ -50,8 +49,6 @@ export class ProductsComponent {
               product.attributes.img?.data?.attributes?.url || '',
         };
       });
-
-      console.log('Processed productDetails:', this.productDetails);
     });
   }
 

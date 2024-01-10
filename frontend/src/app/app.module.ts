@@ -53,6 +53,7 @@ import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeafte
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
+import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     PreventionComponent,
     BlogComponent,
     CartComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

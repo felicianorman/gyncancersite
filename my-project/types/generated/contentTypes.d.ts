@@ -683,6 +683,7 @@ export interface ApiAboutUsAboutUs extends Schema.CollectionType {
     singularName: 'about-us';
     pluralName: 'about-uses';
     displayName: 'about-us';
+    description: '';
   };
   options: {
     draftAndPublish: true;
