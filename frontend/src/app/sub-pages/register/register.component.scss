@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 
 .register-img {
@@ -51,6 +52,10 @@ h3 {
     display: flex;
     margin-top: 2%;
 
+    @include mixins.mobile {
+      margin-bottom: 5%;
+    }
+
     button {
       background-color: $base-accent;
       color: $base-gray;
@@ -75,6 +80,11 @@ h3 {
   &__container {
     display: flex;
     gap: 50px;
+
+    @include mixins.mobile {
+      flex-direction: column;
+      height: auto;
+    }
 
     &--card {
       display: flex;
@@ -110,6 +120,11 @@ h3 {
     width: 700px;
     height: 500px;
     box-shadow: 0px 0px 8px 0px rgba(140, 136, 136, 0.75);
+
+    @include mixins.mobile {
+      height: auto;
+      width: 100%;
+    }
   }
 }
 
