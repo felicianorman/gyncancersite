@@ -1,16 +1,45 @@
 <div *ngIf="cartItems.length > 0">
-  <div class="material-symbols-outlined dropdown" (click)="navigateToCart()">
-    shopping_bag
+  <div class="dropdown">
+    <span class="material-symbols-outlined dropdown">shopping_bag</span>
+
     <ul class="dropdown-content">
       <li *ngFor="let item of cartItems">
-        {{ item.title }} - {{ item.price }} kr
+        {{ item.title }} - {{ item.price }} x {{ item.quantity }} kr
+        <button (click)="removeFromCart(item.productId)">Remove</button>
       </li>
       <div class="total">
-        <span>Total: {{ totalAmount }} kr</span>
+        <span>Total: {{ calculateTotalAmount() }} kr</span>
+        <li>
+          <button (click)="navigateToCart()">Proceed to Checkout</button>
+        </li>
       </div>
     </ul>
   </div>
-  <div *ngIf="cartItems.length === 0">
-    <p>Your cart is empty.</p>
-  </div>
 </div>
+<div *ngIf="cartItems.length === 0">No products in cart</div>
+
+<!-- <div *ngIf="cartItems.length > 0" class="dropdown">
+  <span
+    class="material-symbols-outlined dropbtn"
+    (mouseenter)="toggleDropdown()"
+  >
+    shopping_bag
+  </span>
+  <span class="material-symbols-outlined__badge">{{ cartItems.length }}</span>
+  <ul class="dropdown-content">
+    <li *ngFor="let item of cartItems">
+      {{ item.title }} - {{ item.price }} kr
+      <button (click)="removeFromCart(item.id)">Remove</button>
+    </li>
+    <div class="total">
+      <span>Total: {{ totalAmount }} kr</span>
+      <li>
+        <button (click)="navigateToCart()">Proceed to Checkout</button>
+      </li>
+    </div>
+  </ul>
+</div>
+
+<div *ngIf="cartItems.length === 0">
+  <p>Your cart is empty.</p>
+</div> -->

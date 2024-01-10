@@ -9,6 +9,7 @@ import { LandingpageComponent } from './pages/landingpage/landingpage.component'
 import { ShopComponent } from './pages/shop/shop.component';
 import { SupportUsComponent } from './pages/support-us/support-us.component';
 import { BlogComponent } from './sub-pages/blog/blog.component';
+import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
 import { CloseRelativeComponent } from './sub-pages/close-relative/close-relative.component';
 import { ContactUsComponent } from './sub-pages/contact-us/contact-us.component';
 import { DonateComponent } from './sub-pages/donate/donate.component';
@@ -111,6 +112,10 @@ const routes: Routes = [
   {
     path: 'webshop/:id',
     component: ProductIdComponent,
+  },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
   },
 ];
 
