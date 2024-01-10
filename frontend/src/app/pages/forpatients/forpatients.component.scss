@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 
 body {
@@ -19,10 +20,24 @@ span {
   background-position: top;
   background-repeat: no-repeat;
 
+  @include mixins.mobile {
+    height: 60vh;
+  }
+
   &--text {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include mixins.mobile {
+      justify-content: flex-start;
+      margin: 0;
+
+      h2 {
+        width: 50%;
+        font-size: 0.9em;
+      }
+    }
 
     height: inherit;
     margin-left: 2%;
@@ -62,11 +77,18 @@ span {
   align-items: center;
   justify-content: space-between;
 
+  @include mixins.mobile {
+    flex-direction: column;
+  }
+
   .fp-img {
-    background-color: pink;
     width: 50%;
     height: 400px;
     display: flex;
+
+    @include mixins.mobile {
+      width: 100%;
+    }
 
     &--text {
       color: $base-gray;

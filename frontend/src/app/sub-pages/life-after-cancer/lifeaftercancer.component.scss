@@ -10,6 +10,10 @@
   align-items: center;
   justify-content: flex-end;
 
+  @include mixins.mobile {
+    align-items: flex-start;
+  }
+
   h1 {
     color: $base-gray;
     font-weight: normal;
@@ -37,8 +41,17 @@
   &--pages {
     @include mixins.card-holder;
 
+    @include mixins.mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
     &--cards {
       @include mixins.card;
+
+      @include mixins.mobile {
+        width: 100%;
+      }
     }
   }
 }
@@ -69,12 +82,21 @@
   background-size: cover;
   background-position: center;
 
+  @include mixins.mobile {
+    margin: 0;
+    height: 60vh;
+  }
+
   &--text {
     margin-left: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: $base-gray;
+
+    @include mixins.mobile {
+      margin-top: 10%;
+    }
 
     h2 {
       color: $base-gray;
@@ -83,6 +105,10 @@
 
     p {
       width: 50%;
+
+      @include mixins.mobile {
+        font-size: 0.9em;
+      }
     }
   }
 }
