@@ -1,0 +1,30 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles.scss";
+
+.wwd-header {
+  height: 50vh;
+  background-color: $base-accent;
+  display: flex;
+  align-items: center;
+  color: $base-gray;
+
+  h1 {
+    margin-left: 2%;
+  }
+}
+
+.wwd-content {
+  background-color: $base-gray;
+
+  h2 {
+    margin: 0;
+    color: $base-accent;
+  }
+
+  &__text {
+    margin-left: 2%;
+    p {
+      width: 90%;
+    }
+  }
+}

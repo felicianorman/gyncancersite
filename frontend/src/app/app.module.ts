@@ -21,6 +21,7 @@ import { NewsComponent } from './sub-pages/news/news.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import {
+  servicesAboutUs,
   servicesCart,
   servicesDonate,
   servicesKnowledge,
@@ -33,6 +34,7 @@ import {
   servicesSupportUs,
 } from 'src/services';
 
+import { AboutUsEffects } from 'src/store/about-us';
 import { DonateEffects } from 'src/store/donate/effects';
 import { KnowledgeEffects } from 'src/store/knowledge';
 import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
@@ -97,6 +99,8 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     StoreModule.forFeature('life-after-cancer', {}),
     StoreModule.forFeature('knowledge', {}),
     StoreModule.forFeature('patient-stories', {}),
+    StoreModule.forFeature('cart', {}),
+    StoreModule.forFeature('about-us', {}),
 
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
@@ -107,6 +111,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     EffectsModule.forFeature(LifeAfterCancerEffects),
     EffectsModule.forFeature(KnowledgeEffects),
     EffectsModule.forFeature(PatientStoriesEffects),
+    EffectsModule.forFeature(AboutUsEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -120,6 +125,7 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     servicesKnowledge,
     servicesPatientStories,
     servicesCart,
+    servicesAboutUs,
   ],
   bootstrap: [AppComponent],
 })

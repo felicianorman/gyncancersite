@@ -1,0 +1,59 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles.scss";
+
+.aboutus-header {
+  background-image: url("../../../assets/aboutus2-header.jpg");
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  color: $base-gray;
+
+  &--text {
+    margin-left: 2%;
+
+    p {
+      width: 40%;
+      font-size: 0.9em;
+    }
+  }
+}
+
+.aboutus-content {
+  h2 {
+    color: $base-accent;
+    margin-left: 2%;
+  }
+
+  &--members {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: auto;
+
+    &__card {
+      min-height: 1000px;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $base-gray;
+      padding: 10px;
+
+      img {
+        width: 200px;
+      }
+
+      h3 {
+        color: $base-accent;
+      }
+    }
+  }
+}
+
+.content {
+  font-size: 0.8em;
+}

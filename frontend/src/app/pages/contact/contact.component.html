@@ -1,1 +1,28 @@
-<p>contact works!</p>
+<div class="aboutus-header">
+  <div class="aboutus-header--text">
+    <h1>Om oss</h1>
+    <p>
+      Vi är en ideell patientförening som sprider kunskap och skapar debatt om
+      gynekologiska cancersjukdomar. Vi stödjer drabbade och närstående genom
+      våra slutna Facebookgrupper och digitala träffar.
+    </p>
+  </div>
+</div>
+<main class="aboutus-content">
+  <h2>Styrelsen</h2>
+  <section
+    class="aboutus-content--members"
+    *ngIf="pageDetails && pageDetails.length > 0"
+  >
+    <article
+      class="aboutus-content--members__card"
+      *ngFor="let page of pageDetails"
+    >
+      <img [src]="page.img" alt="" />
+      <h3>{{ page.title }}</h3>
+      <markdown [data]="page.content" class="content">
+        <p>{{ page.content }}</p>
+      </markdown>
+    </article>
+  </section>
+</main>
