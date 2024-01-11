@@ -2,6 +2,8 @@
   <span class="material-symbols-outlined dropdown">shopping_bag</span>
 
   <ul class="dropdown-content">
+    <div class="cart"><h3>Varukorg</h3></div>
+
     <li *ngFor="let item of cartItems">
       {{ item.title }} - {{ item.price }} kr x {{ item.quantity }}
       <button (click)="removeFromCart(item.productId)">Ta bort</button>
