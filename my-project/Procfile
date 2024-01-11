@@ -1,1 +1,1 @@
-web: npm start
+web: node 18.13.0 npm start
