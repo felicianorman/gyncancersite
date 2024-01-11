@@ -27,6 +27,7 @@ export class ProductEffects {
                     attributes {
                       title
                       productId
+                      quantity
                       img {
                         data {
                           attributes {

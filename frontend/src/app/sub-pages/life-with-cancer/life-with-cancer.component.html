@@ -5,11 +5,9 @@
 </div>
 
 <main class="lfw-content" *ngIf="pageDetails && pageDetails.length > 0">
-  <div>
-    <markdown [data]="pageDetails[0].content">
-      <p class="lfw-content--text">{{ pageDetails[0].content }}</p></markdown
-    >
-  </div>
+  <markdown [data]="pageDetails[0].content" class="lfw-content--text">
+    <p>{{ pageDetails[0].content }}</p></markdown
+  >
 
   <div class="lfw-content--pages">
     <div class="lfw-content--pages--card">
@@ -76,10 +74,12 @@
     </div>
   </div>
   <div class="lfw-words">
-    <h2>{{ pageDetails[7].title }}</h2>
-    <p>
-      {{ pageDetails[7].content }}
-    </p>
-    <span>Läs mer</span>
+    <div class="lfw-words--text">
+      <h2>{{ pageDetails[7].title }}</h2>
+      <p>
+        {{ pageDetails[7].content }}
+      </p>
+      <span>Läs mer</span>
+    </div>
   </div>
 </main>

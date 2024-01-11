@@ -6,7 +6,7 @@ body {
 }
 .palliative-header {
   height: 50vh;
-  // background-image: url("../../../assets/palliative-header.jpg");
+  background-image: url("../../../assets/palliative-header.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -56,7 +56,7 @@ body {
   &--late {
     margin-top: 5%;
     height: 40vh;
-    // background-image: url("../../../assets/palliative-end.jpg");
+    background-image: url("../../../assets/palliative-end.jpg");
     background-size: cover;
     background-position: center;
     display: flex;

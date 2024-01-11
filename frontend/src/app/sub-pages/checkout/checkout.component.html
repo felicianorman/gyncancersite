@@ -1,54 +1,38 @@
 <div *ngIf="cartItems.length > 0">
   <h2>Checkout</h2>
-  <ul>
-    <li *ngFor="let item of cartItems">
-      {{ item.title }} - {{ item.price }} x {{ item.quantity }} kr
-    </li>
-  </ul>
-  <p>Total Amount: {{ calculateTotalAmount() }} kr</p>
-  <form [formGroup]="form" (ngSubmit)="checkout()">
-    <div class="register-form__container">
-      <div class="register-form__container--card">
-        <label for="firstName">Förnamn</label>
-        <input type="text" formControlName="firstName" />
+  <div *ngIf="orderSuccess">Tack för din beställning!</div>
+  <div *ngIf="!orderSuccess">
+    <ul>
+      <li *ngFor="let item of cartItems">
+        {{ item.title }} - {{ item.price }} x {{ item.quantity }} kr
+      </li>
+    </ul>
+    <p>Total Amount: {{ calculateTotalAmount() }} kr</p>
+    <form [formGroup]="form" (ngSubmit)="registerOrder()">
+      <div class="register-form__container">
+        <div class="register-form__container--card">
+          <label for="firstName">Förnamn</label>
+          <input type="text" formControlName="firstName" />
+        </div>
+        <div class="register-form__container--card">
+          <label for="lastName">Efternamn</label>
+          <input type="text" formControlName="lastName" />
+        </div>
       </div>
-      <div class="register-form__container--card">
-        <label for="lastName">Efternamn</label>
-        <input type="text" formControlName="lastName" />
+      <div class="register-form__container">
+        <div class="register-form__container--card">
+          <label for="email">Email</label>
+          <input type="string" formControlName="email" />
+        </div>
+        <div class="register-form__container--card">
+          <label for="address">Address</label>
+          <input type="string" formControlName="address" />
+        </div>
       </div>
-    </div>
-    <div class="register-form__container">
-      <div class="register-form__container--card">
-        <label for="age">Ålder</label>
-        <input type="number" formControlName="age" />
+      <div class="register-form__container"></div>
+      <div class="register-form__button">
+        <button>Bli medlem</button>
       </div>
-      <div class="register-form__container--card">
-        <label for="region">Region</label>
-        <input type="string" formControlName="region" />
-      </div>
-    </div>
-    <div class="register-form__container">
-      <div class="register-form__container--card">
-        <label for="role">Roll</label>
-        <select name="role" id="" formControlName="role">
-          <option value="drabbad">Drabbad</option>
-          <option value="naerstaende">Närstående</option>
-          <option value="stoedmedlem">Stödmedlem</option>
-        </select>
-      </div>
-      <div class="register-form__container--card">
-        <label for="email">E-mail</label>
-        <input type="string" formControlName="email" />
-      </div>
-    </div>
-    <div class="register-form__button">
-      <button>Bli medlem</button>
-    </div>
-  </form>
-  <!-- Add additional checkout form or payment processing logic here -->
-</div>
-<div *ngIf="cartItems.length === 0">
-  <p>
-    Your cart is empty. Add items to your cart before proceeding to checkout.
-  </p>
+    </form>
+  </div>
 </div>

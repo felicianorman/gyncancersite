@@ -34,16 +34,16 @@ h2 {
   flex-direction: column;
   justify-content: center;
 
+  &--text {
+    margin-left: 2%;
+    width: 90%;
+    font-size: 0.9em;
+  }
+
   @include mixins.mobile {
   }
   h2 {
     margin-left: 2%;
-  }
-
-  p {
-    margin-left: 2%;
-    width: 90%;
-    font-size: 0.9em;
   }
 
   &--pages {
@@ -66,7 +66,7 @@ h2 {
 
 .lfw-diet {
   width: 100%;
-  // background-image: url("../../../assets/lfw-food.jpg");
+  background-image: url("../../../assets/lfw-food.jpg");
   background-size: cover;
   background-position: center;
   height: 40vh;
@@ -80,6 +80,7 @@ h2 {
     h2 {
       color: $base-gray;
       font-size: 2.2em;
+      margin: 0;
     }
 
     p {
@@ -89,7 +90,6 @@ h2 {
 
     span {
       font-size: 0.9em;
-      margin-left: 2%;
     }
     color: $base-gray;
   }
@@ -101,27 +101,27 @@ h2 {
   background-size: cover;
   background-position: center;
   height: 40vh;
+  display: flex;
+  align-items: center;
+
+  &--text {
+    margin-left: 2%;
+
+    color: $base-gray;
+
+    h2 {
+      font-size: 2.2em;
+      color: $base-gray;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.1em;
+      width: 60%;
+    }
+  }
 
   @include mixins.mobile {
     height: 50vh;
-  }
-
-  h2,
-  p,
-  span {
-    color: $base-gray;
-  }
-
-  span {
-    margin-left: 2%;
-  }
-
-  h2 {
-    font-size: 2.2em;
-  }
-
-  p {
-    font-size: 1.1em;
-    width: 60%;
   }
 }

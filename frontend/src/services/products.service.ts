@@ -14,6 +14,7 @@ export class ProductService {
               attributes {
                 title
                 productId
+                quantity
                 img {
                   data {
                     attributes {
