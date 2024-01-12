@@ -10,7 +10,88 @@
   >
 
   <div class="lfw-content--pages">
-    <div class="lfw-content--pages--card">
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button
+              class="btn"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              {{ pageDetails[1].title }}
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseOne"
+          class="collapse show"
+          aria-labelledby="headingOne"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>{{ pageDetails[1].content }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button
+              class="btn collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              {{ pageDetails[2].title }}
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseTwo"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>{{ pageDetails[2].content }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button
+              class="btn collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              {{ pageDetails[3].title }}
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseThree"
+          class="collapse"
+          aria-labelledby="headingThree"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>{{ pageDetails[3].content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="lfw-content--pages--card" (click)="navigateToDoctor()">
       <img [src]="pageDetails[1].img" class="lfw-content--pages--card__img" />
 
       <h2>{{ pageDetails[1].title }}</h2>
@@ -19,7 +100,7 @@
       </p>
       <span>Läs mer</span>
     </div>
-    <div class="lfw-content--pages--card">
+    <div class="lfw-content--pages--card" (click)="navigateToAfter()">
       <img class="lfw-content--pages--card__img" [src]="pageDetails[2].img" />
       <h2>{{ pageDetails[2].title }}</h2>
       <p>
@@ -27,18 +108,18 @@
       </p>
       <span>Läs mer</span>
     </div>
-    <div class="lfw-content--pages--card">
+    <div class="lfw-content--pages--card" (click)="navigateToRights()">
       <img class="lfw-content--pages--card__img" [src]="pageDetails[3].img" />
       <h2>{{ pageDetails[3].title }}</h2>
       <p>
         {{ pageDetails[3].content }}
       </p>
       <span>Läs mer</span>
-    </div>
+    </div> -->
   </div>
 
   <!-- byt till bild?-->
-  <div class="lfw-diet">
+  <div class="lfw-diet" (click)="navigateToDiet()">
     <div class="lfw-diet--text">
       <h2>{{ pageDetails[8].title }}</h2>
       <p>
@@ -48,7 +129,88 @@
     </div>
   </div>
   <div class="lfw-content--pages">
-    <div class="lfw-content--pages--card">
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button
+              class="btn"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseFour"
+              aria-expanded="true"
+              aria-controls="collapseFour"
+            >
+              {{ pageDetails[4].title }}
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseFour"
+          class="collapse show"
+          aria-labelledby="headingFour"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>{{ pageDetails[4].content }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h5 class="mb-0">
+            <button
+              class="btn collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              {{ pageDetails[5].title }}
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseFive"
+          class="collapse"
+          aria-labelledby="headingFive"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>{{ pageDetails[5].content }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingSix">
+          <h5 class="mb-0">
+            <button
+              class="btn collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              {{ pageDetails[6].title }}
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseSix"
+          class="collapse"
+          aria-labelledby="headingSix"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <p>{{ pageDetails[6].content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="lfw-content--pages--card" (click)="navigateToFatigue()">
       <img class="lfw-content--pages--card__img" [src]="pageDetails[4].img" />
       <h2>{{ pageDetails[4].title }}</h2>
       <p>
@@ -56,7 +218,7 @@
       </p>
       <span>Läs mer</span>
     </div>
-    <div class="lfw-content--pages--card">
+    <div class="lfw-content--pages--card" (click)="navigateToSexuality()">
       <img class="lfw-content--pages--card__img" [src]="pageDetails[5].img" />
       <h2>{{ pageDetails[5].title }}</h2>
       <p>
@@ -64,16 +226,16 @@
       </p>
       <span>Läs mer</span>
     </div>
-    <div class="lfw-content--pages--card">
+    <div class="lfw-content--pages--card" (click)="navigateToLymph()">
       <img class="lfw-content--pages--card__img" [src]="pageDetails[6].img" />
       <h2>{{ pageDetails[6].title }}</h2>
       <p>
         {{ pageDetails[6].content }}
       </p>
       <span>Läs mer</span>
-    </div>
+    </div> -->
   </div>
-  <div class="lfw-words">
+  <div class="lfw-words" (click)="navigateToText()">
     <div class="lfw-words--text">
       <h2>{{ pageDetails[7].title }}</h2>
       <p>

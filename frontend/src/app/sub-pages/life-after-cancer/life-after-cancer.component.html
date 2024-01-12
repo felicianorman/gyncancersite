@@ -10,7 +10,7 @@
   </div>
 
   <div class="lac-content--pages">
-    <div class="lac-content--pages--cards">
+    <div class="lac-content--pages--cards" (click)="navigateToWorry()">
       <img class="lac-content--pages--cards__img" [src]="pageDetails[1].img" />
       <h2>{{ pageDetails[1].title }}</h2>
       <p>
@@ -18,7 +18,7 @@
       </p>
       <span>Läs mer</span>
     </div>
-    <div class="lac-content--pages--cards">
+    <div class="lac-content--pages--cards" (click)="navigateToRehab()">
       <img class="lac-content--pages--cards__img" [src]="pageDetails[2].img" />
       <h2>{{ pageDetails[2].title }}</h2>
       <p>
@@ -26,7 +26,7 @@
       </p>
       <span>Läs mer</span>
     </div>
-    <div class="lac-content--pages--cards">
+    <div class="lac-content--pages--cards" (click)="navigateToHangover()">
       <img class="lac-content--pages--cards__img" [src]="pageDetails[3].img" />
       <h2>{{ pageDetails[3].title }}</h2>
       <p>
@@ -35,7 +35,7 @@
       <span>Läs mer</span>
     </div>
   </div>
-  <div class="lac-stories">
+  <div class="lac-stories" (click)="navigateToStories()">
     <div class="lac-stories--text">
       <h2>{{ pageDetails[7].title }}</h2>
       <p>{{ pageDetails[7].content }}</p>
@@ -68,7 +68,7 @@
       <span>Läs mer</span>
     </div>
   </div>
-  <div class="lac-workout">
+  <div class="lac-workout" (click)="navigateToActivity()">
     <div class="lac-workout--text">
       <h2>{{ pageDetails[8].title }}</h2>
       <p>

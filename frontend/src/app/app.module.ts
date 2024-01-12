@@ -50,12 +50,25 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ActivityComponent } from './sub-pages/activity/activity.component';
+import { AfterCancerComponent } from './sub-pages/after-cancer/after-cancer.component';
 import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
+import { DietComponent } from './sub-pages/diet/diet.component';
+import { DoctorComponent } from './sub-pages/doctor/doctor.component';
+import { FatigueComponent } from './sub-pages/fatigue/fatigue.component';
 import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
+import { HangoverComponent } from './sub-pages/hangover/hangover.component';
 import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
+import { LymphComponent } from './sub-pages/lymph/lymph.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
+import { RehabComponent } from './sub-pages/rehab/rehab.component';
+import { RightsComponent } from './sub-pages/rights/rights.component';
+import { SexualityComponent } from './sub-pages/sexuality/sexuality.component';
+import { TreatmentComponent } from './sub-pages/treatment/treatment.component';
+import { WordsComponent } from './sub-pages/words/words.component';
+import { WorryComponent } from './sub-pages/worry/worry.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +94,19 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     BlogComponent,
     CartComponent,
     CheckoutComponent,
+    DoctorComponent,
+    AfterCancerComponent,
+    RightsComponent,
+    FatigueComponent,
+    SexualityComponent,
+    LymphComponent,
+    DietComponent,
+    WordsComponent,
+    WorryComponent,
+    RehabComponent,
+    HangoverComponent,
+    ActivityComponent,
+    TreatmentComponent,
   ],
   imports: [
     BrowserModule,

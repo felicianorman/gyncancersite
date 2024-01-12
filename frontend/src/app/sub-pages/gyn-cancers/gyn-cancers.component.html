@@ -1,39 +1,94 @@
 <div class="gyncancer--header">
   <div class="gyncancer--header--text">
     <h1>Gyncancer</h1>
-    <p>
-      Det finns flera olika typer av gyncancer. De vanligaste är
-      livmoderhalscancer, äggstockscancer, livmoderkroppscancer och slemhinne-
-      eller skivepitelcancer i slidan.
-    </p>
   </div>
 </div>
 <main class="gyncancer--content" *ngIf="pageDetails && pageDetails.length > 0">
-  <section class="gyncancer--content--pages">
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
-      <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[4].img" />
-      <h2>{{ pageDetails[4].title }}</h2>
-      <p>{{ pageDetails[4].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
-      <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
-      <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
-      <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-  </section>
+  <h2>Kunskap om cancer</h2>
+  <p>
+    Det finns flera olika typer av gyncancer. De vanligaste är
+    livmoderhalscancer, äggstockscancer, livmoderkroppscancer och slemhinne-
+    eller skivepitelcancer i slidan.
+  </p>
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button
+            class="btn"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            {{ pageDetails[3].title }}
+          </button>
+        </h5>
+      </div>
+
+      <div
+        id="collapseOne"
+        class="collapse show"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <p>{{ pageDetails[3].content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            {{ pageDetails[4].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseTwo"
+        class="collapse"
+        aria-labelledby="headingTwo"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <p>{{ pageDetails[4].content }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            {{ pageDetails[5].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseThree"
+        class="collapse"
+        aria-labelledby="headingThree"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <p>{{ pageDetails[5].content }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

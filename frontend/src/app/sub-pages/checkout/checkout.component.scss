@@ -1,0 +1,89 @@
+@import "../../../styles";
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    color: $base-accent;
+  }
+
+  &--checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+
+    span {
+      font-weight: bold;
+    }
+
+    &__list {
+      padding: 20px;
+      border: 1px solid $base-gray;
+
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+}
+
+.register-form__button {
+  display: flex;
+
+  justify-content: center;
+  margin-bottom: 4%;
+  margin-top: 4%;
+
+  button {
+    border: none;
+    background-color: $base-accent;
+    color: $base-gray;
+    padding: 10px;
+    width: 150px;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: $base-accent-hover;
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+}
+.register-form__container {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 50px;
+  gap: 10px;
+  background-color: $base-gray;
+  padding: 10px;
+
+  &--card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    label {
+      font-weight: 500;
+    }
+
+    input {
+      padding: 5px;
+    }
+  }
+}
+
+.success {
+  padding: 10px;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

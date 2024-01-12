@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Page } from 'src/interfaces/Page';
@@ -22,6 +23,7 @@ export class LifeaftercancerComponent implements OnInit {
   constructor(
     private store: Store<fromStore.LifeAfterCancerState>,
     private lifeAfterCancerService: LifeAfterCancerService,
+    private router: Router,
   ) {
     this.store.select((state) => state.lifeAfterCancer);
   }
@@ -46,5 +48,25 @@ export class LifeaftercancerComponent implements OnInit {
           };
         });
       });
+  }
+
+  public navigateToWorry() {
+    this.router.navigate(['for-patienter/livet-efter-cancerr/oro-och-angest']);
+  }
+
+  public navigateToRehab() {
+    this.router.navigate(['for-patienter/livet-efter-cancer/rehab']);
+  }
+
+  public navigateToHangover() {
+    this.router.navigate(['for-patienter/livet-efter-cancer/baksmallan']);
+  }
+
+  public navigateToStories() {
+    this.router.navigate(['kunskap/patient-berattelser']);
+  }
+
+  public navigateToActivity() {
+    this.router.navigate(['for-patienter/livet-efter-cancer/aktivitet']);
   }
 }
