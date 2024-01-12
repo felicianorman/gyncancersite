@@ -50,12 +50,20 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ActivityComponent } from './sub-pages/activity/activity.component';
 import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
+import { DietComponent } from './sub-pages/diet/diet.component';
+import { EndoComponent } from './sub-pages/endo/endo.component';
 import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
 import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
+import { CervicalCancerComponent } from './sub-pages/livmoderhalscancer/cerivalcancer.component';
+import { OvarianComponent } from './sub-pages/ovarian/ovarian.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
+import { TreatmentComponent } from './sub-pages/treatment/treatment.component';
+import { WordsComponent } from './sub-pages/words/words.component';
+import { VulvaComponent } from './sub-pages/vulva/vulva.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +89,16 @@ import { RegisterComponent } from './sub-pages/register/register.component';
     BlogComponent,
     CartComponent,
     CheckoutComponent,
+
+    DietComponent,
+    WordsComponent,
+
+    ActivityComponent,
+    TreatmentComponent,
+    OvarianComponent,
+    EndoComponent,
+    CervicalCancerComponent,
+    VulvaComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
   templateUrl: './treatment.component.html',
   styleUrls: ['./treatment.component.scss'],
 })
-export class TreatmentComponent {}
+export class TreatmentComponent {
+  public toggle: boolean = false;
+
+  public toggleText() {
+    this.toggle = !this.toggle;
+  }
+}

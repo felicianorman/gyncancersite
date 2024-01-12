@@ -14,6 +14,7 @@ export class KnowledgeService {
               attributes {
                 title
                 content
+                preview
                 img {
                   data {
                     attributes {
