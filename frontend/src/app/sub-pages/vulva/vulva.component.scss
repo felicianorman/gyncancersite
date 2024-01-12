@@ -1,13 +1,12 @@
 @use "../../../mixins" as mixins;
 @import "../../../styles.scss";
-
 body {
   background-color: $base-gray;
 }
-.ovarian-header {
+.vulva-header {
   @include mixins.cancer;
 }
 
-.ovarian-content {
+.vulva-content {
   @include mixins.cancer-content;
 }

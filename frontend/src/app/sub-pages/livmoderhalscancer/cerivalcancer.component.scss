@@ -4,10 +4,10 @@
 body {
   background-color: $base-gray;
 }
-.ovarian-header {
+.cervical-header {
   @include mixins.cancer;
 }
 
-.ovarian-content {
+.cervical-content {
   @include mixins.cancer-content;
 }

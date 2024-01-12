@@ -4,10 +4,17 @@
 body {
   background-color: $base-gray;
 }
-.ovarian-header {
+
+.endo-header {
   @include mixins.cancer;
 }
 
-.ovarian-content {
-  @include mixins.cancer-content;
+.endo-content {
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.text {
+  font-size: 0.9em;
+  width: 90%;
 }

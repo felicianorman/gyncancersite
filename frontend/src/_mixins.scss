@@ -12,6 +12,31 @@
   }
 }
 
+@mixin cancer {
+  height: 50vh;
+  background-image: url("./assets/lac_stories.jpg");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  h1 {
+    color: $base-gray;
+    margin-left: 2%;
+  }
+}
+
+@mixin cancer-content {
+  margin-left: 2%;
+  margin-top: 2%;
+
+  .text {
+    font-size: 0.9em;
+    width: 90%;
+  }
+}
+
 @mixin card-holder {
   display: flex;
   align-items: center;

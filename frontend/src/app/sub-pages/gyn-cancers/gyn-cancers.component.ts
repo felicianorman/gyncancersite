@@ -59,4 +59,34 @@ export class GynCancersComponent implements OnInit {
 
     this.router.navigate(['kunskap/aggstockscancer'], navigationExtras);
   }
+
+  public endoCancer() {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        pageDetails: this.pageDetails,
+      },
+    };
+
+    this.router.navigate(['kunskap/livmoderkroppscancer'], navigationExtras);
+  }
+
+  public cervicalCancer() {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        pageDetails: this.pageDetails,
+      },
+    };
+
+    this.router.navigate(['kunskap/livmoderhalscancer'], navigationExtras);
+  }
+
+  public vulvaCancer() {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        pageDetails: this.pageDetails,
+      },
+    };
+
+    this.router.navigate(['kunskap/vulvacancer'], navigationExtras);
+  }
 }

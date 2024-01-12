@@ -1,0 +1,11 @@
+<div class="cervical-header">
+  <h1>Livmoderhals- och vaginalcancer</h1>
+</div>
+<main
+  *ngIf="cervicalCancer && cervicalCancer.length > 0"
+  class="cervical-content"
+>
+  <markdown [data]="cervicalCancer[3].content" class="text">
+    {{ cervicalCancer[3].content }}
+  </markdown>
+</main>

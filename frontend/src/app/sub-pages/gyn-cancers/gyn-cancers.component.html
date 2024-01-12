@@ -19,7 +19,7 @@
         <span>Läs mer</span>
       </div>
     </div>
-    <div class="gyncancer--content--pages__card">
+    <div class="gyncancer--content--pages__card" (click)="endoCancer()">
       <img [src]="pageDetails[1].img" alt="" />
 
       <h2>{{ pageDetails[1].title }}</h2>
@@ -28,7 +28,7 @@
         <span>Läs mer</span>
       </div>
     </div>
-    <div class="gyncancer--content--pages__card">
+    <div class="gyncancer--content--pages__card" (click)="cervicalCancer()">
       <img [src]="pageDetails[3].img" alt="" />
       <h2>{{ pageDetails[3].title }}</h2>
       <div class="gyncancer--content--pages__card--text">
@@ -38,7 +38,7 @@
         </div>
       </div>
     </div>
-    <div class="gyncancer--content--pages__card">
+    <div class="gyncancer--content--pages__card" (click)="vulvaCancer()">
       <img [src]="pageDetails[4].img" alt="" />
       <h2>{{ pageDetails[4].title }}</h2>
       <div class="gyncancer--content--pages__card--text">
