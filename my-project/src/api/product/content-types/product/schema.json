@@ -34,6 +34,9 @@
     },
     "productId": {
       "type": "uid"
+    },
+    "quantity": {
+      "type": "integer"
     }
   }
 }

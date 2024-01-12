@@ -5,6 +5,7 @@ import { KnowledgeService } from './knowledge.service';
 import { LandingPageService } from './landingpage.service';
 import { LifeAfterCancerService } from './life-after-cancer.service';
 import { LifeWithCancerService } from './life-with-cancer.service';
+import { OrderService } from './order.service';
 import { PatientStoriesService } from './patient-stories.service';
 import { ProductService } from './products.service';
 import { RegisterService } from './register.service';
@@ -31,5 +32,7 @@ export const servicesPatientStories: any[] = [PatientStoriesService];
 export const servicesCart: any[] = [CartService];
 
 export const servicesAboutUs: any[] = [AboutUsService];
+
+export const servicesOrder: any[] = [OrderService];
 
 export * from './landingpage.service';
