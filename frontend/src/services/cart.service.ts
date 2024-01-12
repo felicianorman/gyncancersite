@@ -18,10 +18,11 @@ export class CartService {
   addToCart(product: any) {
     const currentCartItems = this.cartItemsSubject.value;
     const existingProductIndex = currentCartItems.findIndex(
-      (item) => item.id === product.id,
+      (item) => item.productId === product.productId,
     );
 
     if (existingProductIndex !== -1) {
+
       const updatedCartItems = [...currentCartItems];
       updatedCartItems[existingProductIndex].quantity += 1;
       this.updateCartItems(updatedCartItems);

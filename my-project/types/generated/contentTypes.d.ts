@@ -1099,6 +1099,41 @@ export interface ApiNewsletterNewsletter extends Schema.CollectionType {
   };
 }
 
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'Order';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    firstName: Attribute.String;
+    lastName: Attribute.String;
+    address: Attribute.String;
+    email: Attribute.Email;
+    products: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiOurVisionOurVision extends Schema.SingleType {
   collectionName: 'our_visions';
   info: {
@@ -1180,6 +1215,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     price: Attribute.Decimal;
     description: Attribute.RichText;
     productId: Attribute.UID;
+    quantity: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1371,6 +1407,7 @@ declare module '@strapi/types' {
       'api::livet-efter-cancer.livet-efter-cancer': ApiLivetEfterCancerLivetEfterCancer;
       'api::lp-sharesite.lp-sharesite': ApiLpSharesiteLpSharesite;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
+      'api::order.order': ApiOrderOrder;
       'api::our-vision.our-vision': ApiOurVisionOurVision;
       'api::palliativ-vard.palliativ-vard': ApiPalliativVardPalliativVard;
       'api::product.product': ApiProductProduct;

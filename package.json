@@ -5,6 +5,5 @@
   },
   "dependencies": {
     "apollo-link-http": "^1.5.17"
-  },
-  "engines: "
+  }
 }

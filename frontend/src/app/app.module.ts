@@ -28,6 +28,7 @@ import {
   servicesLandingPage,
   servicesLifeAfterCancer,
   servicesLifeWithCancer,
+  servicesOrder,
   servicesPatientStories,
   servicesProducts,
   servicesRegister,
@@ -40,6 +41,7 @@ import { KnowledgeEffects } from 'src/store/knowledge';
 import { LandingPageEffects } from 'src/store/landingpage/effects/landingpage.effects';
 import { LifeAfterCancerEffects } from 'src/store/life-after-cancer/effects';
 import { LifeWithCancerEffects } from 'src/store/life-with-cancer';
+import { OrderEffects } from 'src/store/order';
 import { PatientStoriesEffects } from 'src/store/patient-stories';
 import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
@@ -48,12 +50,12 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
 import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
 import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
-import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +105,7 @@ import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
     StoreModule.forFeature('patient-stories', {}),
     StoreModule.forFeature('cart', {}),
     StoreModule.forFeature('about-us', {}),
+    StoreModule.forFeature('order', {}),
 
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
@@ -114,6 +117,7 @@ import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
     EffectsModule.forFeature(KnowledgeEffects),
     EffectsModule.forFeature(PatientStoriesEffects),
     EffectsModule.forFeature(AboutUsEffects),
+    EffectsModule.forFeature(OrderEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -128,6 +132,7 @@ import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
     servicesPatientStories,
     servicesCart,
     servicesAboutUs,
+    servicesOrder,
   ],
   bootstrap: [AppComponent],
 })
