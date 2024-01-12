@@ -22,6 +22,7 @@ export class CartService {
     );
 
     if (existingProductIndex !== -1) {
+
       const updatedCartItems = [...currentCartItems];
       updatedCartItems[existingProductIndex].quantity += 1;
       this.updateCartItems(updatedCartItems);
