@@ -1,7 +1,7 @@
-import { DietComponent } from './diet.component'
+import { DietComponent } from './diet.component';
 
 describe('DietComponent', () => {
   it('should mount', () => {
-    cy.mount(DietComponent)
-  })
-})
+    cy.mount(DietComponent);
+  });
+});

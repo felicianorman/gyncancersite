@@ -1,1 +1,8 @@
-<p>diet works!</p>
+<div class="doctor-header">
+  <h1>Möte med vården</h1>
+</div>
+<main class="doctor-content" *ngIf="doctor && doctor.length > 0">
+  <markdown [data]="doctor[8].content">
+    {{ doctor[8].content }}
+  </markdown>
+</main>

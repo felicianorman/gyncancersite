@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Page } from 'src/interfaces/Page';
@@ -51,7 +51,15 @@ export class LifewithcancerComponent implements OnInit {
   }
 
   public navigateToDiet() {
-    this.router.navigate(['/for-patienter/livet-med-cancer/diet']);
+    const navigationExtras: NavigationExtras = {
+      state: {
+        pageDetails: this.pageDetails,
+      },
+    };
+    this.router.navigate(
+      ['/for-patienter/livet-med-cancer/diet'],
+      navigationExtras,
+    );
   }
 
   public navigateToText() {

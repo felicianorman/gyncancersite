@@ -1,0 +1,14 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles.scss";
+
+body {
+  background-color: $base-gray;
+}
+.doctor-header {
+  @include mixins.cancer;
+}
+
+.doctor-content {
+  margin-left: 2%;
+  margin-top: 2%;
+}
