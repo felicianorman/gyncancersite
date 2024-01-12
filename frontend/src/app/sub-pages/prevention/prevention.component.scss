@@ -1,8 +1,10 @@
 @import "../../../styles.scss";
 
+body {
+  background-color: $base-gray;
+}
 .prevention-header {
   height: 50vh;
-
   background-image: url("../../../assets/prevention-header.jpg");
   background-size: cover;
   background-position: center;
@@ -18,11 +20,11 @@
 }
 
 .prevention-content {
-  background-color: $base-gray;
   margin-left: 2%;
 
   h2 {
     color: $base-accent;
+    margin-top: 2%;
   }
 
   &--text {

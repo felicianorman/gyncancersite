@@ -1,0 +1,17 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles.scss";
+
+body {
+  background-color: $base-gray;
+}
+.contact-header {
+  @include mixins.cancer;
+}
+
+.contact-content {
+  margin: 2% 0 0 2%;
+
+  li {
+    list-style-type: none;
+  }
+}

@@ -1,13 +1,7 @@
 @use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 .blog--header {
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: $base-accent;
-  color: $base-gray;
-  margin-bottom: 5%;
+  @include mixins.cancer;
 }
 .blog {
   display: flex;

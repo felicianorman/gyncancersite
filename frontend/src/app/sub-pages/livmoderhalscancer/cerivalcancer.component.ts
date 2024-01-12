@@ -14,6 +14,7 @@ export class CervicalCancerComponent {
   ngOnInit() {
     this.route.paramMap.subscribe(() => {
       const pageDetails = history.state.pageDetails;
+      console.log(pageDetails);
       this.cervicalCancer = pageDetails;
     });
   }
