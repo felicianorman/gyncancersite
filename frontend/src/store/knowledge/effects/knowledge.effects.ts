@@ -28,6 +28,7 @@ export class KnowledgeEffects {
                     attributes {
                       title
                       content
+                      preview
                       img {
                         data {
                           attributes {

@@ -30,6 +30,14 @@
 }
 
 .gyncancer--content {
+  font-size: 0.9em;
+  height: 100vh;
+
+  p {
+    margin-left: 2%;
+    font-size: 0.9em;
+  }
+
   h2 {
     color: $base-accent;
     margin-top: 2%;
@@ -37,10 +45,13 @@
     margin-bottom: 2%;
   }
 
-  p {
-    margin-left: 2%;
-    width: 90%;
-    font-size: 0.9em;
+  &--pages {
+    @include mixins.card-holder;
+
+    &__card {
+      @include mixins.card;
+    }
   }
+
   @include mixins.bootstrap-card;
 }

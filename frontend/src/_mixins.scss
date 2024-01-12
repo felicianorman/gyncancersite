@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  gap: 5px;
   h2 {
     margin: 0;
     font-size: 1.1em;
@@ -25,19 +26,33 @@
 }
 @mixin card {
   margin-top: 2%;
-  width: 33%;
   height: 400px;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+
+  &--text {
+    width: 70%;
+    height: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 0.9em;
+    }
+  }
 
   &:hover {
     cursor: pointer;
   }
 
-  p {
-    width: 50%;
-    font-size: 0.9em;
+  &:active {
+    transform: scale(0.95);
   }
 
   span {

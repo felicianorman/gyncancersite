@@ -945,6 +945,7 @@ export interface ApiKunskapKunskap extends Schema.CollectionType {
     singularName: 'kunskap';
     pluralName: 'kunskaps';
     displayName: 'kunskap';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -953,6 +954,7 @@ export interface ApiKunskapKunskap extends Schema.CollectionType {
     title: Attribute.String;
     img: Attribute.Media;
     content: Attribute.RichText;
+    preview: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

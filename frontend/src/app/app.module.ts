@@ -60,6 +60,8 @@ import { PreventionComponent } from './sub-pages/prevention/prevention.component
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { TreatmentComponent } from './sub-pages/treatment/treatment.component';
 import { WordsComponent } from './sub-pages/words/words.component';
+import { OvarianComponent } from './sub-pages/ovarian/ovarian.component';
+import { EndoComponent } from './sub-pages/endo/endo.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,8 @@ import { WordsComponent } from './sub-pages/words/words.component';
 
     ActivityComponent,
     TreatmentComponent,
+    OvarianComponent,
+    EndoComponent,
   ],
   imports: [
     BrowserModule,

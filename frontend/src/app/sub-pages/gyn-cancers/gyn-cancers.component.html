@@ -1,6 +1,6 @@
 <div class="gyncancer--header">
   <div class="gyncancer--header--text">
-    <h1>Gyncancer</h1>
+    <h1>Kunskap</h1>
   </div>
 </div>
 <main class="gyncancer--content" *ngIf="pageDetails && pageDetails.length > 0">
@@ -10,84 +10,40 @@
     livmoderhalscancer, äggstockscancer, livmoderkroppscancer och slemhinne-
     eller skivepitelcancer i slidan.
   </p>
-  <div class="accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h5 class="mb-0">
-          <button
-            class="btn"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne"
-          >
-            {{ pageDetails[3].title }}
-          </button>
-        </h5>
+  <div class="gyncancer--content--pages">
+    <div class="gyncancer--content--pages__card" (click)="ovarianCancer()">
+      <img [src]="pageDetails[0].img" alt="" />
+      <h2>{{ pageDetails[0].title }}</h2>
+      <div class="gyncancer--content--pages__card--text">
+        <p>{{ pageDetails[0].preview }}</p>
+        <span>Läs mer</span>
       </div>
+    </div>
+    <div class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[1].img" alt="" />
 
-      <div
-        id="collapseOne"
-        class="collapse show"
-        aria-labelledby="headingOne"
-        data-parent="#accordionExample"
-      >
-        <div class="card-body">
-          <p>{{ pageDetails[3].content }}</p>
+      <h2>{{ pageDetails[1].title }}</h2>
+      <div class="gyncancer--content--pages__card--text">
+        <p>{{ pageDetails[1].preview }}</p>
+        <span>Läs mer</span>
+      </div>
+    </div>
+    <div class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[3].img" alt="" />
+      <h2>{{ pageDetails[3].title }}</h2>
+      <div class="gyncancer--content--pages__card--text">
+        <p>{{ pageDetails[3].preview }}</p>
+        <div class="gyncancer--content--pages__card--text__link">
+          <span>Läs mer</span>
         </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h5 class="mb-0">
-          <button
-            class="btn collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo"
-          >
-            {{ pageDetails[4].title }}
-          </button>
-        </h5>
-      </div>
-      <div
-        id="collapseTwo"
-        class="collapse"
-        aria-labelledby="headingTwo"
-        data-parent="#accordionExample"
-      >
-        <div class="card-body">
-          <p>{{ pageDetails[4].content }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h5 class="mb-0">
-          <button
-            class="btn collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree"
-          >
-            {{ pageDetails[5].title }}
-          </button>
-        </h5>
-      </div>
-      <div
-        id="collapseThree"
-        class="collapse"
-        aria-labelledby="headingThree"
-        data-parent="#accordionExample"
-      >
-        <div class="card-body">
-          <p>{{ pageDetails[5].content }}</p>
-        </div>
+    <div class="gyncancer--content--pages__card">
+      <img [src]="pageDetails[4].img" alt="" />
+      <h2>{{ pageDetails[4].title }}</h2>
+      <div class="gyncancer--content--pages__card--text">
+        <p class="text">{{ pageDetails[4].preview }}</p>
+        <span>Läs mer</span>
       </div>
     </div>
   </div>

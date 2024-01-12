@@ -19,10 +19,10 @@ import { DonateComponent } from './sub-pages/donate/donate.component';
 import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
 import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
+import { OvarianComponent } from './sub-pages/ovarian/ovarian.component';
 import { PalliatveCareComponent } from './sub-pages/palliatve-care/palliatve-care.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
-
 import { TreatmentComponent } from './sub-pages/treatment/treatment.component';
 import { WhatWeDoComponent } from './sub-pages/what-we-do/what-we-do.component';
 import { WordsComponent } from './sub-pages/words/words.component';
@@ -66,11 +66,11 @@ const routes: Routes = [
 
   {
     path: 'kunskap',
-    component: KnowledgeComponent,
+    component: GynCancersComponent,
   },
   {
-    path: 'kunskap/gyn-cancer',
-    component: GynCancersComponent,
+    path: 'kunskap/aggstockscancer',
+    component: OvarianComponent,
   },
 
   {

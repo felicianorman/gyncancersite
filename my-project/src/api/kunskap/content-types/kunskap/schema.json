@@ -4,7 +4,8 @@
   "info": {
     "singularName": "kunskap",
     "pluralName": "kunskaps",
-    "displayName": "kunskap"
+    "displayName": "kunskap",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,17 +16,21 @@
       "type": "string"
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "content": {
       "type": "richtext"
+    },
+    "preview": {
+      "type": "string"
     }
   }
 }
