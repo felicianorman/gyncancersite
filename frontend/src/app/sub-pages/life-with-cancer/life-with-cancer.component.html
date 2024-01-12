@@ -34,7 +34,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>{{ pageDetails[1].content }}</p>
+            <markdown [data]="pageDetails[1].content">
+              {{ pageDetails[1].content }}</markdown
+            >
           </div>
         </div>
       </div>
@@ -60,7 +62,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>{{ pageDetails[2].content }}</p>
+            <markdown [data]="pageDetails[2].content">
+              {{ pageDetails[2].content }}</markdown
+            >
           </div>
         </div>
       </div>
@@ -75,7 +79,7 @@
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              {{ pageDetails[3].title }}
+              {{ pageDetails[5].title }}
             </button>
           </h5>
         </div>
@@ -86,7 +90,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>{{ pageDetails[3].content }}</p>
+            <markdown [data]="pageDetails[5].content">
+              {{ pageDetails[5].content }}</markdown
+            >
           </div>
         </div>
       </div>
@@ -97,7 +103,9 @@
     <div class="lfw-diet--text">
       <h2>{{ pageDetails[8].title }}</h2>
       <p>
-        {{ pageDetails[8].content }}
+        Vid diagnos av gynekologisk cancer kan du behöva stöd och hjälp av flera
+        olika yrkesgrupper i vården, och här vi nämnt några olika professioner
+        som kan bli aktuella för dig att få stöd och hjälp från
       </p>
       <span>Läs mer</span>
     </div>
@@ -115,7 +123,7 @@
               aria-expanded="true"
               aria-controls="collapseFour"
             >
-              {{ pageDetails[4].title }}
+              {{ pageDetails[6].title }}
             </button>
           </h5>
         </div>
@@ -127,7 +135,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>{{ pageDetails[4].content }}</p>
+            <markdown [data]="pageDetails[6].content">
+              {{ pageDetails[6].content }}</markdown
+            >
           </div>
         </div>
       </div>
@@ -142,7 +152,7 @@
               aria-expanded="false"
               aria-controls="collapseFive"
             >
-              {{ pageDetails[5].title }}
+              {{ pageDetails[7].title }}
             </button>
           </h5>
         </div>
@@ -153,33 +163,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>{{ pageDetails[5].content }}</p>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingSix">
-          <h5 class="mb-0">
-            <button
-              class="btn collapsed"
-              type="button"
-              data-toggle="collapse"
-              data-target="#collapseSix"
-              aria-expanded="false"
-              aria-controls="collapseSix"
+            <markdown [data]="pageDetails[7].content">
+              {{ pageDetails[7].content }}</markdown
             >
-              {{ pageDetails[6].title }}
-            </button>
-          </h5>
-        </div>
-        <div
-          id="collapseSix"
-          class="collapse"
-          aria-labelledby="headingSix"
-          data-parent="#accordionExample"
-        >
-          <div class="card-body">
-            <p>{{ pageDetails[6].content }}</p>
           </div>
         </div>
       </div>
@@ -187,9 +173,9 @@
   </div>
   <div class="lfw-words" (click)="navigateToText()">
     <div class="lfw-words--text">
-      <h2>{{ pageDetails[7].title }}</h2>
+      <h2>{{ pageDetails[3].title }}</h2>
       <p>
-        {{ pageDetails[7].content }}
+        {{ pageDetails[3].content }}
       </p>
       <span>Läs mer</span>
     </div>

@@ -1,0 +1,18 @@
+@use "../../../mixins" as mixins;
+@import "../../../styles";
+
+body {
+  background-color: $base-gray;
+}
+
+.words-header {
+  @include mixins.cancer;
+}
+
+.words-content {
+  height: auto;
+  margin-left: 2%;
+  margin-top: 2%;
+
+  @include mixins.bootstrap-card;
+}

@@ -4,7 +4,6 @@ import { Store } from '@ngrx/store';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { Post } from 'src/interfaces/Post';
-import { LandingPageService } from 'src/services';
 import { SupportUsService } from 'src/services/support-us.service';
 import * as fromStore from '../../../store/support-us/index';
 

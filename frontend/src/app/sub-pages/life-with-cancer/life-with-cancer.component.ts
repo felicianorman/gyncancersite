@@ -36,6 +36,7 @@ export class LifewithcancerComponent implements OnInit {
       .getLifeWithCancer()
       .valueChanges.subscribe((result) => {
         this.pages = (result.data as any)['donates'].data;
+        console.log(this.pages);
 
         this.pageDetails = this.pages.map((page: any) => {
           return {
@@ -47,30 +48,6 @@ export class LifewithcancerComponent implements OnInit {
           };
         });
       });
-  }
-
-  public navigateToDoctor() {
-    this.router.navigate(['/for-patienter/livet-med-cancer/lakarbesok']);
-  }
-
-  public navigateToAfter() {
-    this.router.navigate(['/for-patienter/livet-med-cancer/efter-beskedet']);
-  }
-
-  public navigateToRights() {
-    this.router.navigate(['/for-patienter/livet-med-cancer/rattigheter']);
-  }
-
-  public navigateToFatigue() {
-    this.router.navigate(['/for-patienter/livet-med-cancer/fatigue']);
-  }
-
-  public navigateToSexuality() {
-    this.router.navigate(['/for-patienter/livet-med-cancer/sexualitet']);
-  }
-
-  public navigateToLymph() {
-    this.router.navigate(['/for-patienter/livet-med-cancer/lymfodem']);
   }
 
   public navigateToDiet() {
