@@ -1,0 +1,8 @@
+<div class="ovarian-header">
+  <h1>Äggstockscancer</h1>
+</div>
+<main class="ovarian-content" *ngIf="ovarianCancer && ovarianCancer.length > 0">
+  <markdown [data]="ovarianCancer[0].content" class="text">
+    {{ ovarianCancer[0].content }}
+  </markdown>
+</main>

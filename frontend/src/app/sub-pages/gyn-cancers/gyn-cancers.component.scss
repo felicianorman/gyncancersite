@@ -30,21 +30,27 @@
 }
 
 .gyncancer--content {
-  &--pages {
-    flex-wrap: wrap;
-    @include mixins.card-holder;
+  height: 100vh;
 
-    @include mixins.mobile {
-      flex-direction: column;
-      align-items: center;
-    }
+  p {
+    margin-left: 2%;
+    font-size: 0.9em;
+  }
+
+  h2 {
+    color: $base-accent;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+  }
+
+  &--pages {
+    @include mixins.card-holder;
 
     &__card {
       @include mixins.card;
-
-      @include mixins.mobile {
-        width: 100%;
-      }
     }
   }
+
+  @include mixins.bootstrap-card;
 }

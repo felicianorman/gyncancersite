@@ -1,13 +1,14 @@
-<div *ngIf="cartItems.length > 0">
-  <h2>Checkout</h2>
-  <div *ngIf="orderSuccess">Tack för din beställning!</div>
-  <div *ngIf="!orderSuccess">
-    <ul>
+<div *ngIf="cartItems.length > 0" class="cart">
+  <h2>Kassa</h2>
+  <div *ngIf="orderSuccess" class="success">Tack för din beställning!</div>
+  <div *ngIf="!orderSuccess" class="cart--checkout">
+    <span>I varukorgen:</span>
+    <ul class="cart--checkout__list">
       <li *ngFor="let item of cartItems">
         {{ item.title }} - {{ item.price }} x {{ item.quantity }} kr
       </li>
     </ul>
-    <p>Total Amount: {{ calculateTotalAmount() }} kr</p>
+    <p>Summa: {{ calculateTotalAmount() }} kr</p>
     <form [formGroup]="form" (ngSubmit)="registerOrder()">
       <div class="register-form__container">
         <div class="register-form__container--card">
@@ -31,7 +32,7 @@
       </div>
       <div class="register-form__container"></div>
       <div class="register-form__button">
-        <button>Bli medlem</button>
+        <button>Betala</button>
       </div>
     </form>
   </div>

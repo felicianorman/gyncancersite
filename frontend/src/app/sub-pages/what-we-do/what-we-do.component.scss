@@ -1,9 +1,15 @@
 @use "../../../mixins" as mixins;
 @import "../../../styles.scss";
 
+body {
+  background-color: $base-gray;
+}
+
 .wwd-header {
   height: 50vh;
-  background-color: $base-accent;
+  background-image: url("../../../assets/lac_stories.jpg");
+  background-position: center;
+  background-size: cover;
   display: flex;
   align-items: center;
   color: $base-gray;
@@ -14,15 +20,17 @@
 }
 
 .wwd-content {
-  background-color: $base-gray;
-
   h2 {
     margin: 0;
     color: $base-accent;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
   }
 
   &__text {
     margin-left: 2%;
+    @include mixins.bootstrap-card;
     p {
       width: 90%;
     }

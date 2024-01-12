@@ -1,39 +1,50 @@
 <div class="gyncancer--header">
   <div class="gyncancer--header--text">
-    <h1>Gyncancer</h1>
-    <p>
-      Det finns flera olika typer av gyncancer. De vanligaste är
-      livmoderhalscancer, äggstockscancer, livmoderkroppscancer och slemhinne-
-      eller skivepitelcancer i slidan.
-    </p>
+    <h1>Kunskap</h1>
   </div>
 </div>
 <main class="gyncancer--content" *ngIf="pageDetails && pageDetails.length > 0">
-  <section class="gyncancer--content--pages">
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
+  <h2>Kunskap om cancer</h2>
+  <p>
+    Det finns flera olika typer av gyncancer. De vanligaste är
+    livmoderhalscancer, äggstockscancer, livmoderkroppscancer och slemhinne-
+    eller skivepitelcancer i slidan.
+  </p>
+  <div class="gyncancer--content--pages">
+    <div class="gyncancer--content--pages__card" (click)="ovarianCancer()">
+      <img [src]="pageDetails[0].img" alt="" />
+      <h2>{{ pageDetails[0].title }}</h2>
+      <div class="gyncancer--content--pages__card--text">
+        <p>{{ pageDetails[0].preview }}</p>
+        <span>Läs mer</span>
+      </div>
+    </div>
+    <div class="gyncancer--content--pages__card" (click)="endoCancer()">
+      <img [src]="pageDetails[1].img" alt="" />
+
+      <h2>{{ pageDetails[1].title }}</h2>
+      <div class="gyncancer--content--pages__card--text">
+        <p>{{ pageDetails[1].preview }}</p>
+        <span>Läs mer</span>
+      </div>
+    </div>
+    <div class="gyncancer--content--pages__card" (click)="cervicalCancer()">
+      <img [src]="pageDetails[3].img" alt="" />
       <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[4].img" />
+      <div class="gyncancer--content--pages__card--text">
+        <p>{{ pageDetails[3].preview }}</p>
+        <div class="gyncancer--content--pages__card--text__link">
+          <span>Läs mer</span>
+        </div>
+      </div>
+    </div>
+    <div class="gyncancer--content--pages__card" (click)="vulvaCancer()">
+      <img [src]="pageDetails[4].img" alt="" />
       <h2>{{ pageDetails[4].title }}</h2>
-      <p>{{ pageDetails[4].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
-      <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
-      <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-    <article class="gyncancer--content--pages__card">
-      <img [src]="pageDetails[3].img" />
-      <h2>{{ pageDetails[3].title }}</h2>
-      <p>{{ pageDetails[3].content }}</p>
-    </article>
-  </section>
+      <div class="gyncancer--content--pages__card--text">
+        <p class="text">{{ pageDetails[4].preview }}</p>
+        <span>Läs mer</span>
+      </div>
+    </div>
+  </div>
 </main>

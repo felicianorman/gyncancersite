@@ -35,6 +35,7 @@ h2 {
   justify-content: center;
 
   &--text {
+    margin-top: 2%;
     margin-left: 2%;
     width: 90%;
     font-size: 0.9em;
@@ -47,24 +48,14 @@ h2 {
   }
 
   &--pages {
-    @include mixins.card-holder;
-
-    @include mixins.mobile {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    &--card {
-      @include mixins.card;
-
-      @include mixins.mobile {
-        width: 90%;
-      }
-    }
+    margin-left: 2%;
+    @include mixins.bootstrap-card;
   }
 }
 
 .lfw-diet {
+  margin-top: 2%;
+  margin-bottom: 2%;
   width: 100%;
   background-image: url("../../../assets/lfw-food.jpg");
   background-size: cover;
@@ -96,6 +87,7 @@ h2 {
 }
 
 .lfw-words {
+  margin-top: 2%;
   width: 100%;
   background-image: url("../../../assets/lfw-words.jpg");
   background-size: cover;

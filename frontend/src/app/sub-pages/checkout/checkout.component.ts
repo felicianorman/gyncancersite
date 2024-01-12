@@ -10,12 +10,13 @@ import * as fromStore from '../../../store/order/index';
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
-  styleUrl: './checkout.component.css',
+  styleUrl: './checkout.component.scss',
 })
 export class CheckoutComponent implements OnInit {
   cartItems: any[] = [];
   totalAmount: number = 0;
   form: FormGroup;
+  public images: string[] = []; // Use an array to store image URLs
   public orderSuccess: boolean = false;
 
   constructor(
@@ -28,6 +29,10 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.cartItems$.subscribe((items) => {
       this.cartItems = items;
+      // this.images = items.map(
+      //   (item) => 'http://localhost:3000/' + item.img.url,
+      // );
+      // console.log(this.images);
     });
 
     this.form = new FormGroup({

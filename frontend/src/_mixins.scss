@@ -12,113 +12,28 @@
   }
 }
 
-@mixin mobile-menu {
-  .top-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 1.5vh;
-    // color: var.$primary-color;
-    padding: 1em;
-  }
+@mixin cancer {
+  height: 50vh;
+  background-image: url("./assets/lac_stories.jpg");
+  background-size: cover;
+  background-position: center;
 
-  .menu {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-  }
+  display: flex;
+  align-items: center;
 
-  .menu > li {
-    margin: 0 1rem;
-    overflow: hidden;
+  h1 {
+    color: $base-gray;
+    margin-left: 2%;
   }
+}
 
-  .menu-button-container {
-    display: none;
-    height: 100%;
-    width: 30px;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+@mixin cancer-content {
+  margin-left: 2%;
+  margin-top: 2%;
 
-  #menu-toggle {
-    display: none;
-  }
-
-  .menu-button,
-  .menu-button::before,
-  .menu-button::after {
-    display: block;
-    // background-color: var.$primary-color;
-    position: absolute;
-    height: 4px;
-    width: 30px;
-    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    border-radius: 2px;
-  }
-
-  .menu-button::before {
-    content: "";
-    margin-top: -8px;
-  }
-
-  .menu-button::after {
-    content: "";
-    margin-top: 8px;
-  }
-
-  #menu-toggle:checked + .menu-button-container .menu-button::before {
-    margin-top: 0px;
-    transform: rotate(405deg);
-  }
-
-  #menu-toggle:checked + .menu-button-container .menu-button {
-    background: rgba(255, 255, 255, 0);
-  }
-
-  #menu-toggle:checked + .menu-button-container .menu-button::after {
-    margin-top: 0px;
-    transform: rotate(-405deg);
-  }
-
-  @media (max-width: 700px) {
-    .menu-button-container {
-      display: flex;
-    }
-    .menu {
-      position: absolute;
-      top: 0;
-      margin-top: 50px;
-      left: 0;
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
-    #menu-toggle ~ .menu li {
-      height: 0;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    #menu-toggle:checked ~ .menu li {
-      height: 1em;
-      padding: 0.3em;
-      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .menu > li {
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      width: 100%;
-      //   color: var.$primary-color;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+  .text {
+    font-size: 0.9em;
+    width: 90%;
   }
 }
 
@@ -127,6 +42,7 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  gap: 5px;
   h2 {
     margin: 0;
     font-size: 1.1em;
@@ -135,15 +51,33 @@
 }
 @mixin card {
   margin-top: 2%;
-  width: 33%;
   height: 400px;
+  width: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 
-  p {
-    width: 50%;
-    font-size: 0.9em;
+  &--text {
+    width: 70%;
+    height: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 
   span {
@@ -154,5 +88,32 @@
     height: 190px;
     width: 200px;
     border-radius: 50%;
+  }
+}
+
+@mixin bootstrap-card {
+  .card {
+    width: 90%;
+    border: none;
+
+    p {
+      font-size: 0.9em;
+    }
+  }
+
+  .btn {
+    background-color: $base-gray;
+    color: $base-accent;
+
+    font-weight: 500;
+    font-size: 0.9em;
+
+    &:hover {
+      color: $base-accent;
+    }
+  }
+
+  .card-header {
+    background-color: $base-gray;
   }
 }

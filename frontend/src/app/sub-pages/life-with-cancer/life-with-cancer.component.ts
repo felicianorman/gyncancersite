@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Page } from 'src/interfaces/Page';
@@ -22,6 +23,7 @@ export class LifewithcancerComponent implements OnInit {
   constructor(
     private store: Store<fromStore.LifeWithCancerState>,
     private lifeWithCancerService: LifeWithCancerService,
+    private router: Router,
   ) {
     this.store.select((state) => state.lifeWithCancer);
   }
@@ -45,5 +47,37 @@ export class LifewithcancerComponent implements OnInit {
           };
         });
       });
+  }
+
+  public navigateToDoctor() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/lakarbesok']);
+  }
+
+  public navigateToAfter() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/efter-beskedet']);
+  }
+
+  public navigateToRights() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/rattigheter']);
+  }
+
+  public navigateToFatigue() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/fatigue']);
+  }
+
+  public navigateToSexuality() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/sexualitet']);
+  }
+
+  public navigateToLymph() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/lymfodem']);
+  }
+
+  public navigateToDiet() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/diet']);
+  }
+
+  public navigateToText() {
+    this.router.navigate(['/for-patienter/livet-med-cancer/ordlista']);
   }
 }
