@@ -33,6 +33,7 @@ import {
   servicesProducts,
   servicesRegister,
   servicesSupportUs,
+  servicesWhatWeDo,
 } from 'src/services';
 
 import { AboutUsEffects } from 'src/store/about-us';
@@ -46,6 +47,7 @@ import { PatientStoriesEffects } from 'src/store/patient-stories';
 import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
 import { SupportUsEffects } from 'src/store/support-us/effects';
+import { WhatWeDoEffects } from 'src/store/what-we-do';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -62,8 +64,9 @@ import { OvarianComponent } from './sub-pages/ovarian/ovarian.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
 import { TreatmentComponent } from './sub-pages/treatment/treatment.component';
-import { WordsComponent } from './sub-pages/words/words.component';
 import { VulvaComponent } from './sub-pages/vulva/vulva.component';
+import { WhatWeDoComponent } from './sub-pages/what-we-do/what-we-do.component';
+import { WordsComponent } from './sub-pages/words/words.component';
 
 @NgModule({
   declarations: [
@@ -89,16 +92,15 @@ import { VulvaComponent } from './sub-pages/vulva/vulva.component';
     BlogComponent,
     CartComponent,
     CheckoutComponent,
-
     DietComponent,
     WordsComponent,
-
     ActivityComponent,
     TreatmentComponent,
     OvarianComponent,
     EndoComponent,
     CervicalCancerComponent,
     VulvaComponent,
+    WhatWeDoComponent,
   ],
   imports: [
     BrowserModule,
@@ -124,6 +126,7 @@ import { VulvaComponent } from './sub-pages/vulva/vulva.component';
     StoreModule.forFeature('cart', {}),
     StoreModule.forFeature('about-us', {}),
     StoreModule.forFeature('order', {}),
+    StoreModule.forFeature('what-we-do', {}),
 
     EffectsModule.forFeature(LandingPageEffects),
     EffectsModule.forFeature(SupportUsEffects),
@@ -136,6 +139,7 @@ import { VulvaComponent } from './sub-pages/vulva/vulva.component';
     EffectsModule.forFeature(PatientStoriesEffects),
     EffectsModule.forFeature(AboutUsEffects),
     EffectsModule.forFeature(OrderEffects),
+    EffectsModule.forFeature(WhatWeDoEffects),
     StoreDevtoolsModule.instrument(),
   ],
   providers: [
@@ -151,6 +155,7 @@ import { VulvaComponent } from './sub-pages/vulva/vulva.component';
     servicesCart,
     servicesAboutUs,
     servicesOrder,
+    servicesWhatWeDo,
   ],
   bootstrap: [AppComponent],
 })

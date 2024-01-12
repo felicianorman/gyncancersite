@@ -913,6 +913,7 @@ export interface ApiGynekologiskCancerGynekologiskCancer
     singularName: 'gynekologisk-cancer';
     pluralName: 'gynekologisk-cancers';
     displayName: 'Gynekologisk cancer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -920,7 +921,6 @@ export interface ApiGynekologiskCancerGynekologiskCancer
   attributes: {
     title: Attribute.String;
     content: Attribute.RichText;
-    img: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

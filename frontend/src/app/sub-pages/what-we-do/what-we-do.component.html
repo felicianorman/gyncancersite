@@ -1,7 +1,7 @@
 <div class="wwd-header">
   <h1>Vad vi gör</h1>
 </div>
-<main class="wwd-content">
+<main class="wwd-content" *ngIf="postDetails && postDetails.length > 0">
   <section class="wwd-content__text">
     <h2>Frågor vi driver</h2>
 
@@ -17,7 +17,7 @@
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Prevention och tidig upptäckt
+              {{ postDetails[0].title }}
             </button>
           </h5>
         </div>
@@ -29,9 +29,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>
-              {{ pageDetails[11].content }}
-            </p>
+            <markdown [data]="postDetails[0].content">
+              {{ postDetails[0].content }}</markdown
+            >
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Jämlik vård
+              {{ postDetails[1].title }}
             </button>
           </h5>
         </div>
@@ -57,54 +57,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>
-              Några av de frågor vi driver; Alla nationella vårdprogram SKA
-              följas i hela landet och beslutad nivåstrukturering ska följas.
-              Det är oacceptabelt att det exempelvis finns regioner som opererar
-              patienter med äggstockscancer trots att man nationellt
-              rekommenderat att detta ska vara nivåstrukturerat till
-              universitetssjukhusen. Vi vill se att fler svenska sjukhus
-              ackrediteras som Comprehensive Cancer Center. Vi stödjer EU:s
-              cancerplan där vi bland annat delar visionen 70:35 vilket innebär
-              att minst 70% av alla cancerpatienter ska ha en 10-årslöverlevnad
-              2035. Trots att utvecklingen går framåt så anser vi att det
-              fortfarande utförs alldeles för få studier på gynekologisk cancer
-              i förhållande till hur många som årligen diagnosticeras och dör
-              till följd av sjukdomarna. Vi arbetar för att politiker,
-              myndigheter, regioner och akademi ska stötta forskningsmiljön och
-              genomföra åtgärder som motiverar och förenklar forskningen. Vi
-              anser att introduktionen av nya läkemedel i Sverige är komplicerad
-              och kan ta lång tid. Vi tycker att det är problematiskt att
-              enskilda regioner sedan kan välja att inte använda läkemedel eller
-              exempelvis bestämma sig för att ha en egen godkännandeprocess.
-              Detta leder till en ojämn förskrivning av nya läkemedel och tyvärr
-              också till att patientens bostadsort kan bli avgörande för om
-              patienten får en ärlig chans till överlevnad eller inte. Alla
-              patienter ska erbjudas Min Vårdplan där även en
-              rehabiliteringsplan ska inkluderas. Individuella patientöversikter
-              (IPÖ) ska bli verklighet för alla gynekologiska cancerdiagnoser.
-              En ny patientlag måste bli verklighet. Dagens patientlag anser vi
-              är ett hån, då lagen inte är en rättighetslag och inte heller en
-              skyldighetslag utan en lag utan konsekvenser. Vi anser att målet
-              med en lag måste vara att stärka patientskyddet, patienternas
-              rättigheter och rättssäkerheten. För vad är syftet med en lag som
-              man kan tolka som en rekommendation? Mer behandlingar och åtgärder
-              behöver skräddarsys efter patienten. Aktiva överlämningar ska
-              fungera mellan exempelvis olika sjukhus och behandlingsgivare.
-              Alla patienter ska få och känna till sin fasta vårdkontakt.
-              Uppföljning ska utgå från de nationella vårdprogrammen. Den
-              nationella cancerstrategin behöver utvecklas. Vi vill se ett ökat
-              fokus på rehabilitering, precisionsmedicin och palliativ vård. Vi
-              vill också att Socialstyrelsen har en uppföljning av att strategin
-              genomförs. Journalsystem som talar med varandra över
-              regiongränserna behöver införas. Vi lyfter upp jämlik vård på
-              flera olika sätt, till exempel genom att delta i olika
-              arbetsgrupper, skriva debattartiklar, anordna webbinarier och
-              Gyncancerdagen. Se även Brev; Du som politiker kan göra skillnad.
-              – Vi har skrivit ett brev som vi har skickat till alla politiker i
-              socialutskottet samt till politiker i landets alla
-              regionfullmäktige.
-            </p>
+            <markdown [data]="postDetails[1].content">
+              {{ postDetails[1].content }}
+            </markdown>
           </div>
         </div>
       </div>
@@ -119,7 +74,7 @@
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Rehabilitering och närstående
+              {{ postDetails[2].title }}
             </button>
           </h5>
         </div>
@@ -130,31 +85,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>
-              Några av de frågor vi driver; Alla patienter och närstående ska
-              erbjudas rehabilitering efter sina behov. Rehabilitering måste bli
-              jämlik i hela landet. Ett kvalitetsregister för rehabilitering
-              måste byggas Patienten och de närstående ska få kännedom om teamet
-              som ska genomföra behandling (exempelvis kirurg, gynonkolog,
-              kontaktsjuksköterska, kurator och sexolog). Vården ska ha en
-              helhetssyn på patienten och vilka övriga sjukdomar patienten har.
-              Patienten ska inte behöva föra information vidare mellan läkare
-              och enheter. Patientens sociala situation ska uppmärksammas. Det
-              är viktigt att patienten får kännedom om det stöd patienten och
-              närstående kan få, exempelvis att vården berättar om
-              patientföreningar och föreningar för närstående. Patient och
-              närstående ska alltid få information om rättigheterna i nuvarande
-              patientlag exempelvis information om second opinion och fast
-              vårdkontakt. Patient och närstående ska alltid få information om
-              tidsramar, mål med behandlingen, biverkningar och eftervård.
-              Patient och närstående ska få information och guidning om
-              exempelvis närståendepenning och Försäkringskassan. Patient och
-              närstående ska få information om exempelvis komplementär medicin,
-              kost, fysisk aktivitet, egenvård och lymfödem. Vi lyfter upp
-              rehabilitering och närstående på flera olika sätt, till exempel
-              genom att delta i olika arbetsgrupper, skriva debattartiklar,
-              anordna webbinarier och Gyncancerdagen.
-            </p>
+            <markdown [data]="postDetails[2].content">
+              {{ postDetails[2].content }}
+            </markdown>
           </div>
         </div>
       </div>
@@ -169,7 +102,7 @@
               aria-expanded="false"
               aria-controls="collapseFour"
             >
-              Palliativ vård
+              {{ postDetails[3].title }}
             </button>
           </h5>
         </div>
@@ -180,26 +113,9 @@
           data-parent="#accordionExample"
         >
           <div class="card-body">
-            <p>
-              Några av de frågor vi driver; Den palliativa vården ska vara
-              jämlik i hela landet. Idag är det långt ifrån jämlikt, exempelvis
-              finns det stora skillnader mellan städer och landsbygd. Palliativ
-              vård som är ett specialistområde ska också behandlas som ett
-              sådant. Breddsjukvård kan inte ersätta specialistkompetens. Den
-              palliativa vården ska ha en helhetssyn där livskvalitet,
-              relationer och närståendes perspektiv måste finnas med. Alla svårt
-              sjuka patienter ska ha rätt till specialiserad palliativ
-              konsultation, hemsjukvård och slutenvård (inklusive hospice). Alla
-              dessa tre bitar måste finnas samtidigt och det ena kan inte
-              utesluta det andra. Vårdprogrammet för palliativ vård SKA följas i
-              hela landet. Samhällets inklusive politikernas och vårdens kunskap
-              om palliativ vård måste öka. Palliativ vård ska vara en aktiv vård
-              i hela landet. Vi har bland annat lyft upp palliativ vård på fler
-              olika sätt, exempelvis genom att delta i olika arbetsgrupper,
-              debattartiklar, webbinarier och Gyncancerdagen. För mer
-              information besök gärna flikarna patientinvolvering, kampanjer,
-              webbinarier och Gyncancerdagen
-            </p>
+            <markdown [data]="postDetails[3].content">
+              {{ postDetails[3].content }}
+            </markdown>
           </div>
         </div>
       </div>

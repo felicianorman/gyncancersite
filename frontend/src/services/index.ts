@@ -10,6 +10,7 @@ import { PatientStoriesService } from './patient-stories.service';
 import { ProductService } from './products.service';
 import { RegisterService } from './register.service';
 import { SupportUsService } from './support-us.service';
+import { WhatWeDoServices } from './we-do.services';
 
 export const servicesLandingPage: any[] = [LandingPageService];
 
@@ -34,5 +35,7 @@ export const servicesCart: any[] = [CartService];
 export const servicesAboutUs: any[] = [AboutUsService];
 
 export const servicesOrder: any[] = [OrderService];
+
+export const servicesWhatWeDo: any[] = [WhatWeDoServices];
 
 export * from './landingpage.service';

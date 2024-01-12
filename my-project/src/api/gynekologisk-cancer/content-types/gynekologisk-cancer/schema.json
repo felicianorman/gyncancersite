@@ -4,7 +4,8 @@
   "info": {
     "singularName": "gynekologisk-cancer",
     "pluralName": "gynekologisk-cancers",
-    "displayName": "Gynekologisk cancer"
+    "displayName": "Gynekologisk cancer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,16 +17,6 @@
     },
     "content": {
       "type": "richtext"
-    },
-    "img": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
     }
   }
 }
