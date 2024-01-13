@@ -1,7 +1,5 @@
-node_modules
 .angular
 .angular/cache
 .vercel
 dist
-.env
 .vercelignore
