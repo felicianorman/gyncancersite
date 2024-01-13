@@ -22,3 +22,17 @@ export default [
     },
   },
 ];
+
+module.exports = ({ env }) => ({
+  settings: {
+    cors: {
+      enabled: true,
+      origin: env('CORS_ORIGIN', '*'), // You can set specific origins here, or use '*' for any origin
+      headers: ['Content-Type', 'Authorization', 'Accept'],
+    },
+  },
+  load: {
+    before: ['strapi::cors', 'strapi::logger', 'strapi::body', 'strapi::errors'],
+    order: ['Define the order in which middleware should be applied'],
+  },
+});
