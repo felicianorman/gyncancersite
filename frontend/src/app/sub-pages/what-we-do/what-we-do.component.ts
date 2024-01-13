@@ -34,7 +34,6 @@ export class WhatWeDoComponent implements OnInit {
 
     this.whatWeDoService.getWhatWeDo().valueChanges.subscribe((result) => {
       this.posts = (result.data as any)['gynekologiskCancers'].data;
-      console.log(this.posts);
 
       this.postDetails = this.posts.map((page: any) => {
         return {

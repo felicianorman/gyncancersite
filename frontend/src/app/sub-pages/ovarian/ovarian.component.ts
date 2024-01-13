@@ -12,9 +12,7 @@ export class OvarianComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(() => {
-      // Retrieve data from navigationExtras
       const pageDetails = history.state.pageDetails;
-      console.log(pageDetails);
       this.ovarianCancer = pageDetails;
     });
   }

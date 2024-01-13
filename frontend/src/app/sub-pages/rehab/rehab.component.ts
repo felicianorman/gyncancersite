@@ -31,7 +31,6 @@ export class RehabComponent implements OnInit {
 
     this.rehabService.getRehab().valueChanges.subscribe((result) => {
       this.posts = (result.data as any)['rehabs'].data;
-      console.log(this.posts);
 
       this.postDetails = this.posts.map((post: any) => {
         return {

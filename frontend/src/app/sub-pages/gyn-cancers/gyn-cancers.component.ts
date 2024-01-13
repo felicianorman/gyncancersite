@@ -35,7 +35,6 @@ export class GynCancersComponent implements OnInit {
 
     this.knowledgeService.getKnowledge().valueChanges.subscribe((result) => {
       this.pages = (result.data as any)['kunskaps'].data;
-      console.log(this.pages);
 
       this.pageDetails = this.pages.map((page: any) => {
         const imgObject = page.attributes.img?.data?.attributes.url;

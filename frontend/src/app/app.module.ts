@@ -16,7 +16,6 @@ import { LandingpageComponent } from './pages/landingpage/landingpage.component'
 import { SupportUsComponent } from './pages/support-us/support-us.component';
 import { BlogComponent } from './sub-pages/blog/blog.component';
 import { DonateComponent } from './sub-pages/donate/donate.component';
-import { NewsComponent } from './sub-pages/news/news.component';
 import { PalliatveCareComponent } from './sub-pages/palliatve-care/palliatve-care.component';
 
 import { EffectsModule } from '@ngrx/effects';
@@ -50,16 +49,16 @@ import { PalliativeEffects } from 'src/store/palliative';
 import { PatientStoriesEffects } from 'src/store/patient-stories';
 import { ProductEffects } from 'src/store/products/effects';
 import { RegisterEffects } from 'src/store/register/effects/register.effects';
+import { RehabEffects } from 'src/store/rehab';
 import { SupportUsEffects } from 'src/store/support-us/effects';
 import { WhatWeDoEffects } from 'src/store/what-we-do';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductIdComponent } from './components/product-id/product-id.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
-import { ActivityComponent } from './sub-pages/activity/activity.component';
 import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
 import { CloseRelativeComponent } from './sub-pages/close-relative/close-relative.component';
-import { DietComponent } from './sub-pages/diet/diet.component';
+import { DoctorComponent } from './sub-pages/doctor/doctor.component';
 import { EndoComponent } from './sub-pages/endo/endo.component';
 import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
@@ -67,8 +66,6 @@ import { CervicalCancerComponent } from './sub-pages/livmoderhalscancer/cerivalc
 import { OvarianComponent } from './sub-pages/ovarian/ovarian.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
-
-import { RehabEffects } from 'src/store/rehab';
 import { RehabComponent } from './sub-pages/rehab/rehab.component';
 import { VulvaComponent } from './sub-pages/vulva/vulva.component';
 import { WhatWeDoComponent } from './sub-pages/what-we-do/what-we-do.component';
@@ -86,7 +83,6 @@ import { WordsComponent } from './sub-pages/words/words.component';
     LifewithcancerComponent,
     NavigationComponent,
     FooterComponent,
-    NewsComponent,
     BlogComponent,
     RegisterComponent,
     ShopComponent,
@@ -97,9 +93,8 @@ import { WordsComponent } from './sub-pages/words/words.component';
     BlogComponent,
     CartComponent,
     CheckoutComponent,
-    DietComponent,
+    DoctorComponent,
     WordsComponent,
-    ActivityComponent,
     OvarianComponent,
     EndoComponent,
     CervicalCancerComponent,

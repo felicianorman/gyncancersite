@@ -38,8 +38,6 @@ export class PreventionComponent implements OnInit {
           content: page.attributes.content,
         };
       });
-
-      console.log('Processed pageDetails:', this.pageDetails);
     });
   }
 }

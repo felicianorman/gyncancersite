@@ -32,10 +32,9 @@ export class ContactComponent implements OnInit {
 
     this.aboutUsService.getAboutUs().valueChanges.subscribe((result) => {
       this.pages = (result.data as any)['aboutUses'].data;
-      console.log(this.pages[1]);
 
       this.pageDetails = this.pages.map((page: any) => {
-        const imgObject = page.attributes.img?.data?.attributes.url; //
+        const imgObject = page.attributes.img?.data?.attributes.url;
 
         return {
           title: page.attributes.title,
@@ -43,8 +42,6 @@ export class ContactComponent implements OnInit {
           img: 'http://localhost:1337' + imgObject,
         };
       });
-
-      console.log('Processed pageDetails:', this.pageDetails);
     });
   }
 }

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Post } from 'src/interfaces/Post';
-
-import { Store } from '@ngrx/store';
-import { post } from 'cypress/types/jquery';
 import { closeRelativeService } from 'src/services/close-relative.services';
 import * as fromStore from '../../../store/close-relative/index';
 
@@ -35,7 +33,6 @@ export class CloseRelativeComponent implements OnInit {
       .getCloseRelative()
       .valueChanges.subscribe((result) => {
         this.posts = (result.data as any)['foerNaerstaendes'].data;
-        console.log(this.posts);
 
         this.postDetails = this.posts.map((post: any) => {
           return {

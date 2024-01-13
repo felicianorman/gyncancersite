@@ -2,15 +2,18 @@
   <span class="material-symbols-outlined dropdown">shopping_bag</span>
 
   <ul class="dropdown-content">
-    <div class="cart"><h3>Varukorg</h3></div>
+    <div class="dropdown-content__cart"><h3>Varukorg</h3></div>
 
     <li *ngFor="let item of cartItems">
       {{ item.title }} - {{ item.price }} kr x {{ item.quantity }}
-      <button (click)="removeFromCart(item.productId)" class="remove">
+      <button
+        (click)="removeFromCart(item.productId)"
+        class="dropdown-content__remove"
+      >
         <span class="material-symbols-outlined"> remove </span>
       </button>
     </li>
-    <div class="total">
+    <div class="dropdown-content__total">
       <span>Total: {{ calculateTotalAmount() }} kr</span>
       <li>
         <button (click)="navigateToCart()">Till kassa</button>

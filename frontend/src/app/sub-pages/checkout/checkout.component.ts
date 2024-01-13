@@ -14,7 +14,6 @@ export class CheckoutComponent implements OnInit {
   cartItems: any[] = [];
   totalAmount: number = 0;
   form: FormGroup;
-  public images: string[] = []; // Use an array to store image URLs
   public orderSuccess: boolean = false;
 
   constructor(
@@ -42,17 +41,13 @@ export class CheckoutComponent implements OnInit {
 
   public registerOrder() {
     this.store.dispatch(new OrderActions.CreateOrder(this.form.value));
-
     localStorage.clear();
-
     this.orderSuccess = true;
-
-    console.log('order registered, local storage cleared');
   }
 
   calculateTotalAmount(): number {
     return this.cartItems.reduce(
-      (acc, item) => acc + item.price * item.quantity,
+      (reduce, item) => reduce + item.price * item.quantity,
       0,
     );
   }

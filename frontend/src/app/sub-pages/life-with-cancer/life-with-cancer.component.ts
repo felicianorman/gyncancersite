@@ -36,7 +36,6 @@ export class LifewithcancerComponent implements OnInit {
       .getLifeWithCancer()
       .valueChanges.subscribe((result) => {
         this.pages = (result.data as any)['donates'].data;
-        console.log(this.pages);
 
         this.pageDetails = this.pages.map((page: any) => {
           return {
@@ -57,7 +56,7 @@ export class LifewithcancerComponent implements OnInit {
       },
     };
     this.router.navigate(
-      ['/for-patienter/livet-med-cancer/diet'],
+      ['/for-patienter/livet-med-cancer/doctor'],
       navigationExtras,
     );
   }

@@ -31,7 +31,6 @@ export class PalliatveCareComponent implements OnInit {
 
     this.palliativeService.getPalliative().valueChanges.subscribe((result) => {
       this.posts = (result.data as any)['palliativVards'].data;
-      console.log(this.posts);
 
       this.postDetails = this.posts.map((post: any) => {
         return {

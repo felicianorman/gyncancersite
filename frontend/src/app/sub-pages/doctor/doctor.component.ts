@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-diet',
-  templateUrl: './diet.component.html',
-  styleUrl: './diet.component.scss',
+  selector: 'app-doctor',
+  templateUrl: './doctor.component.html',
+  styleUrl: './doctor.component.scss',
 })
-export class DietComponent {
+export class DoctorComponent {
   constructor(private route: ActivatedRoute) {}
   public doctor: any[] = [];
 
