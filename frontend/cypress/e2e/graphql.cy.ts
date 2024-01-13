@@ -23,6 +23,7 @@ describe('GraphQL Test', () => {
       },
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
     });
   });
