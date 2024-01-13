@@ -1,13 +1,10 @@
 # My Degree Project
+For my degree project at Medieinstiutet, I decided to re-work [Nätverket mot Gynekologisk Cancer's](https://www.gyncancer.se/) website. They aim to spread awarness about gynecological cancer in women, while fighting for better healthcare for cancer paitents. 
 
 View it live: [https://gyncancersite.vercel.app/](https://gyncancersite.vercel.app/)
 
-This repository contains my degree project, which is built using the following technologies:
-
--   Angular 17: A popular JavaScript framework for building web applications.
--   Strapi: A headless CMS (Content Management System) that provides a flexible and customizable backend.
--   GraphQL: A query language for APIs that allows efficient data fetching and manipulation.
--   SCSS: A CSS preprocessor that enhances the styling capabilities of web applications.
+## Tech
+For this project I have used **Angular 17**, **Strapi** for CMS with **GraphQL** as a database, **SCSS** for styling and a few **Bootstrap** components. 
 
 ## Installation
 
