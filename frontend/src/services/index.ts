@@ -1,5 +1,6 @@
 import { AboutUsService } from './about-us.service';
 import { CartService } from './cart.service';
+import { closeRelativeService } from './close-relative.services';
 import { DonateService } from './donate.service';
 import { KnowledgeService } from './knowledge.service';
 import { LandingPageService } from './landingpage.service';
@@ -37,5 +38,7 @@ export const servicesAboutUs: any[] = [AboutUsService];
 export const servicesOrder: any[] = [OrderService];
 
 export const servicesWhatWeDo: any[] = [WhatWeDoServices];
+
+export const servicesCloseRelative: any[] = [closeRelativeService];
 
 export * from './landingpage.service';

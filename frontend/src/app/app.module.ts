@@ -23,6 +23,7 @@ import { StoreModule } from '@ngrx/store';
 import {
   servicesAboutUs,
   servicesCart,
+  servicesCloseRelative,
   servicesDonate,
   servicesKnowledge,
   servicesLandingPage,
@@ -54,6 +55,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ActivityComponent } from './sub-pages/activity/activity.component';
 import { CheckoutComponent } from './sub-pages/checkout/checkout.component';
+import { CloseRelativeComponent } from './sub-pages/close-relative/close-relative.component';
 import { DietComponent } from './sub-pages/diet/diet.component';
 import { EndoComponent } from './sub-pages/endo/endo.component';
 import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
@@ -101,6 +103,7 @@ import { WordsComponent } from './sub-pages/words/words.component';
     CervicalCancerComponent,
     VulvaComponent,
     WhatWeDoComponent,
+    CloseRelativeComponent,
   ],
   imports: [
     BrowserModule,
@@ -156,6 +159,7 @@ import { WordsComponent } from './sub-pages/words/words.component';
     servicesAboutUs,
     servicesOrder,
     servicesWhatWeDo,
+    servicesCloseRelative,
   ],
   bootstrap: [AppComponent],
 })

@@ -1,3 +1,4 @@
+@use "../../../mixins.scss" as mixins;
 @import "../../../styles.scss";
 
 .relative-header {
@@ -18,38 +19,16 @@
 }
 
 .relative-content {
-  height: auto;
+  margin: 2% 0 2% 2%;
 
-  &--text {
-    margin-left: 2%;
-
-    h2 {
-      color: $base-accent;
-    }
-
-    p {
-      font-size: 0.9em;
-      width: 90%;
-    }
+  h2 {
+    color: $base-accent;
   }
 
-  &--links {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 5%;
+  @include mixins.bootstrap-card;
 
-    &__card {
-      width: 50%;
-      height: 300px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      color: $base-gray;
-
-      h3 {
-        font-size: 1.8em;
-      }
-    }
+  .text {
+    font-size: 0.9em;
+    width: 90%;
   }
 }

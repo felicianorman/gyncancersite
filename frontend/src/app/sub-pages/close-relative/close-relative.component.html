@@ -1,29 +1,99 @@
 <div class="relative-header">
   <h1>För närstående</h1>
 </div>
-<main class="relative-content">
+<main class="relative-content" *ngIf="postDetails && postDetails.length > 0">
   <section class="relative-content--text">
-    <h2>Att vara närstående någon med cancer</h2>
-    <p>
-      En närstående (anhörig) kan vara en partner, barn, syskon, förälder, vän,
-      granne eller exempelvis ett barnbarn. En närstående är någon som stöttar
-      och finns där, nära den som har drabbats av sjukdom. Närstående är oerhört
-      viktiga och gör många gånger betydande insatser på flera olika plan för
-      den som är sjuk. Utan närstående skulle vårdsystemet mest troligt
-      kollapsa, detta eftersom undersökningar visar att mer än hälften av all
-      vård och omsorg i hemmet utförs av närstående. Närmare var femte person
-      som är i vuxen ålder vårdar, hjälper eller stöttar en närstående. Många
-      närstående har genom tiderna upplevt att vården har förbisett dem, deras
-      känslor och behov. Idag har tack och lov de närståendes stora betydelse
-      börjats uppmärksammas alltmer i sjukvården, och det finns mycket stöttning
-      för närstående att få. Många människor som har eller har haft cancer
-      vittnar ofta om hur viktigt deras närståendes stöd varit. Du som är
-      närstående spelar en stor roll och du kan vara ett stort stöd genom att
-      finnas vid den sjukes sida, lyssna och visa omtanke. I dessa stycken
-      sammanfattar vi närståendeskap. Dessa stycken har vi försökt skriva på så
-      sätt att de ska kunna rikta sig till dig som är närstående oavsett vilken
-      relation du har till den som är sjuk. Vi hänvisar dig också till vidare
-      läsning.
-    </p>
+    <h2>{{ postDetails[0].title }}</h2>
+    <markdown [data]="postDetails[0].content" class="text">
+      {{ postDetails[0].content }}</markdown
+    >
   </section>
+
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            {{ postDetails[1].title }}
+          </button>
+        </h5>
+      </div>
+
+      <div
+        id="collapseOne"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[1].content" class="text">
+            {{ postDetails[1].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            {{ postDetails[2].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseTwo"
+        class="collapse"
+        aria-labelledby="headingTwo"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[2].content" class="text">
+            {{ postDetails[2].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            {{ postDetails[3].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseThree"
+        class="collapse"
+        aria-labelledby="headingThree"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[3].content" class="text">
+            {{ postDetails[3].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
