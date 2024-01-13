@@ -27,7 +27,7 @@ module.exports = ({ env }) => ({
   settings: {
     cors: {
       enabled: true,
-      origin: env('CORS_ORIGIN', '*'), // You can set specific origins here, or use '*' for any origin
+      origin: env('CORS_ORIGIN', 'https://gyncancersite.vercel.app'), // Set your frontend origin
       headers: ['Content-Type', 'Authorization', 'Accept'],
     },
   },
@@ -36,3 +36,4 @@ module.exports = ({ env }) => ({
     order: ['Define the order in which middleware should be applied'],
   },
 });
+
