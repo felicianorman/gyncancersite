@@ -11,7 +11,7 @@ For this project I have used **Angular 17**, **Strapi** for CMS with **GraphQL**
 -   Clone the repository
 -   Install the dependencies by running `npm install` in the frontend and backend folders
 -   Run `npm start` in the frontend folder to start the Angular server
--   Run `npm run develop` in the backend folder to start the Strapi server
+-   Run `npm run start` in the backend folder to start the Strapi server
 
 ## Pictures
 
