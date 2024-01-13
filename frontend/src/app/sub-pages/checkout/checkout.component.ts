@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { CartService } from 'src/services/cart.service';
-import { OrderService } from 'src/services/order.service';
-import { Actions } from 'src/store/order/actions/order.actions';
 import { OrderActions } from '../../../store/order/actions';
 import * as fromStore from '../../../store/order/index';
 
@@ -27,12 +25,10 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.getItem('cartItems');
+    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
     this.cartService.cartItems$.subscribe((items) => {
       this.cartItems = items;
-      // this.images = items.map(
-      //   (item) => 'http://localhost:3000/' + item.img.url,
-      // );
-      // console.log(this.images);
     });
 
     this.form = new FormGroup({

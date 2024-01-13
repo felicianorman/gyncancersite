@@ -3,36 +3,29 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Apollo, gql } from 'apollo-angular';
 import { EMPTY, Observable, of } from 'rxjs';
 import { catchError, exhaustMap, map, switchMap } from 'rxjs/operators';
-import { Page } from 'src/interfaces/Page';
-import * as LifeAfterCancerActions from '../actions/life-after-cancer.actions';
+import { Post } from 'src/interfaces/Post';
+import * as rehabActions from '../actions/rehab.actions';
 
 @Injectable()
-export class LifeAfterCancerEffects {
+export class RehabEffects {
   constructor(
     private actions$: Actions,
     private apollo: Apollo,
   ) {}
 
-  loadLifeAfterCancer$ = createEffect(() =>
+  loadRehab$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(LifeAfterCancerActions.LOAD_LIFE_AFTER_CANCER),
+      ofType(rehabActions.LOAD_REHAB),
       switchMap(() =>
         this.apollo
           .query({
             query: gql`
-              query getLifeAfterCancer {
-                livetEfterCancers {
+              query getRehab {
+                rehabs {
                   data {
                     attributes {
                       title
                       content
-                      img {
-                        data {
-                          attributes {
-                            url
-                          }
-                        }
-                      }
                     }
                   }
                 }
@@ -43,23 +36,16 @@ export class LifeAfterCancerEffects {
             switchMap(() =>
               this.apollo
                 .query<{
-                  lifeaftercancer: any;
-                  data: { lifeaftercancer: { data: { attributes: Page } } };
+                  rehabs: any;
+                  data: { rehabs: { data: { attributes: Post } } };
                 }>({
                   query: gql`
-                    query getLifeAfterCancer {
-                      livetEfterCancers {
+                    query getRehab {
+                      rehabs {
                         data {
                           attributes {
                             title
                             content
-                            img {
-                              data {
-                                attributes {
-                                  url
-                                }
-                              }
-                            }
                           }
                         }
                       }
@@ -69,8 +55,8 @@ export class LifeAfterCancerEffects {
                 .pipe(
                   map(
                     (result) =>
-                      new LifeAfterCancerActions.LoadLifeAfterCancerSuccess(
-                        result.data.lifeaftercancer.data.attributes,
+                      new rehabActions.LoadRehabSuccess(
+                        result.data.rehabs.data.attributes,
                       ),
                   ),
                   catchError(() => EMPTY),

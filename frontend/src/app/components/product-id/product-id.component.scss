@@ -80,6 +80,7 @@
     h3 {
       font-weight: normal;
       width: 50%;
+      font-size: 1.2em;
 
       @include mixins.mobile {
         width: 90%;

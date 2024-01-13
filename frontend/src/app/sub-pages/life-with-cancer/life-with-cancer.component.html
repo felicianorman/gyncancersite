@@ -12,14 +12,43 @@
   <div class="lfw-content--pages">
     <div class="accordion" id="accordionExample">
       <div class="card">
+        <div class="card-header" id="headingSix">
+          <h5 class="mb-0">
+            <button
+              class="btn collapsed"
+              type="button"
+              data-toggle="collapse"
+              data-target="#collapseSix"
+              aria-expanded="false"
+              aria-controls="collapseSix"
+            >
+              {{ pageDetails[4].title }}
+            </button>
+          </h5>
+        </div>
+
+        <div
+          id="collapseSix"
+          class="collapse"
+          aria-labelledby="headingSix"
+          data-parent="#accordionExample"
+        >
+          <div class="card-body">
+            <markdown [data]="pageDetails[4].content">
+              {{ pageDetails[4].content }}</markdown
+            >
+          </div>
+        </div>
+      </div>
+      <div class="card">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">
             <button
-              class="btn"
+              class="btn collapsed"
               type="button"
               data-toggle="collapse"
               data-target="#collapseOne"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="collapseOne"
             >
               {{ pageDetails[1].title }}
@@ -29,7 +58,7 @@
 
         <div
           id="collapseOne"
-          class="collapse show"
+          class="collapse"
           aria-labelledby="headingOne"
           data-parent="#accordionExample"
         >
@@ -68,6 +97,22 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="lfw-diet" (click)="navigateToDiet()">
+    <div class="lfw-diet--text">
+      <h2>{{ pageDetails[8].title }}</h2>
+      <p>
+        Vid diagnos av gynekologisk cancer kan du behöva stöd och hjälp av flera
+        olika yrkesgrupper i vården, och här vi nämnt några olika professioner
+        som kan bli aktuella för dig att få stöd och hjälp från
+      </p>
+      <span>Läs mer</span>
+    </div>
+  </div>
+  <div class="lfw-content--pages">
+    <div class="accordion" id="accordionExample">
       <div class="card">
         <div class="card-header" id="headingThree">
           <h5 class="mb-0">
@@ -96,31 +141,15 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="lfw-diet" (click)="navigateToDiet()">
-    <div class="lfw-diet--text">
-      <h2>{{ pageDetails[8].title }}</h2>
-      <p>
-        Vid diagnos av gynekologisk cancer kan du behöva stöd och hjälp av flera
-        olika yrkesgrupper i vården, och här vi nämnt några olika professioner
-        som kan bli aktuella för dig att få stöd och hjälp från
-      </p>
-      <span>Läs mer</span>
-    </div>
-  </div>
-  <div class="lfw-content--pages">
-    <div class="accordion" id="accordionExample">
       <div class="card">
         <div class="card-header" id="headingFour">
           <h5 class="mb-0">
             <button
-              class="btn"
+              class="btn collapsed"
               type="button"
               data-toggle="collapse"
               data-target="#collapseFour"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="collapseFour"
             >
               {{ pageDetails[6].title }}
@@ -130,7 +159,7 @@
 
         <div
           id="collapseFour"
-          class="collapse show"
+          class="collapse"
           aria-labelledby="headingFour"
           data-parent="#accordionExample"
         >

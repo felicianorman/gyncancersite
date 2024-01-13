@@ -1,7 +1,6 @@
 @import "../../../styles.scss";
 
 .dropdown {
-  width: 90vw;
   position: relative;
   display: flex;
   justify-content: flex-end;
@@ -9,6 +8,10 @@
 
 .material-symbols-outlined {
   font-size: 2em;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .cart {
@@ -26,12 +29,12 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: $base-gray;
   min-width: 250px;
   box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
   z-index: 999;
-  top: 10px;
-  right: -10%;
+  top: 30px;
+  right: -30%;
   padding: 0;
 
   font-size: 0.9em;
@@ -39,6 +42,9 @@
   li {
     list-style-type: none;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -63,5 +69,20 @@
     &:hover {
       background-color: $base-accent-hover;
     }
+  }
+}
+
+.remove {
+  color: $base-accent;
+  border: none;
+  padding: 0;
+  background-color: $base-gray;
+  font-size: 0.9em;
+  margin-left: 2%;
+
+  &:hover {
+    cursor: pointer;
+    color: $base-accent-hover;
+    transform: scale(1.1);
   }
 }

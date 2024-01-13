@@ -16,14 +16,14 @@ import { DietComponent } from './sub-pages/diet/diet.component';
 import { DonateComponent } from './sub-pages/donate/donate.component';
 import { EndoComponent } from './sub-pages/endo/endo.component';
 import { GynCancersComponent } from './sub-pages/gyn-cancers/gyn-cancers.component';
-import { LifeaftercancerComponent } from './sub-pages/life-after-cancer/lifeaftercancer.component';
 import { LifewithcancerComponent } from './sub-pages/life-with-cancer/life-with-cancer.component';
 import { CervicalCancerComponent } from './sub-pages/livmoderhalscancer/cerivalcancer.component';
 import { OvarianComponent } from './sub-pages/ovarian/ovarian.component';
 import { PalliatveCareComponent } from './sub-pages/palliatve-care/palliatve-care.component';
 import { PreventionComponent } from './sub-pages/prevention/prevention.component';
 import { RegisterComponent } from './sub-pages/register/register.component';
-import { TreatmentComponent } from './sub-pages/treatment/treatment.component';
+
+import { RehabComponent } from './sub-pages/rehab/rehab.component';
 import { VulvaComponent } from './sub-pages/vulva/vulva.component';
 import { WhatWeDoComponent } from './sub-pages/what-we-do/what-we-do.component';
 import { WordsComponent } from './sub-pages/words/words.component';
@@ -47,14 +47,10 @@ const routes: Routes = [
     path: 'for-patienter/livet-med-cancer',
     component: LifewithcancerComponent,
   },
-  {
-    path: 'for-patienter/livet-efter-cancer',
-    component: LifeaftercancerComponent,
-  },
 
   {
-    path: 'for-patienter/behandlingar',
-    component: TreatmentComponent,
+    path: 'for-patienter/rehab',
+    component: RehabComponent,
   },
   {
     path: 'for-patienter/for-narstaende',

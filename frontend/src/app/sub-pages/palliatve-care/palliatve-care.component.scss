@@ -11,57 +11,28 @@ body {
   background-position: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  color: $base-gray;
 
-  &--text {
-    color: $base-gray;
+  h1 {
     margin-left: 2%;
-
-    p {
-      width: 50%;
-    }
   }
 }
 
 .palliative-content {
-  &--text {
-    margin-left: 2%;
-    margin-top: 2%;
-    h2 {
-      color: $base-accent;
-      font-size: 1.8em;
-    }
-
+  @include mixins.bootstrap-card;
+  margin: 2% 2% 2% 2%;
+  .text {
     p {
-      width: 90%;
       font-size: 0.9em;
-      margin-bottom: 2%;
     }
   }
-
-  &--late {
-    margin-top: 5%;
-    height: 40vh;
-    background-image: url("../../../assets/palliative-end.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-
-    &__text {
-      color: $base-gray;
-      margin-left: 2%;
-
-      h2 {
-        font-weight: normal;
-        font-size: 1.8em;
-      }
-
-      p {
-        width: 40%;
-      }
-    }
+  h2 {
+    color: $base-accent;
   }
 }
 
-@include mixins.bootstrap-card;
+.text {
+  font-size: 0.9em;
+  width: 90%;
+}

@@ -1,0 +1,237 @@
+<div class="rehab-header">
+  <h1>Rehabilitering</h1>
+</div>
+
+<main class="rehab-content" *ngIf="postDetails && postDetails.length > 0">
+  <h2>{{ postDetails[0].title }}</h2>
+  <markdown [data]="postDetails[0].content" class="rehab-content--text">
+    <p>{{ postDetails[0].content }}</p></markdown
+  >
+  <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            {{ postDetails[1].title }}
+          </button>
+        </h5>
+      </div>
+
+      <div
+        id="collapseOne"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[1].content" class="text">
+            {{ postDetails[1].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            {{ postDetails[2].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseTwo"
+        class="collapse"
+        aria-labelledby="headingTwo"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[2].content" class="text">
+            {{ postDetails[2].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            {{ postDetails[3].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseThree"
+        class="collapse"
+        aria-labelledby="headingThree"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[3].content" class="text">
+            {{ postDetails[3].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFour">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseFour"
+            aria-expanded="false"
+            aria-controls="collapseFour"
+          >
+            {{ postDetails[4].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseFour"
+        class="collapse"
+        aria-labelledby="headingFour"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[4].content" class="text">
+            {{ postDetails[4].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFive">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseFive"
+            aria-expanded="false"
+            aria-controls="collapseFive"
+          >
+            {{ postDetails[5].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseFive"
+        class="collapse"
+        aria-labelledby="headingFive"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[5].content" class="text">
+            {{ postDetails[5].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingFive">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseSix"
+            aria-expanded="false"
+            aria-controls="collapseSix"
+          >
+            {{ postDetails[6].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseSix"
+        class="collapse"
+        aria-labelledby="headingsix"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[6].content" class="text">
+            {{ postDetails[6].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingSeven">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseSeven"
+            aria-expanded="false"
+            aria-controls="collapseSeven"
+          >
+            {{ postDetails[7].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseSeven"
+        class="collapse"
+        aria-labelledby="headingSeven"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[7].content" class="text">
+            {{ postDetails[7].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingEight">
+        <h5 class="mb-0">
+          <button
+            class="btn collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapseEight"
+            aria-expanded="false"
+            aria-controls="collapseEight"
+          >
+            {{ postDetails[8].title }}
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseEight"
+        class="collapse"
+        aria-labelledby="headingEight"
+        data-parent="#accordionExample"
+      >
+        <div class="card-body">
+          <markdown [data]="postDetails[8].content" class="text">
+            {{ postDetails[8].content }}</markdown
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

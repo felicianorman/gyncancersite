@@ -1273,6 +1273,37 @@ export interface ApiRegisterRegister extends Schema.CollectionType {
   };
 }
 
+export interface ApiRehabRehab extends Schema.CollectionType {
+  collectionName: 'rehabs';
+  info: {
+    singularName: 'rehab';
+    pluralName: 'rehabs';
+    displayName: 'rehab';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    content: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rehab.rehab',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rehab.rehab',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiStoryStory extends Schema.CollectionType {
   collectionName: 'stories';
   info: {
@@ -1414,6 +1445,7 @@ declare module '@strapi/types' {
       'api::palliativ-vard.palliativ-vard': ApiPalliativVardPalliativVard;
       'api::product.product': ApiProductProduct;
       'api::register.register': ApiRegisterRegister;
+      'api::rehab.rehab': ApiRehabRehab;
       'api::story.story': ApiStoryStory;
       'api::support-us.support-us': ApiSupportUsSupportUs;
       'api::support-us-info.support-us-info': ApiSupportUsInfoSupportUsInfo;

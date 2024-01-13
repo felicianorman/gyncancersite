@@ -60,4 +60,8 @@ export class LandingpageComponent {
   public navigateToBlog() {
     this.router.navigate(['/kunskap/patient-berattelser']);
   }
+
+  public navigateToRegister() {
+    this.router.navigate(['/stod-oss/register']);
+  }
 }

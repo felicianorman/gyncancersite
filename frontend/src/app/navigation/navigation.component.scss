@@ -16,6 +16,7 @@ header {
 nav {
   display: flex;
   background-color: $base-gray;
+  justify-content: space-between;
   font-family: "Jost", sans-serif;
 
   @include mixins.mobile {
@@ -93,4 +94,10 @@ nav {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.cart {
+  margin-right: 2%;
+  display: flex;
+  align-items: center;
 }

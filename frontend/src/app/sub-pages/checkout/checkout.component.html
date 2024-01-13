@@ -30,10 +30,12 @@
           <input type="string" formControlName="address" />
         </div>
       </div>
-      <div class="register-form__container"></div>
       <div class="register-form__button">
         <button>Betala</button>
       </div>
     </form>
   </div>
+</div>
+<div *ngIf="cartItems.length == 0" class="empty-cart">
+  <h2>Varukorgen är tom!</h2>
 </div>

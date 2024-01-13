@@ -6,7 +6,9 @@
 
     <li *ngFor="let item of cartItems">
       {{ item.title }} - {{ item.price }} kr x {{ item.quantity }}
-      <button (click)="removeFromCart(item.productId)">Ta bort</button>
+      <button (click)="removeFromCart(item.productId)" class="remove">
+        <span class="material-symbols-outlined"> remove </span>
+      </button>
     </li>
     <div class="total">
       <span>Total: {{ calculateTotalAmount() }} kr</span>

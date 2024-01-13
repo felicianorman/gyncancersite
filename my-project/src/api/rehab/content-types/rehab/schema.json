@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rehabs",
+  "info": {
+    "singularName": "rehab",
+    "pluralName": "rehabs",
+    "displayName": "rehab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

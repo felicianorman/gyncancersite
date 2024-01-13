@@ -1,69 +1,40 @@
 <div class="palliative-header">
   <div class="palliative-header--text">
     <h1>Palliativ vård</h1>
-    <p>
-      Palliativ vård innebär att sjukdomen eller ditt tillstånd är livshotande
-      och målet är att du ska ha en hög livskvalitet så länge som möjligt, och
-      den palliativa vården innebär att du ska få möjlighet att
-      <span>'leva tills du dör'.</span>
-    </p>
   </div>
 </div>
-<main class="palliative-content">
-  <section class="palliative-content--text">
-    <h2>Vad är palliativ vård?</h2>
-    <p>
-      Ett vanligt missförstånd om palliativ vård är att det är vård som ges när
-      det inte finns mer att göra, men det är mycket missvisande, särskilt när
-      det kommer till palliativ vård vid en cancersjukdom då det kan vara
-      aktuellt med palliativ cytostatikabehandling eller annan cancerbehandling
-      för att bromsa sjukdomen och lindra symtom. Ibland inleds den palliativa
-      vården redan vid diagnostillfället då det ibland vid diagnos kan stå klart
-      att det inte går att bota sjukdomen. Det kan också bli aktuellt med
-      palliativ vård efter att behandlingar för att bota sjukdomen har slutat
-      fungera eller för att du själv inte längre vill genomföra behandlingar.
-    </p>
-  </section>
+<main class="palliative-content" *ngIf="postDetails && postDetails.length > 0">
+  <h2>Vad är palliativ vård?</h2>
+  <markdown [data]="postDetails[1].content" class="text">
+    {{ postDetails[1].content }}
+  </markdown>
   <div class="accordion" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingOne">
         <h5 class="mb-0">
           <button
-            class="btn"
+            class="btn collapsed"
             type="button"
             data-toggle="collapse"
             data-target="#collapseOne"
-            aria-expanded="true"
+            aria-expanded="false"
             aria-controls="collapseOne"
           >
-            Tidig palliativ fas
+            {{ postDetails[2].title }}
           </button>
         </h5>
       </div>
 
       <div
         id="collapseOne"
-        class="collapse show"
+        class="collapse"
         aria-labelledby="headingOne"
         data-parent="#accordionExample"
       >
         <div class="card-body">
-          <p>
-            Cytostatika är ett läkemedel som tar sönder celler som delar sig.
-            Olika cytostatikum angriper cellerna på olika sätt därför kombineras
-            ofta flera olika cytostatika för att få bättre effekt. Cytostatika
-            ges oftast i droppform (men kan också ges i exempelvis tablettform).
-          </p>
-
-          <p>
-            Cytostatika ges oftast efter operation men ibland kan cytostatika
-            också ges innan operationen om sjukdomen är mycket spridd.
-            Cytostatika är en viktig behandling vid äggstockscancer och är ett
-            läkemedel som tar sönder celler som delar sig. Olika cytostatikum
-            angriper cellerna på olika sätt därför kombineras ofta flera olika
-            cytostatika för att få bättre effekt. Cytostatika ges oftast i
-            droppform (men kan också ges i exempelvis tablettform).
-          </p>
+          <markdown [data]="postDetails[2].content" class="text">
+            {{ postDetails[2].content }}
+          </markdown>
         </div>
       </div>
     </div>
@@ -78,7 +49,7 @@
             aria-expanded="false"
             aria-controls="collapseTwo"
           >
-            Sen palliativ fas
+            {{ postDetails[4].title }}
           </button>
         </h5>
       </div>
@@ -89,15 +60,9 @@
         data-parent="#accordionExample"
       >
         <div class="card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-          terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-          skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-          single-origin coffee nulla assumenda shoreditch et. Nihil anim
-          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-          you probably haven't heard of them accusamus labore sustainable VHS.
+          <markdown [data]="postDetails[4].content" class="text">
+            {{ postDetails[4].content }}
+          </markdown>
         </div>
       </div>
     </div>
@@ -112,7 +77,7 @@
             aria-expanded="false"
             aria-controls="collapseThree"
           >
-            Närstående
+            {{ postDetails[3].title }}
           </button>
         </h5>
       </div>
@@ -123,29 +88,11 @@
         data-parent="#accordionExample"
       >
         <div class="card-body">
-          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-          terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
-          skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-          single-origin coffee nulla assumenda shoreditch et. Nihil anim
-          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-          occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
-          you probably haven't heard of them accusamus labore sustainable VHS.
+          <markdown [data]="postDetails[3].content" class="text">
+            {{ postDetails[3].content }}
+          </markdown>
         </div>
       </div>
     </div>
   </div>
-
-  <section class="palliative-content--late">
-    <article class="palliative-content--late__text">
-      <h2>Livets slutskede</h2>
-      <p>
-        Vård i livets slutskede innebär att sjukdomen inte längre kan bromsas.
-        Läkaren samråder med dig och eventuella närstående om du är i livets
-        slutskede, vad det innebär och hur de symtom du har kan lindras.
-      </p>
-      <span>Läs mer</span>
-    </article>
-  </section>
 </main>
