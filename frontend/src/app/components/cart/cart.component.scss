@@ -1,3 +1,5 @@
+@use "../../../mixins" as mixins;
+
 @import "../../../styles.scss";
 
 .dropdown {
@@ -8,9 +10,19 @@
 
 .material-symbols-outlined {
   font-size: 2em;
+  color: gray;
+
+  @include mixins.mobile {
+    font-size: 1.5em;
+  }
 
   &:hover {
     cursor: pointer;
+    color: rgb(100, 100, 100);
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 }
 

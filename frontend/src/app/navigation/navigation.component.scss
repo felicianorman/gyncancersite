@@ -13,37 +13,18 @@ header {
   }
 }
 
+.dropdown-menu {
+  background-color: $base-gray;
+}
+
+.nav-item {
+  padding: 5px;
+}
 nav {
   display: flex;
   background-color: $base-gray;
   justify-content: space-between;
   font-family: "Jost", sans-serif;
-
-  @include mixins.mobile {
-    align-items: center;
-    justify-content: center;
-
-    .nav-ul {
-      padding: 0;
-    }
-
-    li {
-      font-size: 0.8em;
-    }
-  }
-
-  width: 100%;
-
-  .nav-ul {
-    display: flex;
-    gap: 10px;
-  }
-
-  li {
-    list-style-type: none;
-
-    padding: 5px;
-  }
 
   a {
     text-decoration: none;
@@ -66,38 +47,17 @@ nav {
   }
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-
-  &-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    padding: 0;
-
-    a {
-      color: black;
-      text-decoration: none;
-      display: block;
-
-      &:hover {
-        background-color: #ddd;
-      }
-    }
-  }
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
 .cart {
   margin-right: 2%;
   display: flex;
   align-items: center;
+
+  @include mixins.mobile {
+    margin-bottom: 2%;
+    font-size: 1.7em;
+
+    &:hover {
+      display: none;
+    }
+  }
 }
