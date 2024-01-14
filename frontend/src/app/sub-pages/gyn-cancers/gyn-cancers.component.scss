@@ -32,6 +32,10 @@
 .gyncancer--content {
   height: 100vh;
 
+  @include mixins.mobile {
+    height: auto;
+  }
+
   p {
     margin-left: 2%;
     font-size: 0.9em;
@@ -47,8 +51,16 @@
   &--pages {
     @include mixins.card-holder;
 
+    @include mixins.mobile {
+      flex-direction: column;
+    }
+
     &__card {
       @include mixins.card;
+
+      @include mixins.mobile {
+        width: 100%;
+      }
     }
   }
 

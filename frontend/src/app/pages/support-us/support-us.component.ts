@@ -31,7 +31,7 @@ export class SupportUsComponent implements OnInit {
   }
 
   public navigateTo() {
-    this.router.navigate(['/stod-oss/donate']);
+    this.router.navigate(['/webshop']);
   }
   ngOnInit() {
     this.posts$ = this.store.select(fromStore.getSupportUs);

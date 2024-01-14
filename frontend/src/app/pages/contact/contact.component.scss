@@ -34,6 +34,10 @@
     gap: 10px;
     height: auto;
 
+    @include mixins.mobile {
+      flex-direction: column;
+    }
+
     &__card {
       min-height: 1000px;
       width: 40%;
@@ -42,6 +46,10 @@
       align-items: center;
       background-color: $base-gray;
       padding: 10px;
+
+      @include mixins.mobile {
+        width: 80%;
+      }
 
       img {
         width: 200px;

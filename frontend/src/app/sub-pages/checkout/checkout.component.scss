@@ -1,3 +1,4 @@
+@use "../../../mixins" as mixins;
 @import "../../../styles";
 
 .cart {
@@ -63,6 +64,11 @@
   gap: 10px;
   background-color: $base-gray;
   padding: 10px;
+
+  @include mixins.mobile {
+    flex-direction: column;
+    height: 200px;
+  }
 
   &--card {
     display: flex;

@@ -11,7 +11,6 @@ import { GraphQLModule } from './graphql.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ForpatientsComponent } from './pages/forpatients/forpatients.component';
-import { KnowledgeComponent } from './pages/knowledge/knowledge.component';
 import { LandingpageComponent } from './pages/landingpage/landingpage.component';
 import { SupportUsComponent } from './pages/support-us/support-us.component';
 import { BlogComponent } from './sub-pages/blog/blog.component';
@@ -76,7 +75,6 @@ import { WordsComponent } from './sub-pages/words/words.component';
     AppComponent,
     LandingpageComponent,
     DonateComponent,
-    KnowledgeComponent,
     SupportUsComponent,
     ContactComponent,
     ForpatientsComponent,
