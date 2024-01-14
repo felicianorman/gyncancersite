@@ -5,14 +5,22 @@
     <div class="dropdown-content__cart"><h3>Varukorg</h3></div>
 
     <li *ngFor="let item of cartItems">
-      {{ item.title }} - {{ item.price }} kr x {{ item.quantity }}
-      <button
-        (click)="removeFromCart(item.productId)"
-        class="dropdown-content__remove"
-      >
-        <span class="material-symbols-outlined"> remove </span>
-      </button>
+      {{ item.title }} - {{ item.price }} kr
+      <div class="dropdown-content__cart--btn">
+        <button
+          (click)="removeFromCart(item.productId)"
+          class="dropdown-content__remove"
+        >
+          -
+          <!-- <span class="material-symbols-outlined"> remove </span> -->
+        </button>
+        <div class="dropdown-content__cart--btn__quant">
+          {{ item.quantity }}
+        </div>
+        <button (click)="addToCart(item)">+</button>
+      </div>
     </li>
+
     <div class="dropdown-content__total">
       <span>Total: {{ calculateTotalAmount() }} kr</span>
       <li>

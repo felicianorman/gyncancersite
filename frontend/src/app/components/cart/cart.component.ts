@@ -1,6 +1,5 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { CartService } from 'src/services/cart.service';
 
 @Component({
@@ -26,6 +25,10 @@ export class CartComponent implements OnInit {
 
   public navigateToCart() {
     this.router.navigate(['/checkout']);
+  }
+
+  public addToCart(product: any) {
+    this.cartService.addToCart(product);
   }
 
   public removeFromCart(productId: number) {

@@ -18,7 +18,7 @@
   display: none;
   position: absolute;
   background-color: $base-gray;
-  min-width: 250px;
+  min-width: 260px;
   box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
   z-index: 999;
   top: 30px;
@@ -30,26 +30,45 @@
     padding: 5px;
     text-align: center;
 
+    &--btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+
+      button {
+        background-color: $base-accent;
+        border: none;
+        color: $base-gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+        font-weight: bold;
+        height: 20px;
+        width: 15px;
+
+        &:hover {
+          background-color: $base-accent-hover;
+          cursor: pointer;
+        }
+      }
+
+      &__quant {
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px 0px;
+        text-align: center;
+        width: 15px;
+        height: 20px;
+        font-size: 0.8em;
+      }
+    }
+
     h3 {
       margin: 0;
       color: $base-gray;
       font-size: 1em;
       font-weight: 500;
-    }
-  }
-
-  &__remove {
-    color: $base-accent;
-    border: none;
-    padding: 0;
-    background-color: $base-gray;
-    font-size: 0.9em;
-    margin-left: 2%;
-
-    &:hover {
-      cursor: pointer;
-      color: $base-accent-hover;
-      transform: scale(1.1);
     }
   }
 
@@ -73,14 +92,13 @@
     }
   }
 
-  font-size: 0.9em;
-
   li {
     list-style-type: none;
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    font-size: 0.9em;
   }
 }
 
