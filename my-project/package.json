@@ -33,8 +33,8 @@
     "uuid": "c524c78f-09f2-4787-b6f3-9cfa8ea4351d"
   },
   "engines": {
-    "node": "18.13.0",
-    "npm": "8.19.3"
+    "node": ">=16.0.0",
+    "npm": ">=6.0.0"
   },
   "license": "MIT",
   "cypress": {
