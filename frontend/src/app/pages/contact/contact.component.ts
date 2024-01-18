@@ -39,7 +39,7 @@ export class ContactComponent implements OnInit {
         return {
           title: page.attributes.title,
           content: page.attributes.content,
-          img: 'https://gyncancersite.vercel.app' + imgObject,
+          img: 'https://gyncancersite.vercel.app/' + imgObject,
         };
       });
     });

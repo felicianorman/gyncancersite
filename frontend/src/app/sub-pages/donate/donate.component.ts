@@ -42,7 +42,7 @@ export class DonateComponent implements OnInit {
         'doneraLevalitetill'
       ].data.attributes.content;
       this.levaLiteTillImg =
-        'https://gyncancersite.vercel.app' +
+        'https://gyncancersite.vercel.app/' +
         (result.data as any)['doneraLevalitetill'].data.attributes.img.data
           .attributes.url;
     });
@@ -62,7 +62,7 @@ export class DonateComponent implements OnInit {
         'doneraMeetup'
       ].data.attributes.content;
       this.meetUpImg =
-        'https://gyncancersite.vercel.app' +
+        'https://gyncancersite.vercel.app/' +
         (result.data as any)['doneraMeetup'].data.attributes.img.data.attributes
           .url;
     });
@@ -72,7 +72,7 @@ export class DonateComponent implements OnInit {
         'doneraGyncancerdagen'
       ].data.attributes.content;
       this.gynCancerDagenImg =
-        'https://gyncancersite.vercel.app' +
+        'https://gyncancersite.vercel.app/' +
         (result.data as any)['doneraGyncancerdagen'].data.attributes.img.data
           .attributes.url;
     });

@@ -28,7 +28,7 @@ export class ProductIdComponent implements OnInit {
 
         const productDetail = products.find((product: any) => {
           this.img =
-            'https://gyncancersite.vercel.app' +
+            'https://gyncancersite.vercel.app/' +
               product.attributes.img?.data?.attributes?.url || '';
           return product.attributes.productId == productId;
         });
