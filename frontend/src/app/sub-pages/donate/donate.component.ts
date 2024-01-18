@@ -42,7 +42,7 @@ export class DonateComponent implements OnInit {
         'doneraLevalitetill'
       ].data.attributes.content;
       this.levaLiteTillImg =
-        'http://localhost:1337' +
+        'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
         (result.data as any)['doneraLevalitetill'].data.attributes.img.data
           .attributes.url;
     });
@@ -52,7 +52,7 @@ export class DonateComponent implements OnInit {
         'doneraVaccin'
       ].data.attributes.content;
       this.vaccineImg =
-        'http://localhost:1337' +
+        'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
         (result.data as any)['doneraVaccin'].data.attributes.img.data.attributes
           .url;
     });
@@ -62,7 +62,7 @@ export class DonateComponent implements OnInit {
         'doneraMeetup'
       ].data.attributes.content;
       this.meetUpImg =
-        'http://localhost:1337' +
+        'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
         (result.data as any)['doneraMeetup'].data.attributes.img.data.attributes
           .url;
     });
@@ -72,7 +72,7 @@ export class DonateComponent implements OnInit {
         'doneraGyncancerdagen'
       ].data.attributes.content;
       this.gynCancerDagenImg =
-        'http://localhost:1337' +
+        'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
         (result.data as any)['doneraGyncancerdagen'].data.attributes.img.data
           .attributes.url;
     });

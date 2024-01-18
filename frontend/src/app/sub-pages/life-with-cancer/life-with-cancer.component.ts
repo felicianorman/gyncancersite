@@ -42,7 +42,7 @@ export class LifewithcancerComponent implements OnInit {
             title: page.attributes.title,
             content: page.attributes.content,
             img:
-              'http://localhost:1337' +
+              'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
                 page.attributes.img?.data?.attributes?.url || '',
           };
         });

@@ -46,7 +46,7 @@ export class ProductsComponent {
           description: product.attributes.description,
           price: product.attributes.price,
           img:
-            'http://localhost:1337' +
+            'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
               product.attributes.img?.data?.attributes?.url || '',
         };
       });

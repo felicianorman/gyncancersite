@@ -3,10 +3,11 @@ import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 
-const uri = '/graphql'; // <-- add the URL of the GraphQL server here
+const uri = 'https://superb-triumph-446ab0e0c5.strapiapp.com/graphql';
+
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
-    link: httpLink.create({ uri }),
+    link: httpLink.create({ uri, method: 'POST' }), // Ensure the method is set to POST
     cache: new InMemoryCache(),
   };
 }
