@@ -37,13 +37,11 @@ export class GynCancersComponent implements OnInit {
       this.pages = (result.data as any)['kunskaps'].data;
 
       this.pageDetails = this.pages.map((page: any) => {
-   
-
         return {
           title: page.attributes.title,
           content: page.attributes.content,
           preview: page.attributes.preview,
-          img: page.attributes.img?.data?.attributes.url;
+          img: page.attributes.img?.data?.attributes.url,
         };
       });
     });
