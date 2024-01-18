@@ -42,9 +42,7 @@ export class BlogComponent implements OnInit {
           body: blog.attributes.content,
           author: blog.attributes.author,
           preview: blog.attributes.preview,
-          img:
-            'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
-            imgObject,
+          img: 'https://gyncancersite.vercel.app' + imgObject,
         };
       });
     });

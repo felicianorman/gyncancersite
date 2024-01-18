@@ -43,9 +43,7 @@ export class GynCancersComponent implements OnInit {
           title: page.attributes.title,
           content: page.attributes.content,
           preview: page.attributes.preview,
-          img:
-            'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
-            imgObject,
+          img: 'https://gyncancersite.vercel.app' + imgObject,
         };
       });
     });

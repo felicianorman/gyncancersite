@@ -39,9 +39,7 @@ export class ContactComponent implements OnInit {
         return {
           title: page.attributes.title,
           content: page.attributes.content,
-          img:
-            'https://gyncancersite-fml0ccrbh-felicianorman.vercel.app' +
-            imgObject,
+          img: 'https://gyncancersite.vercel.app' + imgObject,
         };
       });
     });
