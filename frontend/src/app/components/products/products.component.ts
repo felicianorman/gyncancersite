@@ -45,9 +45,7 @@ export class ProductsComponent {
           id: product.attributes.productId,
           description: product.attributes.description,
           price: product.attributes.price,
-          img:
-            'https://gyncancersite.vercel.app/' +
-              product.attributes.img?.data?.attributes?.url || '',
+          img: product.attributes.img?.data?.attributes?.url || '',
         };
       });
     });

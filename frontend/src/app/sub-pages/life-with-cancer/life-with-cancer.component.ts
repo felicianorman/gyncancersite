@@ -41,9 +41,7 @@ export class LifewithcancerComponent implements OnInit {
           return {
             title: page.attributes.title,
             content: page.attributes.content,
-            img:
-              'https://gyncancersite.vercel.app/' +
-                page.attributes.img?.data?.attributes?.url || '',
+            img: page.attributes.img?.data?.attributes?.url || '',
           };
         });
       });

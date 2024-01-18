@@ -41,40 +41,36 @@ export class DonateComponent implements OnInit {
       this.levaLiteTillText = (result.data as any)[
         'doneraLevalitetill'
       ].data.attributes.content;
-      this.levaLiteTillImg =
-        'https://gyncancersite.vercel.app/' +
-        (result.data as any)['doneraLevalitetill'].data.attributes.img.data
-          .attributes.url;
+      this.levaLiteTillImg = (result.data as any)[
+        'doneraLevalitetill'
+      ].data.attributes.img.data.attributes.url;
     });
 
     this.donateService.getVaccine().valueChanges.subscribe((result) => {
       this.vaccineText = (result.data as any)[
         'doneraVaccin'
       ].data.attributes.content;
-      this.vaccineImg =
-        'https://gyncancersite.vercel.app/' +
-        (result.data as any)['doneraVaccin'].data.attributes.img.data.attributes
-          .url;
+      this.vaccineImg = (result.data as any)[
+        'doneraVaccin'
+      ].data.attributes.img.data.attributes.url;
     });
 
     this.donateService.getMeetup().valueChanges.subscribe((result) => {
       this.meetUpText = (result.data as any)[
         'doneraMeetup'
       ].data.attributes.content;
-      this.meetUpImg =
-        'https://gyncancersite.vercel.app/' +
-        (result.data as any)['doneraMeetup'].data.attributes.img.data.attributes
-          .url;
+      this.meetUpImg = (result.data as any)[
+        'doneraMeetup'
+      ].data.attributes.img.data.attributes.url;
     });
 
     this.donateService.getGynCancerdagen().valueChanges.subscribe((result) => {
       this.gynCancerDagenText = (result.data as any)[
         'doneraGyncancerdagen'
       ].data.attributes.content;
-      this.gynCancerDagenImg =
-        'https://gyncancersite.vercel.app/' +
-        (result.data as any)['doneraGyncancerdagen'].data.attributes.img.data
-          .attributes.url;
+      this.gynCancerDagenImg = (result.data as any)[
+        'doneraGyncancerdagen'
+      ].data.attributes.img.data.attributes.url;
     });
   }
 }

@@ -34,12 +34,10 @@ export class ContactComponent implements OnInit {
       this.pages = (result.data as any)['aboutUses'].data;
 
       this.pageDetails = this.pages.map((page: any) => {
-        const imgObject = page.attributes.img?.data?.attributes.url;
-
         return {
           title: page.attributes.title,
           content: page.attributes.content,
-          img: 'https://gyncancersite.vercel.app/' + imgObject,
+          img: page.attributes.img?.data?.attributes.url,
         };
       });
     });

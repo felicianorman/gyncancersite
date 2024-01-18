@@ -36,13 +36,12 @@ export class BlogComponent implements OnInit {
       this.blog = (result.data as any)['stories'].data;
 
       this.blogDetails = this.blog.map((blog: any) => {
-        const imgObject = blog.attributes.img?.data?.attributes.url;
         return {
           title: blog.attributes.title,
           body: blog.attributes.content,
           author: blog.attributes.author,
           preview: blog.attributes.preview,
-          img: 'https://gyncancersite.vercel.app/' + imgObject,
+          img: blog.attributes.img?.data?.attributes.url,
         };
       });
     });
