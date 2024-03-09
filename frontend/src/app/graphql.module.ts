@@ -3,7 +3,7 @@ import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 
-const uri = 'https://superb-triumph-446ab0e0c5.strapiapp.com/graphql';
+const uri = 'https://mas22m6xj5f77avjtb7hx2it4e.appsync-api.eu-north-1.amazonaws.com/graphql';
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
