@@ -3,7 +3,7 @@ import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { APOLLO_OPTIONS, ApolloModule } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 
-const uri = 'localhost:1337/graphql';
+const uri = 'https://gyncancerse-1bd694468459.herokuapp.com/graphql';
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
