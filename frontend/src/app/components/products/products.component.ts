@@ -38,6 +38,7 @@ export class ProductsComponent {
 
     this.productService.getProducts().valueChanges.subscribe((result) => {
       this.products = (result.data as any)['products'].data;
+      console.log(result.data, 'data')
 
       this.productDetails = this.products.map((product: any) => {
         return {
@@ -45,10 +46,16 @@ export class ProductsComponent {
           id: product.attributes.productId,
           description: product.attributes.description,
           price: product.attributes.price,
-          img: product.attributes.img?.data?.attributes?.url || '',
+          img: 'https://gyncancersite.vercel.app' + product.attributes.img.data.attributes.url || '',
         };
+
+        
       });
+
+      console.log(this.productDetails);
     });
+
+   
   }
 
   public onProductClick(product: any) {
