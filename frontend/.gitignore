@@ -1,6 +1,5 @@
 .angular
 .angular/cache
 .vercel
-dist
 .vercelignore
 node_modules
